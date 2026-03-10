@@ -1,0 +1,116 @@
+---
+import '../styles/global.css'
+import '@fontsource-variable/dm-sans'
+import '@fontsource-variable/fraunces/opsz.css'
+import '@fontsource-variable/fraunces/opsz-italic.css'
+
+// Self-hosted font paths — served from /public/fonts/ for reliable preloading in production
+const dmSansUrl = '/fonts/dm-sans-latin-wght-normal.woff2'
+const frauncesUrl = '/fonts/fraunces-latin-opsz-normal.woff2'
+const frauncesItalicUrl = '/fonts/fraunces-latin-opsz-italic.woff2'
+
+export interface Props {
+  title?: string
+  description?: string
+  ogImage?: string
+  noIndex?: boolean
+}
+
+const { title, description, ogImage, noIndex } = Astro.props as Props
+const site = Astro.site?.origin ?? 'https://www.thrivedentalny.com'
+const canonicalURL = site + Astro.url.pathname
+const resolvedOgImage = ogImage
+  ? (ogImage.startsWith('http') ? ogImage : site + ogImage)
+  : site + '/og-default.jpg'
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font preloads — improves LCP -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={dmSansUrl} />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesUrl} />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesItalicUrl} />
+    <!-- Preconnect to third-party origins used on most pages -->
+    <link rel="preconnect" href="https://maps.googleapis.com" />
+    <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+    <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://maps.gstatic.com" />
+    <link rel="preconnect" href="https://app.nexhealth.com" />
+    <link rel="dns-prefetch" href="https://app.nexhealth.com" />
+    <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Browser UI color to match teal brand -->
+    <meta name="theme-color" content="#007f78" />
+    <!-- Robots -->
+    {noIndex
+      ? <meta name="robots" content="noindex,nofollow" />
+      : <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    }
+    <!-- Primary meta -->
+    <title>{title ?? 'Thrive Dental | Cosmetic & Family Dentistry in Bayside, NY'}</title>
+    <meta name="description" content={description ?? 'Modern, friendly dental care in Bayside, Queens. Comprehensive oral health, Invisalign®, implants, and cosmetic dentistry from Dr. Yelena Mikhaylova and team.'} />
+    <link rel="canonical" href={canonicalURL} />
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Thrive Dental" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title ?? 'Thrive Dental | Cosmetic & Family Dentistry in Bayside, NY'} />
+    <meta property="og:description" content={description ?? 'Modern, friendly dental care in Bayside, Queens. Comprehensive oral health, Invisalign®, implants, and cosmetic dentistry from Dr. Yelena Mikhaylova and team.'} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title ?? 'Thrive Dental — Cosmetic & Family Dentistry in Bayside, NY'} />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title ?? 'Thrive Dental | Cosmetic & Family Dentistry in Bayside, NY'} />
+    <meta name="twitter:description" content={description ?? 'Modern, friendly dental care in Bayside, Queens. Comprehensive oral health, Invisalign®, implants, and cosmetic dentistry from Dr. Yelena Mikhaylova and team.'} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+    <!-- Geo tags (local SEO) -->
+    <meta name="geo.region" content="US-NY" />
+    <meta name="geo.placename" content="Bayside, Queens, New York" />
+    <meta name="geo.position" content="40.7628;-73.7712" />
+    <meta name="ICBM" content="40.7628, -73.7712" />
+    <!-- Page-specific head injections (preloads, etc.) -->
+    <slot name="head" />
+    <style>
+      :root {
+        --font-sans: 'DM Sans Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --font-display: 'Fraunces Variable', ui-serif, Georgia, serif;
+      }
+      body { font-family: var(--font-sans); }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:shadow">
+      Skip to content
+    </a>
+    <slot name="header" />
+    <main id="main" class="pb-[calc(6.5rem+env(safe-area-inset-bottom,0px))] md:pb-0">
+      <slot />
+    </main>
+    <slot name="reviews-carousel" />
+    <slot name="footer" />
+    <script is:inline>
+      try {
+        document.body.addEventListener('keydown', e => {
+          if (e.key === 'Tab') document.body.classList.add('keys')
+        }, { once: true })
+      } catch {}
+    </script>
+    <script is:inline>
+      try {
+        document.querySelectorAll('details').forEach(function(d) {
+          var s = d.querySelector('summary')
+          if (s) s.setAttribute('aria-expanded', String(d.open))
+          d.addEventListener('toggle', function() {
+            if (s) s.setAttribute('aria-expanded', String(d.open))
+          })
+        })
+      } catch {}
+    </script>
+  </body>
+</html>

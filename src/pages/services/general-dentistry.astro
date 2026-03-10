@@ -1,0 +1,91 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import heroImg from "../../assets/services/general-hero.jpg";
+---
+
+<ServicePage
+  title="General Dentistry in Bayside, Queens NY | Thrive Dental"
+  description="General dentistry in Bayside, Queens NY — comprehensive exams, professional cleanings, and complete oral health care for the whole family. Board-certified team. Call (718) 225-6677."
+  category="General Dentistry"
+  categoryHref="/services/general-dentistry"
+  h1="General Dentistry in Bayside, Queens"
+  subtitle="The foundation of a healthy smile. Comprehensive exams, professional cleanings, and preventive care for every stage of life — handled by a board-certified team that takes the time to do it right."
+  heroImg={heroImg}
+  overviewTitle="Prevention is always cheaper than treatment."
+  overviewText="General dentistry is the cornerstone of everything we do at Thrive Dental. Twice-yearly exams and professional cleanings don't just keep your teeth clean — they catch problems early, when treatment is simple and affordable. Gum disease, cavities, oral cancer, and structural wear are all detectable at their earliest stages during a routine visit. Our comprehensive exams include digital X-rays with 90% less radiation than traditional film, periodontal probing, oral cancer screening, bite analysis, and a full review of any existing restorations."
+  overviewExtra="Many patients come to Thrive Dental having skipped dental visits for years — and are relieved to find that a thorough exam and cleaning is often all they need to get back on track. We see patients from across Bayside, Flushing, Whitestone, and Fresh Meadows who've been told elsewhere that they need extensive treatment, and a preventive-first approach resolves most issues before they become costly. Our general dental exams cover more than a cleaning: every visit includes a temporomandibular joint (TMJ) check, gum tissue assessment, condition of any existing crowns or fillings, bite evaluation, and a genuine conversation about anything you've noticed between visits. We treat every member of the family — from a child's first checkup to adults managing long-term oral health goals."
+  benefits={[
+    {
+      icon: `<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
+      title: 'Comprehensive Exams',
+      desc: 'Digital X-rays, periodontal probing, oral cancer screening, TMJ check, and bite analysis — every visit, not just annually.',
+    },
+    {
+      icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+      title: 'Whole Family Welcome',
+      desc: 'From a child\'s first checkup to full restorative care for adults — everyone in the family seen under one roof.',
+    },
+    {
+      icon: `<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>`,
+      title: 'Early Problem Detection',
+      desc: 'Catching cavities, gum disease, and structural issues in their earliest stages — when a small filling prevents a future crown.',
+    },
+    {
+      icon: `<rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>`,
+      title: 'Advanced Technology',
+      desc: 'Digital X-rays, intraoral cameras, and iTero scanning mean faster, more accurate diagnostics with less radiation and no guesswork.',
+    },
+  ]}
+  steps={[
+    {
+      number: '01',
+      title: 'Comprehensive Exam',
+      desc: 'A full mouth evaluation including digital X-rays (90% less radiation than traditional film), periodontal measurements, TMJ check, oral cancer screening, and a review of any existing restorations.',
+    },
+    {
+      number: '02',
+      title: 'Professional Cleaning',
+      desc: 'Our dental hygienist performs scaling and polishing to remove plaque and tartar that daily brushing cannot reach — including below the gumline where most gum disease begins.',
+    },
+    {
+      number: '03',
+      title: 'Treatment Plan (If Needed)',
+      desc: 'If any issues are detected, we review them with you before anything is scheduled. You\'ll receive a clear, itemized plan with all options explained — no pressure, no surprises.',
+    },
+    {
+      number: '04',
+      title: 'Your Recall Schedule',
+      desc: 'We set a recall interval based on your specific risk profile — typically every 6 months, more frequently for patients managing active gum disease or a high cavity rate.',
+    },
+  ]}
+  faq={[
+    {
+      q: 'How often should I get a dental cleaning and exam?',
+      a: 'For most patients, twice yearly — every 6 months. Patients with active gum disease, a history of frequent cavities, or certain systemic health conditions (diabetes, dry mouth) benefit from 3–4 month intervals. We determine your recall schedule based on clinical findings, not a one-size-fits-all protocol.',
+    },
+    {
+      q: 'What does a comprehensive dental exam include?',
+      a: 'At Thrive Dental, a full exam includes digital X-rays, periodontal probing (measuring gum pocket depths around every tooth), visual oral cancer screening, bite analysis, TMJ evaluation, and a review of any existing crowns, bridges, or fillings. New patient exams typically take 60–75 minutes; established patient exams are faster.',
+    },
+    {
+      q: 'Do you see children for general dentistry?',
+      a: 'Yes — we treat patients of all ages, including young children. The American Academy of Pediatric Dentistry recommends a first dental visit by age 1, or within 6 months of the first tooth erupting. We offer fluoride treatments, dental sealants, and age-appropriate X-rays as part of our pediatric preventive care program.',
+    },
+    {
+      q: 'What if I haven\'t been to the dentist in years?',
+      a: 'You\'re not alone — and we don\'t judge gaps in care. We\'ll perform a comprehensive new patient exam to assess your current oral health, establish an X-ray baseline, and create a practical plan prioritized by urgency. In many cases, patients who\'ve avoided the dentist out of anxiety or cost concerns find they need far less than they feared.',
+    },
+    {
+      q: 'Does dental insurance cover routine cleanings and exams?',
+      a: 'Most dental insurance plans cover twice-yearly cleanings and exams at 100% as a preventive benefit — meaning no out-of-pocket cost for those visits. We are in-network with most major PPO plans and will verify your specific benefits before your appointment. We also offer flexible payment options for patients without insurance.',
+    },
+  ]}
+  related={[
+    { href: '/services/dental-cleanings',    label: 'Cleanings & Exams' },
+    { href: '/services/preventive-dentistry', label: 'Preventive Dentistry' },
+    { href: '/services/dental-fillings',     label: 'Dental Fillings' },
+    { href: '/services/gum-disease-treatment', label: 'Gum Disease Treatment' },
+    { href: '/services/pediatric-dentistry', label: 'Pediatric Dentistry' },
+  ]}
+  ctaHeading="Your healthiest smile starts with a checkup."
+/>

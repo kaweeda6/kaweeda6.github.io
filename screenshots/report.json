@@ -1,0 +1,2630 @@
+[
+  {
+    "path": "/",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/complex-case-design",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/full-arch-restoration",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/functional-rejuvenation",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/restorative-excellence",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/smile-makeover",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/dental-emergency-what-to-do",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/dental-implants-cost-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/gum-disease-signs-treatment",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/how-often-dental-cleaning",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/invisalign-vs-braces-bayside",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/porcelain-veneers-guide",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/contact",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/abanob-saleh",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/alla-hart",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/yelena-mikhaylova",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/financial-information",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/first-visit",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/insurance",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/cosmetic-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-bonding",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-bridges",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-cleanings",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-crowns",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-fillings",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-implants",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-sealants",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dentures",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/emergency-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/fluoride-treatment",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/full-mouth-reconstruction",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/general-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/gum-disease-treatment",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/implant-restoration",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/invisalign",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/itero-digital-impressions",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/laser-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/mouthguards",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/nightguards",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/oral-cancer-screening",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/pediatric-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/periodontal-treatments",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/periodontics",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/porcelain-veneers",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/preventive-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/restorative-dentistry",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/root-canal-therapy",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/smile-design",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/teeth-whitening",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-bayside-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-beechhurst-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-college-point-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-douglaston-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-floral-park-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-flushing-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-fresh-meadows-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-glen-oaks-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-little-neck-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-oakland-gardens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-queens-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-queens-village-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-whitestone-ny",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/testimonials",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/why-thrive",
+    "viewport": "mobile-390",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/complex-case-design",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/full-arch-restoration",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/functional-rejuvenation",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/restorative-excellence",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/smile-makeover",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/dental-emergency-what-to-do",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/dental-implants-cost-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/gum-disease-signs-treatment",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/how-often-dental-cleaning",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/invisalign-vs-braces-bayside",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/porcelain-veneers-guide",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/contact",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/abanob-saleh",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/alla-hart",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/yelena-mikhaylova",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/financial-information",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/first-visit",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/insurance",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/cosmetic-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-bonding",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-bridges",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-cleanings",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-crowns",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-fillings",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-implants",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-sealants",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dentures",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/emergency-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/fluoride-treatment",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/full-mouth-reconstruction",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/general-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/gum-disease-treatment",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/implant-restoration",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/invisalign",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/itero-digital-impressions",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/laser-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/mouthguards",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/nightguards",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/oral-cancer-screening",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/pediatric-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/periodontal-treatments",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/periodontics",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/porcelain-veneers",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/preventive-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/restorative-dentistry",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/root-canal-therapy",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/smile-design",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/teeth-whitening",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-bayside-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-beechhurst-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-college-point-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-douglaston-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-floral-park-ny",
+    "viewport": "tablet-768",
+    "ok": false,
+    "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4321/teeth-whitening-floral-park-ny\", waiting until \"networkidle\"\u001b[22m\n"
+  },
+  {
+    "path": "/teeth-whitening-flushing-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-fresh-meadows-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-glen-oaks-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-little-neck-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-oakland-gardens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-queens-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-queens-village-ny",
+    "viewport": "tablet-768",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/teeth-whitening-whitestone-ny",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/testimonials",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/why-thrive",
+    "viewport": "tablet-768",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/complex-case-design",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/full-arch-restoration",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/functional-rejuvenation",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/restorative-excellence",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/before-and-after/smile-makeover",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/dental-emergency-what-to-do",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/dental-implants-cost-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/gum-disease-signs-treatment",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/how-often-dental-cleaning",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/blog/invisalign-vs-braces-bayside",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/blog/porcelain-veneers-guide",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/contact",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4321/cosmetic-dentist-beechhurst-ny\", waiting until \"networkidle\"\u001b[22m\n"
+  },
+  {
+    "path": "/cosmetic-dentist-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/cosmetic-dentist-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/dental-implants-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dental-implants-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/dentist-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/dentist-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/doctors/abanob-saleh",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/alla-hart",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/doctors/yelena-mikhaylova",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/emergency-dentist-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4321/invisalign-fresh-meadows-ny\", waiting until \"networkidle\"\u001b[22m\n"
+  },
+  {
+    "path": "/invisalign-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/invisalign-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/financial-information",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/new-patients/first-visit",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/new-patients/insurance",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/porcelain-veneers-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/cosmetic-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-bonding",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-bridges",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/services/dental-cleanings",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-crowns",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-fillings",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-implants",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dental-sealants",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/dentures",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/emergency-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/fluoride-treatment",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/full-mouth-reconstruction",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/general-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/gum-disease-treatment",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/implant-restoration",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/invisalign",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/itero-digital-impressions",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/laser-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/mouthguards",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/nightguards",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/oral-cancer-screening",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/pediatric-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/periodontal-treatments",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/periodontics",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/porcelain-veneers",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/preventive-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/restorative-dentistry",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/root-canal-therapy",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/smile-design",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/services/teeth-whitening",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-bayside-ny",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4321/teeth-whitening-bayside-ny\", waiting until \"networkidle\"\u001b[22m\n"
+  },
+  {
+    "path": "/teeth-whitening-beechhurst-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-college-point-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-douglaston-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-floral-park-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-flushing-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-fresh-meadows-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-glen-oaks-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-little-neck-ny",
+    "viewport": "desktop-1280",
+    "ok": false,
+    "error": "TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+  },
+  {
+    "path": "/teeth-whitening-oakland-gardens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-queens-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-queens-village-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/teeth-whitening-whitestone-ny",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/testimonials",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  },
+  {
+    "path": "/why-thrive",
+    "viewport": "desktop-1280",
+    "ok": true,
+    "overflow": false
+  }
+]

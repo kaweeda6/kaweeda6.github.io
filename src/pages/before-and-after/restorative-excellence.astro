@@ -1,0 +1,228 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CallBar from "../../components/CallBar.astro";
+import ReviewsCarousel from "../../components/ReviewsCarousel.astro";
+import { Image } from "astro:assets";
+import { BOOK_APPOINTMENT_URL } from "../../data/site";
+import caseImg from "../../assets/results/restorative-excellence.jpg";
+
+const steps = [
+  { n: "01", title: "Comprehensive Dental Exam & X-rays", body: "We assess existing crowns, bridges, and remaining tooth structure, identifying areas of decay, failed margins, or compromised aesthetics that need to be addressed." },
+  { n: "02", title: "Treatment Planning & Shade Selection", body: "A detailed restorative plan is created, specifying which teeth need new crowns or bridges and selecting the precise porcelain shade to achieve natural harmony with the smile." },
+  { n: "03", title: "Tooth Preparation & Temporaries", body: "Teeth are precisely shaped to receive new restorations, and high-quality temporaries are placed to protect and preview the final result while your custom work is crafted." },
+  { n: "04", title: "Final Crown & Bridge Delivery", body: "Precision-fit porcelain crowns and bridges are cemented with biocompatible adhesive. Marginal integrity, bite, and aesthetics are verified to ensure long-term success." },
+];
+
+const candidates = [
+  { icon: "👑", title: "Failing or aging crown work", body: "Old metal or porcelain-fused-to-metal crowns that show dark margins, chips, or mismatched color are ideal candidates for replacement with modern all-ceramic restorations." },
+  { icon: "🦴", title: "Missing teeth with healthy neighbors", body: "When implants aren't feasible or desired, a precision ceramic bridge provides a fixed, natural-looking solution that restores both function and appearance." },
+  { icon: "💪", title: "Compromised structural integrity", body: "Teeth weakened by large fillings, root canals, or cracks benefit enormously from full-coverage crown protection — preventing fracture and extending tooth longevity." },
+];
+---
+
+<Base
+  title="Restorative Excellence Case Study | Thrive Dental Bayside, Queens NY"
+  description="Real crown and bridge restorative case at Thrive Dental in Bayside, Queens NY — precision porcelain work to restore confidence, function, and oral health."
+>
+  <Fragment slot="header"><Header /></Fragment>
+
+  <!-- Breadcrumb structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.thrivedentalny.com" },
+      { "@type": "ListItem", "position": 2, "name": "Before & After Gallery", "item": "https://www.thrivedentalny.com/before-and-after" },
+      { "@type": "ListItem", "position": 3, "name": "Restorative Excellence", "item": "https://www.thrivedentalny.com/before-and-after/restorative-excellence" }
+    ]
+  })} />
+
+  <!-- Procedure structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": "Restorative Excellence — Crown & Bridge",
+    "description": "Precision crown and bridge work using all-ceramic porcelain restorations to restore lost confidence, function, and oral health.",
+    "procedureType": "Restorative",
+    "bodyLocation": "Mouth",
+    "provider": {
+      "@type": "Dentist",
+      "name": "Thrive Dental",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bayside",
+        "addressRegion": "NY",
+        "postalCode": "11361",
+        "addressCountry": "US"
+      }
+    }
+  })} />
+
+  <!-- Hero -->
+  <section class="relative bg-brand-900 overflow-hidden" style="padding-top: clamp(6rem, 12vw, 9rem); padding-bottom: clamp(2.5rem, 4vw, 3.5rem);">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-brand-700/40 blur-[100px]"></div>
+      <div class="absolute bottom-0 right-0 h-[300px] w-[400px] rounded-full bg-brand-600/20 blur-[80px]"></div>
+    </div>
+    <div class="container-slim relative text-center">
+      <a href="/before-and-after" class="mb-5 inline-flex items-center gap-1.5 text-brand-300 text-sm font-medium hover:text-brand-100 transition-colors no-underline">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Before &amp; After Gallery
+      </a>
+      <br />
+      <span class="mb-5 inline-block rounded-full bg-brand-700/60 border border-brand-600/50 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.25em] text-brand-300">Case Study</span>
+      <h1 class="display-1 !text-white mb-5">Restorative Excellence</h1>
+      <p class="mx-auto max-w-xl text-lg text-brand-200 leading-relaxed">Precision crown and bridge work to restore lost confidence and oral health — where function meets flawless aesthetics in Bayside, Queens NY.</p>
+    </div>
+  </section>
+
+  <!-- Slider Section -->
+  <section class="bg-slate-50 py-10" aria-label="Before and after photo comparison">
+    <div class="container-slim">
+      <div class="mx-auto max-w-3xl">
+        <div class="before-after-container relative aspect-[16/9] w-full overflow-hidden rounded-[1.5rem] bg-white shadow-[0_30px_100px_-15px_rgba(0,0,0,0.12)]">
+          <div class="absolute inset-0 h-full w-full">
+            <Image src={caseImg} alt="Restorative Excellence — After" class="h-full w-full object-cover object-bottom" width={900} height={506} />
+            <div class="absolute bottom-5 right-5 rounded-full bg-brand-500 px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-white shadow-lg z-10">After</div>
+          </div>
+          <div class="before-layer absolute inset-0 h-full w-1/2 overflow-hidden border-r border-white/40 shadow-[15px_0_40px_rgba(0,0,0,0.2)] z-20">
+            <div class="h-full w-full absolute inset-0" style="width: 200%;">
+              <Image src={caseImg} alt="Restorative Excellence — Before" class="h-full w-full object-cover object-top" width={900} height={506} />
+            </div>
+            <div class="absolute bottom-5 left-5 rounded-full bg-slate-900/80 px-4 py-1.5 text-[9px] font-black uppercase tracking-widest text-white backdrop-blur-md">Before</div>
+          </div>
+          <div class="slider-handle absolute top-0 bottom-0 left-1/2 z-30 flex w-px -translate-x-1/2 items-center justify-center bg-white/50">
+            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-2xl border border-slate-100 text-brand-600 cursor-ew-resize">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+                <polyline points="9 18 3 12 9 6"></polyline>
+              </svg>
+            </div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="absolute inset-0 z-40 h-full w-full cursor-ew-resize opacity-0" aria-label="Before and after slider" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Procedure Overview -->
+  <section class="bg-sand-50 py-14 md:py-20 lg:py-28">
+    <div class="container-slim">
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20 items-start">
+        <div>
+          <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">About This Procedure</p>
+          <h2 class="display-2 mb-6">What is restorative crown & bridge work?</h2>
+          <div class="space-y-4 text-slate-600 leading-relaxed">
+            <p>Dental crowns and bridges have long been the cornerstone of restorative dentistry — but at Thrive Dental in Bayside, Queens NY, we elevate this fundamental treatment to an art form. Using only all-ceramic, metal-free materials, our restorations are virtually indistinguishable from natural teeth.</p>
+            <p>A crown encases a damaged tooth completely, restoring its shape, strength, and appearance. A bridge uses adjacent teeth as anchors to span a gap left by one or more missing teeth. Together, they address the most common restorative challenges patients face — from cracked teeth and large fillings to missing teeth that affect chewing and speech.</p>
+            <p>What defines restorative excellence at Thrive isn't just the materials — it's the attention to marginal fit, shade matching, and bite equilibration that ensures restorations feel completely natural from day one. Our Queens NY patients routinely report that they forget the work was ever done.</p>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-[0_2px_20px_rgba(0,0,0,0.06)]">
+          <h3 class="font-display text-lg font-semibold text-slate-900 mb-5">At a glance</h3>
+          <dl class="divide-y divide-slate-100">
+            {[
+              { dt: "Procedure type", dd: "Crown & bridge restoration" },
+              { dt: "Materials", dd: "All-ceramic, metal-free porcelain" },
+              { dt: "Treatment duration", dd: "2–3 appointments over 2–3 weeks" },
+              { dt: "Anesthesia", dd: "Local anesthesia; sedation available" },
+              { dt: "Longevity", dd: "15–25 years with proper care" },
+              { dt: "Recovery", dd: "Minimal — normal function same day" },
+            ].map(({ dt, dd }) => (
+              <div class="flex justify-between items-baseline gap-6 py-3.5">
+                <dt class="text-xs text-slate-400 shrink-0">{dt}</dt>
+                <dd class="text-sm font-semibold text-slate-800 text-right">{dd}</dd>
+              </div>
+            ))}
+          </dl>
+          <a href={BOOK_APPOINTMENT_URL} target="_blank" rel="noopener noreferrer" class="mt-6 block w-full text-center rounded-full bg-brand-600 px-6 py-3 text-sm font-bold text-white hover:bg-brand-700 transition-colors no-underline">
+            Book a Free Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <section class="bg-white py-14 md:py-20 lg:py-28">
+    <div class="container-slim">
+      <div class="max-w-2xl mb-10 lg:mb-16">
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Our Process</p>
+        <h2 class="display-2">How we do it, step by step.</h2>
+      </div>
+      <div class="space-y-0">
+        {steps.map((s, i) => (
+          <div class="flex gap-5 sm:gap-10">
+            <div class="flex flex-col items-center shrink-0">
+              <div class="w-10 h-10 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold text-xs font-display shrink-0">{s.n}</div>
+              {i < steps.length - 1 && <div class="w-px flex-1 bg-brand-100 mt-3"></div>}
+            </div>
+            <div class={`pt-1.5 ${i < steps.length - 1 ? 'pb-8 sm:pb-12' : ''}`}>
+              <h3 class="text-base font-display font-semibold text-slate-900 mb-3">{s.title}</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">{s.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Candidates -->
+  <section class="bg-sand-50 py-14 md:py-20 lg:py-28">
+    <div class="container-slim">
+      <div class="max-w-2xl mb-10 lg:mb-16">
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Is This Right for You?</p>
+        <h2 class="display-2">Who's a good candidate?</h2>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-3">
+        {candidates.map(c => (
+          <div class="rounded-2xl bg-white p-6 sm:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.09)] transition-shadow">
+            <div class="mb-4 flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-brand-600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 12 9 17 20 6"></polyline></svg>
+            </div>
+            <h3 class="font-display font-semibold text-slate-900 mb-2 text-lg">{c.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ReviewsCarousel />
+  <Fragment slot="footer"><Footer /></Fragment>
+  <CallBar />
+</Base>
+
+<style>
+  .before-after-container input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+  }
+</style>
+
+<script>
+  function initSlider() {
+    const containers = document.querySelectorAll('.before-after-container');
+    containers.forEach(container => {
+      const input = container.querySelector('input');
+      const beforeLayer = container.querySelector('.before-layer') as HTMLElement | null;
+      const beforeLayerInner = beforeLayer?.querySelector('div') as HTMLElement | null;
+      const handle = container.querySelector('.slider-handle') as HTMLElement | null;
+      if (input && beforeLayer && handle) {
+        const update = () => {
+          const val = Number((input as HTMLInputElement).value);
+          beforeLayer.style.width = `${val}%`;
+          handle.style.left = `${val}%`;
+          if (beforeLayerInner) beforeLayerInner.style.width = `${Math.max(10000 / Math.max(val, 1), 100)}%`;
+        };
+        input.addEventListener('input', update);
+        update();
+      }
+    });
+  }
+  initSlider();
+  document.addEventListener('astro:after-swap', initSlider);
+</script>

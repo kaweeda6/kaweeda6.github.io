@@ -1,0 +1,59 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import heroImg from "../../assets/services/teeth-whitening.jpg";
+---
+
+<ServicePage
+  title="Teeth Whitening in Bayside, Queens NY | Thrive Dental"
+  description="Professional teeth whitening in Bayside, Queens NY. Philips Zoom! in-office whitening and custom take-home trays. Get visibly whiter teeth fast. Call (718) 225-6677."
+  category="Cosmetic Dentistry"
+  categoryHref="/services/cosmetic-dentistry"
+  h1="Teeth Whitening in Bayside, NY"
+  subtitle="A brighter smile can transform how you look and feel. We offer professional-grade Philips Zoom! in-office whitening and custom take-home trays for results that last."
+  heroImg={heroImg}
+  overviewTitle="Professional whitening vs. store-bought strips."
+  overviewText="Over-the-counter whitening products use low concentrations of bleaching agent — which is why results are slow and inconsistent. Our professional whitening treatments use clinical-strength formulas applied by trained clinicians, giving you dramatically whiter teeth in a single visit or with custom-fitted trays designed specifically for your smile."
+  overviewExtra="Teeth whitening in Bayside, NY has never been more accessible or effective. At Thrive Dental, we offer Philips Zoom! — the same in-office whitening system used by top cosmetic practices nationwide — right here in Queens. Unlike strips you pick up at a pharmacy, Zoom! uses a 25% hydrogen peroxide gel activated by a specially designed LED light, delivering results up to 8 shades brighter in about an hour. For patients who prefer whitening on their own schedule, our custom take-home trays are fabricated from precise digital impressions of your teeth — ensuring full, even coverage that generic trays simply can't provide. Whether you're preparing for a wedding, a big presentation, or just want to refresh your smile, professional teeth whitening at our Bayside office delivers results you'll notice the moment you leave."
+  benefits={[
+    {
+      icon: `<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>`,
+      title: 'Visibly Whiter Fast',
+      desc: 'Philips Zoom! in-office treatment delivers results up to 8 shades brighter in a single one-hour appointment.',
+    },
+    {
+      icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+      title: 'Clinically Safe',
+      desc: 'Applied by our dental team with desensitizing protection — safe for enamel and far more effective than DIY methods.',
+    },
+    {
+      icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>`,
+      title: 'Long-Lasting Results',
+      desc: 'With take-home trays and routine touch-ups, professional whitening results can last 1–3 years.',
+    },
+  ]}
+  faq={[
+    {
+      q: 'How white will my teeth get?',
+      a: 'Results vary depending on the natural shade of your teeth and the type of staining. Most patients achieve 4–8 shades of improvement with Zoom! in-office whitening. We\'ll give you a realistic preview at your consultation.',
+    },
+    {
+      q: 'Is teeth whitening safe for sensitive teeth?',
+      a: 'Yes — we use desensitizing protocols before and after treatment. Some patients experience mild, temporary sensitivity. If you already have sensitive teeth, let us know and we\'ll customize the treatment accordingly.',
+    },
+    {
+      q: 'How long does professional whitening last?',
+      a: 'With good oral hygiene and occasional touch-ups using your custom trays, professional whitening typically lasts 1–3 years. Avoiding staining foods and drinks (coffee, red wine, berries) significantly extends results.',
+    },
+    {
+      q: 'Can I whiten if I have crowns or veneers?',
+      a: 'Whitening agents do not affect the color of crowns, veneers, or fillings. We\'ll discuss your existing restorations at your consultation to ensure your results look even and natural.',
+    },
+  ]}
+  related={[
+    { href: '/services/porcelain-veneers',    label: 'Porcelain Veneers' },
+    { href: '/services/dental-bonding',       label: 'Dental Bonding' },
+    { href: '/services/smile-design',         label: 'Smile Design' },
+    { href: '/services/cosmetic-dentistry',   label: 'All Cosmetic Services' },
+  ]}
+  ctaHeading="Ready for a brighter smile?"
+/>

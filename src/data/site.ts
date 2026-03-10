@@ -1,0 +1,1 @@
+export const BOOK_APPOINTMENT_URL = 'https://app.nexhealth.com/appt/thrive-dental-queens?lid=324493&rwg_token=AFd1xnGNillcXUGOOUKK5stHKAb-R4afFfav9AFwwLLnPtaJk19wGGaej6GSJYPdzjxmFqkjhDjjVNvj5OghPg9um4xucdiw1A%3D%3D'

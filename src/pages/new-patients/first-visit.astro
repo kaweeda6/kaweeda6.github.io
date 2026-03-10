@@ -1,0 +1,18 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import heroImg from "../../assets/office/hero-2108.jpg";
+---
+<ServicePage
+  title="Your First Visit | Thrive Dental Bayside, Queens NY"
+  description="What to expect at your first visit to Thrive Dental in Bayside, NY — exam, digital X-rays, 3D iTero scan, cleaning, and personalized treatment plan. Call (718) 225-6677."
+  category="New Patients"
+  categoryHref="/new-patients"
+  h1="Your First Visit to Thrive Dental"
+  subtitle="We want your first visit to be the best dental experience you've ever had. Here's exactly what to expect when you walk through our doors in Bayside."
+  heroImg={heroImg}
+  related={[
+    { href: '/new-patients/financial-information', label: 'Financial Information' },
+    { href: '/new-patients/insurance',             label: 'Insurance We Accept' },
+    { href: 'https://forms.nexhealth.com/patient/ThriveDental', label: 'Complete Patient Forms ↗' },
+  ]}
+/>

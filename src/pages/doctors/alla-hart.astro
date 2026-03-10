@@ -1,0 +1,154 @@
+---
+import Base from "../../layouts/Base.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import CallBar from "../../components/CallBar.astro";
+import ReviewsCarousel from "../../components/ReviewsCarousel.astro";
+import { Image } from "astro:assets";
+import docImg from "../../assets/team/alla-hart.webp";
+import { BOOK_APPOINTMENT_URL } from "../../data/site";
+
+const doc = {
+  name: 'Dr. Alla Hart',
+  credentials: 'DDS',
+  title: 'Dentist',
+  bio: 'Detail-oriented general and cosmetic dentist with 30+ years of experience, known for compassionate chairside manner and tailored treatment plans.',
+  img: docImg,
+  slug: 'alla-hart'
+}
+---
+
+<Base
+  title="Dr. Alla Hart, DDS | Dentist at Thrive Dental — Bayside, Queens NY"
+  description="Dr. Alla Hart is a DDS at Thrive Dental in Bayside, Queens NY. Specializing in minimally invasive dentistry, preventive care, and patient-centered treatment. Accepting new patients. Call (718) 225-6677."
+>
+  <Fragment slot="header"><Header /></Fragment>
+
+  <!-- Section with massive padding-top to clear the fixed navigation bar -->
+  <section class="relative overflow-hidden bg-sand-50" style="padding-top: clamp(6rem, 12vw, 9rem); padding-bottom: clamp(3rem, 6vw, 5rem);">
+    <!-- Background Decor -->
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-24 left-1/4 h-[500px] w-[500px] rounded-full bg-brand-100/40 blur-[100px]"></div>
+      <div class="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-brand-50/60 blur-[80px]"></div>
+    </div>
+
+    <div class="container-wide">
+      <div class="grid items-start gap-12 lg:grid-cols-12 lg:gap-16 xl:gap-20">
+        
+        <!-- Photo Side -->
+        <div class="relative lg:order-1 lg:col-span-6">
+          <div class="relative overflow-hidden rounded-[3rem] shadow-2xl bg-brand-50 w-full" style="aspect-ratio: 4/5;">
+            <Image 
+              src={doc.img} 
+              alt={doc.name} 
+              class="h-full w-full object-cover object-top"
+              width={900}
+              height={1125}
+              loading="eager"
+            />
+            </div>
+            </div>
+        <!-- Info Side -->
+        <div class="lg:order-2 lg:col-span-6">
+          <p class="text-[11px] font-black uppercase tracking-[0.3em] text-gold-700 mb-6 uppercase">Our Team</p>
+          <h1 class="display-1 text-slate-900 leading-[1.05] tracking-tight mb-6">{doc.name}</h1>
+          
+          <div class="flex items-center gap-3 mb-12">
+            <span class="h-px w-8 bg-brand-400"></span>
+            <p class="text-[14px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-relaxed">
+              {doc.credentials} • Dentist
+            </p>
+          </div>
+          
+          <div class="space-y-8">
+             <p class="text-xl text-slate-700 leading-relaxed mb-6">
+               {doc.bio}
+             </p>
+             <div class="prose prose-slate max-w-none prose-p:text-[17px] prose-p:leading-relaxed prose-p:text-slate-600">
+               <p>
+                 Dr. Alla Hart is a graduate of New York University College of Dentistry and completed her General Practice Residency at Columbia University. With more than 30 years of experience, she has earned a reputation throughout Bayside and greater New York for delivering meticulous general and cosmetic dentistry.
+               </p>
+               <p>
+                 Her clinical interests span natural-colored composite restorations, cosmetic veneers, onlays, crowns, root canals, dental implant restorations, teeth whitening, laser dentistry, full-mouth rehabilitation, smile design, and pediatric dentistry. Dr. Hart is also an Invisalign® Preferred Provider, helping patients achieve confident, well-aligned smiles without brackets or wires.
+               </p>
+               <p>
+                 Known for her warm chairside manner, Dr. Hart spends time walking patients through diagnosis, demonstrating preventive techniques, and ensuring they understand every step of their treatment plan. She believes dentistry is a partnership and works closely with each person to maintain lifelong oral health.
+               </p>
+             </div>
+          </div>
+
+          <div class="mt-14 flex flex-wrap items-center gap-4">
+            <a
+              href={BOOK_APPOINTMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+            >
+              Book with Dr. Hart
+            </a>
+            <a
+              href="tel:+1-718-225-6677"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+            >
+              (718) 225-6677
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Structured data: Physician (Person) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Physician',
+    name: 'Dr. Alla Hart',
+    jobTitle: 'Dentist',
+    description: 'Dentist at Thrive Dental in Bayside, Queens, NY, specializing in minimally invasive dentistry and preventive oral health care. 30+ years of experience.',
+    image: 'https://www.thrivedentalny.com/team/alla-hart.webp',
+    url: 'https://www.thrivedentalny.com/doctors/alla-hart',
+    worksFor: {
+      '@type': 'Dentist',
+      name: 'Thrive Dental',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '41-02 Bell Blvd',
+        addressLocality: 'Bayside',
+        addressRegion: 'NY',
+        postalCode: '11361',
+        addressCountry: 'US',
+      },
+    },
+  })} />
+
+  <!-- Structured data: Dentist -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Dentist',
+    name: 'Dr. Alla Hart',
+    honorificSuffix: 'DDS',
+    jobTitle: 'Dentist',
+    url: 'https://www.thrivedentalny.com/doctors/alla-hart',
+    image: 'https://www.thrivedentalny.com/team/alla-hart.webp',
+    description: 'Dentist at Thrive Dental in Bayside, Queens, NY, specializing in minimally invasive dentistry and preventive oral health care.',
+    worksFor: {
+      '@type': 'Dentist',
+      name: 'Thrive Dental',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '41-02 Bell Blvd',
+        addressLocality: 'Bayside',
+        addressRegion: 'NY',
+        postalCode: '11361',
+        addressCountry: 'US',
+      },
+    },
+    medicalSpecialty: 'Dentistry',
+  })} />
+
+  <Fragment slot="reviews-carousel"><ReviewsCarousel /></Fragment>
+  <Fragment slot="footer"><Footer /></Fragment>
+  <CallBar />
+</Base>

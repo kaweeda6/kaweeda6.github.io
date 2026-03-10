@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply text-[#1a1f1e] bg-white antialiased;
+}
+
+a:not([class]) { @apply text-brand-600 hover:text-brand-700 underline-offset-2; }
+
+.container-slim { @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8; }
+.container-wide { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-10; }
+
+/* Display headings */
+.display-1 {
+  @apply font-display text-[2.6rem] sm:text-5xl lg:text-[3.5rem] leading-[1.08] tracking-[-0.02em] text-[#1a1f1e];
+}
+.display-2 {
+  @apply font-display text-3xl sm:text-4xl leading-[1.12] tracking-[-0.02em] text-[#1a1f1e];
+}
+.display-3 {
+  @apply font-display text-2xl sm:text-3xl leading-[1.15] tracking-[-0.01em] text-[#1a1f1e];
+}
+
+/* UI components */
+.pill  { @apply rounded-full border border-slate-200 bg-sand-50 px-4 py-2 text-sm text-brand-700; }
+.chip  { @apply rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-medium; }
+
+/* Scroll snap */
+.snap-x    { scroll-snap-type: x mandatory; }
+.snap-item { scroll-snap-align: start; }
+
+/* ── Marquee ───────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.marquee-inner:hover {
+  animation-play-state: paused;
+}
+
+/* ── Hero float animations ─────────────────────── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes floatYSlow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+.hero-float      { animation: floatY 7s ease-in-out infinite; }
+.hero-float-slow { animation: floatYSlow 9s ease-in-out infinite; }
+
+/* ── Entrance animations ───────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up         { animation: fadeUp 0.65s ease-out both; }
+.fade-up-delay-1 { animation: fadeUp 0.65s 0.10s ease-out both; }
+.fade-up-delay-2 { animation: fadeUp 0.65s 0.20s ease-out both; }
+.fade-up-delay-3 { animation: fadeUp 0.65s 0.32s ease-out both; }
+.fade-up-delay-4 { animation: fadeUp 0.65s 0.44s ease-out both; }
+
+/* ── Services accordion ────────────────────────── */
+details summary::-webkit-details-marker { display: none; }
+details summary { list-style: none; }
+
+details[open] .svc-name  { color: #00cfc5; }
+details[open] .svc-cross { transform: rotate(45deg); color: #00cfc5; }
+details .svc-cross        { transition: transform 0.2s ease, color 0.2s ease; }
+
+/* ── Reduced motion ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner, .hero-float, .hero-float-slow,
+  .fade-up, .fade-up-delay-1, .fade-up-delay-2,
+  .fade-up-delay-3, .fade-up-delay-4 { animation: none !important; }
+  html { scroll-behavior: auto; }
+}

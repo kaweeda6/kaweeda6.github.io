@@ -1,0 +1,165 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import heroImg from "../../assets/office/thrivedental-3059.jpg";
+import { Image } from "astro:assets";
+
+import aetna from "../../assets/insurance/aetna.svg";
+import ameritas from "../../assets/insurance/ameritas.png";
+import anthem from "../../assets/insurance/anthem.svg";
+import assurant from "../../assets/insurance/assurant.svg";
+import careington from "../../assets/insurance/careington.png";
+import cigna from "../../assets/insurance/cigna.svg";
+import dentaquest from "../../assets/insurance/dentaquest.svg";
+import fidelis from "../../assets/insurance/fidelis.png";
+import guardian from "../../assets/insurance/guardian.png";
+import humana from "../../assets/insurance/humana.svg";
+import metlife from "../../assets/insurance/metlife.png";
+import principal from "../../assets/insurance/principal.png";
+import solstice from "../../assets/insurance/solstice.png";
+import sunLife from "../../assets/insurance/sun-life.svg";
+import unitedHealthcare from "../../assets/insurance/united-healthcare.svg";
+
+const logos = [
+  { src: aetna,           alt: "Aetna" },
+  { src: cigna,           alt: "Cigna" },
+  { src: humana,          alt: "Humana" },
+  { src: guardian,        alt: "Guardian" },
+  { src: metlife,         alt: "MetLife" },
+  { src: unitedHealthcare,alt: "UnitedHealthcare" },
+  { src: anthem,          alt: "Anthem" },
+  { src: ameritas,        alt: "Ameritas" },
+  { src: principal,       alt: "Principal" },
+  { src: sunLife,         alt: "Sun Life" },
+  { src: assurant,        alt: "Assurant" },
+  { src: careington,      alt: "Careington" },
+  { src: dentaquest,      alt: "DentaQuest" },
+  { src: fidelis,         alt: "Fidelis Care" },
+  { src: solstice,        alt: "Solstice" },
+];
+---
+<ServicePage
+  title="Dental Insurance Accepted | Thrive Dental Bayside, NY"
+  description="Thrive Dental in Bayside, Queens NY accepts most major dental insurance plans. We file claims as a courtesy. Questions about coverage? Call us at (718) 225-6677."
+  category="New Patients"
+  categoryHref="/new-patients"
+  h1="Dental Insurance at Thrive Dental Bayside"
+  subtitle="We work with most major dental insurance providers and will file claims directly on your behalf. Our team is happy to verify your benefits before your appointment."
+  heroImg={heroImg}
+  showWhyThrive={false}
+  related={[
+    { href: '/new-patients/financial-information', label: 'Financial Information' },
+    { href: '/new-patients/first-visit',           label: 'Your First Visit' },
+    { href: '/contact',                             label: 'Contact Us' },
+  ]}
+>
+  <section class="bg-white py-20 lg:py-28">
+    <div class="container-slim space-y-16">
+
+      <!-- Logo carousel -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Insurance We Accept</p>
+        <h2 class="display-2 mb-3">Most major plans welcome.</h2>
+        <p class="text-[17px] leading-relaxed text-slate-500 mb-10 max-w-2xl">
+          We're in-network with many of the plans below and out-of-network with others — either way, we'll work to maximize your benefits and keep your out-of-pocket costs as low as possible.
+        </p>
+
+        <!-- Scrolling marquee -->
+        <div class="relative overflow-hidden">
+          <!-- Fade edges -->
+          <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10"></div>
+          <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10"></div>
+
+          <div class="insurance-track flex gap-12 items-center" aria-label="Insurance providers we accept">
+            <!-- First set -->
+            {logos.map((logo) => (
+              <div class="flex-shrink-0 flex items-center justify-center h-12 px-4">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  height={40}
+                  class="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            ))}
+            <!-- Duplicate for seamless loop -->
+            {logos.map((logo) => (
+              <div class="flex-shrink-0 flex items-center justify-center h-12 px-4" aria-hidden="true">
+                <Image
+                  src={logo.src}
+                  alt=""
+                  height={40}
+                  class="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p class="mt-6 text-[13px] text-slate-400">Don't see your plan? Call us — we likely accept it or can help you get the most out of your out-of-network benefits.</p>
+      </div>
+
+      <!-- How it works -->
+      <div class="grid gap-12 lg:grid-cols-2 lg:gap-20 items-start">
+        <div>
+          <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">How It Works</p>
+          <h2 class="display-2 mb-6">We handle the paperwork.</h2>
+          <div class="space-y-5 text-[15px] leading-relaxed text-slate-600">
+            <p>Bring your insurance card (or email it ahead of time) and we'll verify your coverage, run a benefits breakdown, and give you a clear estimate of your out-of-pocket cost before any treatment begins.</p>
+            <p>After your appointment, we submit claims directly to your insurer on your behalf — no forms for you to fill out, no chasing reimbursements. We follow up with your carrier if any issues arise.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          {[
+            { title: "Benefits verification", body: "We contact your insurance before your visit to confirm active coverage, deductibles, and annual maximums so there are no surprises." },
+            { title: "Pre-authorizations", body: "For larger treatments, we submit pre-authorization requests on your behalf and communicate the approval before scheduling." },
+            { title: "Direct claim filing", body: "We submit all claims electronically to your insurer — you pay only your estimated portion at the time of service." },
+            { title: "EOB assistance", body: "Confused by your Explanation of Benefits? Our team will walk you through any statement and address discrepancies directly with your carrier." },
+          ].map((item) => (
+            <div class="flex gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-5">
+              <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <p class="text-[14px] font-semibold text-slate-900 mb-1">{item.title}</p>
+                <p class="text-[13px] leading-relaxed text-slate-500">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- No insurance CTA -->
+      <div class="rounded-[2rem] bg-brand-50 border border-brand-100 p-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+        <div class="max-w-xl">
+          <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-3">No Insurance?</p>
+          <h3 class="text-2xl font-display text-slate-900 mb-3">We have an in-house plan for you.</h3>
+          <p class="text-[15px] leading-relaxed text-slate-600">
+            Our Roslyn Discount Dental Plan gives uninsured patients two cleanings, exams, X-rays, and 15%+ off all other treatment for one flat annual fee — no waiting periods or deductibles.
+          </p>
+        </div>
+        <a
+          href="/new-patients/financial-information"
+          class="shrink-0 inline-flex items-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+        >
+          See plan details
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</ServicePage>
+
+<style>
+  .insurance-track {
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+  .insurance-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>

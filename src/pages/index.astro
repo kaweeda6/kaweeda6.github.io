@@ -1,0 +1,755 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CallBar from "../components/CallBar.astro";
+import ReviewsCarousel from "../components/ReviewsCarousel.astro";
+import BeforeAfter from "../components/BeforeAfter.astro";
+import { Image } from "astro:assets";
+import { BOOK_APPOINTMENT_URL } from "../data/site";
+
+// Local imports for optimized images
+import heroPhoto from "../assets/office/hero-2108.jpg";
+import techPhoto from "../assets/office/thrivedental-3059.jpg";
+import teamPhoto1 from "../assets/office/thrivedental-2750.jpg";
+import teamPhoto2 from "../assets/office/thrivedental-2616.jpg";
+import teamPhoto3 from "../assets/office/thrivedental-2386.jpg";
+
+import docYelena from "../assets/team/yelena-mikhaylova.jpg";
+import docAlla from "../assets/team/alla-hart.webp";
+import docAbanob from "../assets/team/abanob-saleh.jpg";
+
+import svcGeneral from "../assets/services/general.jpg";
+import svcCosmetic from "../assets/services/cosmetic.jpg";
+import svcInvisalign from "../assets/services/invisalign.jpg";
+import svcImplants from "../assets/services/implants.jpg";
+import svcRestorative from "../assets/services/restorative.jpg";
+import svcEmergency from "../assets/services/emergency.jpg";
+
+const business = {
+  name: 'Thrive Dental',
+  phone: '(718) 225-6677',
+  street: '41-02 Bell Blvd',
+  city: 'Bayside',
+  state: 'NY',
+  zip: '11361',
+  latitude: 40.7628,
+  longitude: -73.7712,
+  url: (Astro.site?.origin ?? 'https://www.thrivedentalny.com') + '/',
+}
+
+// Service areas — broader categories with descriptions
+const services = [
+  {
+    title: 'General Dentistry',
+    slug: 'general-dentistry',
+    desc: 'Comprehensive oral health care for all ages, including cleanings, fillings, and preventive treatments to keep your smile healthy.',
+    img: svcGeneral
+  },
+  {
+    title: 'Cosmetic Dentistry',
+    slug: 'cosmetic-dentistry',
+    desc: 'Philips Zoom! teeth whitening, bonding, and custom veneers designed to create your most confident and beautiful smile.',
+    img: svcCosmetic
+  },
+  {
+    title: 'Invisalign®',
+    slug: 'invisalign',
+    desc: 'Straighten your teeth discreetly with Invisalign® and Invisalign Go, the clear alternative to traditional braces.',
+    img: svcInvisalign
+  },
+  {
+    title: 'Dental Implants',
+    slug: 'dental-implants',
+    desc: 'Permanent, natural-looking solutions for missing teeth that restore both the function and aesthetics of your smile.',
+    img: svcImplants
+  },
+  {
+    title: 'Restorative Care',
+    slug: 'restorative-dentistry',
+    desc: 'Expert root canals, crowns, bridges, and full-mouth reconstruction using the latest digital impression technology.',
+    img: svcRestorative
+  },
+  {
+    title: 'Emergency Dentistry',
+    slug: 'emergency-dentistry',
+    desc: 'Same-day relief for toothaches, broken teeth, and dental infections. We provide urgent care when you need it most.',
+    img: svcEmergency
+  },
+]
+
+const doctors = [
+  {
+    name: 'Dr. Yelena Mikhaylova',
+    credentials: 'DDS',
+    title: 'Founder & Clinical Director',
+    bio: 'With over a decade of experience, Dr. Mikhaylova combines clinical precision with an artistic eye to create healthy, confident smiles.',
+    img: docYelena,
+    slug: 'yelena-mikhaylova'
+  },
+  {
+    name: 'Dr. Alla Hart',
+    credentials: 'DDS',
+    title: 'Dentist',
+    bio: 'Dedicated to helping patients achieve optimal oral health through modern, minimally invasive dental techniques.',
+    img: docAlla,
+    slug: 'alla-hart'
+  },
+  {
+    name: 'Dr. Abanob Saleh',
+    credentials: 'DMD',
+    title: 'Dentist',
+    bio: 'A highly trained general dentist committed to providing comprehensive and holistic dental care using advanced techniques.',
+    img: docAbanob,
+    slug: 'abanob-saleh'
+  },
+]
+---
+
+<Base
+  title="Thrive Dental | Cosmetic & Family Dentistry in Bayside, NY"
+  description="Modern, friendly dental care in Bayside. Comprehensive oral health care, Invisalign, and implants from Dr. Yelena Mikhaylova and team."
+  ogImage="/og-default.jpg"
+>
+  <Fragment slot="head">
+    <!-- Preload hero video poster as LCP candidate -->
+    <link rel="preload" as="image" href="/office/hero-2057.jpg" fetchpriority="high" />
+  </Fragment>
+  <Fragment slot="header"><Header /></Fragment>
+
+  <!-- ═══════════════════════════════════════════
+       HERO — full-bleed video
+  ═══════════════════════════════════════════ -->
+  <section class="relative flex min-h-[92vh] items-center overflow-hidden">
+
+    <!-- Video background -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="none"
+      poster="/office/hero-2057.jpg"
+      class="absolute inset-0 h-full w-full object-cover"
+    >
+      <source src="/office/hero-compressed.webm" type="video/webm" />
+      <source src="/office/hero-compressed.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Gradient overlays: base dark + directional fade -->
+    <div class="absolute inset-0 bg-brand-900/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-900/60 via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-900/50 via-transparent to-transparent"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 container-wide w-full py-28 lg:py-36">
+      <div class="max-w-3xl">
+
+        <!-- Eyebrow -->
+        <p class="fade-up-delay-1 text-[11px] font-bold uppercase tracking-[0.2em] text-brand-400 mb-5">
+          Bayside, Queens · Est. 2009
+        </p>
+
+        <h1 class="fade-up-delay-1 display-1 !text-[clamp(2.8rem,5vw,4.6rem)] !leading-[1.08] !text-white">
+          Dentistry you'll<br />
+          <em class="not-italic text-brand-500">actually look</em><br />
+          forward to.
+        </h1>
+
+        <p class="fade-up-delay-2 mt-6 max-w-xl text-[18px] leading-relaxed text-white/75">
+          Dr. Yelena Mikhaylova and the Thrive Dental team provide preventive, cosmetic, Invisalign®, and implant care for Bayside, Queens, and NYC — with modern technology, weekend hours, and zero judgment.
+        </p>
+
+        <div class="fade-up-delay-3 mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href={BOOK_APPOINTMENT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/30 hover:bg-brand-400 hover:-translate-y-px transition-all no-underline"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Book Appointment
+          </a>
+          <a
+            href="tel:+1-718-225-6677"
+            class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 py-4 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20 hover:-translate-y-px transition-all no-underline"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            (718) 225-6677
+          </a>
+        </div>
+
+        <!-- Social proof row -->
+        <div class="fade-up-delay-4 mt-8 flex items-center gap-3">
+          <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"/>
+            </svg>
+          </div>
+          <div class="text-[13px]">
+            <span class="text-amber-400 tracking-tight">★★★★★</span>
+            <span class="ml-1.5 font-bold text-white">4.9</span>
+            <span class="text-white/60"> rating · </span>
+            <span class="font-semibold text-white">500+ reviews</span>
+            <span class="text-white/60"> on Google</span>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- Wave at bottom into services section -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:60px;display:block;width:100%">
+        <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,15 1440,30 L1440,60 L0,60 Z" fill="#f7f3e8"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SERVICES — horizontal marquee
+  ═══════════════════════════════════════════ -->
+  <section class="relative bg-[#f7f3e8] pt-10 pb-20 sm:pt-14 sm:pb-24 overflow-hidden">
+    <div class="container-wide mb-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div class="max-w-xl">
+          <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-500">Our Services</p>
+          <h2 class="display-2 mt-3 text-slate-900">Everything you need in one Bayside studio.</h2>
+          <p class="mt-4 text-slate-500 leading-relaxed">
+            Emergency visits, pediatric checkups, Philips Zoom! whitening, Invisalign®, implants, and restorative dentistry — all in one convenient location so your whole family can stay on track.
+          </p>
+        </div>
+        <a
+          href="/services"
+          class="inline-flex items-center gap-2 rounded-full border border-brand-300/60 bg-white px-8 py-4 text-[14px] font-bold text-slate-700 shadow-sm hover:border-brand-400 hover:bg-brand-50 hover:text-brand-500 no-underline transition-all"
+        >
+          View all services
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Marquee Wrapper -->
+    <div class="relative overflow-hidden group/marquee">
+      <!-- Edge Fades -->
+      <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#f7f3e8] to-transparent"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#f7f3e8] to-transparent"></div>
+
+      <div class="marquee-services flex w-max gap-8 px-6">
+        {[...services, ...services].map((s, i) => (
+          <a
+            href={`/services/${s.slug}`}
+            class="group relative flex min-w-[340px] max-w-[340px] flex-col overflow-hidden rounded-[2.5rem] border border-brand-500/40 bg-brand-700 p-4 shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-all duration-500 hover:border-brand-500/60 hover:shadow-[0_40px_80px_rgba(0,100,90,0.25)] hover:-translate-y-2 no-underline"
+          >
+            <!-- Card Image Area -->
+            <div class="relative h-48 w-full overflow-hidden rounded-[2rem] bg-brand-600">
+              <Image
+                src={s.img}
+                alt={`${s.title} at Thrive Dental in Bayside, Queens NY`}
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                width={400}
+                height={200}
+                loading={i >= services.length ? 'lazy' : 'eager'}
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+            </div>
+
+            <div class="p-6">
+              <h3 class="font-display text-2xl font-bold text-white transition-colors">
+                {s.title}
+              </h3>
+              <p class="mt-4 text-[15px] leading-relaxed text-white/65 line-clamp-2">
+                {s.desc}
+              </p>
+              <div class="mt-8 flex items-center gap-2 text-[13px] font-semibold text-white/80 transition-colors group-hover:text-white">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <style>
+      .marquee-services {
+        animation: marquee-scroll 60s linear infinite;
+        width: max-content;
+        will-change: transform;
+      }
+      @keyframes marquee-scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .group\/marquee:hover .marquee-services {
+        animation-play-state: paused;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .marquee-services {
+          animation: none;
+          will-change: auto;
+        }
+      }
+    </style>
+
+    <!-- Wave into Thrive Experience -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+        <path d="M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,48 L0,48 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THE THRIVE EXPERIENCE
+  ═══════════════════════════════════════════ -->
+  <section class="relative overflow-hidden bg-white pt-10 pb-28 lg:pt-16 lg:pb-36">
+    <div class="container-wide">
+      <!-- 1. BOUTIQUE COMFORT -->
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -bottom-5 -right-5 w-3/4 h-3/4 rounded-[3rem] bg-brand-200/40 -z-10"></div>
+          <div class="absolute -bottom-10 -right-10 w-1/2 h-1/2 rounded-[3rem] bg-brand-100/50 -z-10"></div>
+          <div class="relative overflow-hidden rounded-[3rem] shadow-2xl ring-2 ring-brand-200/50">
+            <Image
+              src={heroPhoto}
+              alt="Comfort-first private treatment room at Thrive Dental"
+              class="h-[600px] w-full object-cover"
+              width={800}
+              height={600}
+            />
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <p class="text-[12px] font-black uppercase tracking-[0.2em] text-gold-700 mb-6">The Environment</p>
+          <h2 class="display-1 text-slate-900 mb-8">A boutique dental<br />experience in <span class="text-brand-500">Bayside.</span></h2>
+          <p class="text-xl text-slate-500 leading-relaxed mb-10">
+            Our Bell Blvd studio feels more like a curated lounge than a dental office — private rooms, calming lighting, and a team that knows you by name before every visit.
+          </p>
+          <div class="flex flex-col gap-4 border-t border-slate-100 pt-8">
+            <p class="text-sm text-slate-500 leading-relaxed">Noise-canceling headphones, warm lighting, and private rooms — designed for patients who've always dreaded the dentist.</p>
+            <a href="/services/general-dentistry" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700 no-underline transition-colors">
+              See what to expect
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. CLINICAL PRECISION -->
+      <div class="mt-16 lg:mt-24 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p class="text-[12px] font-black uppercase tracking-[0.2em] text-gold-700 mb-6">Modern Technology</p>
+          <h2 class="display-1 text-slate-900 mb-8">Precision you<br /><span class="italic text-brand-500">can feel.</span></h2>
+          <p class="text-xl text-slate-500 leading-relaxed mb-10">
+            Digital impressions, 3D imaging, and guided implant planning let us deliver crowns, Invisalign®, and restorations faster with less chair time and fewer follow-ups.
+          </p>
+          <div class="space-y-8 border-t border-slate-100 pt-8">
+            <div>
+              <p class="font-display text-lg font-semibold italic text-slate-800">iTero Digital Scanning</p>
+              <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Instant 3D models for Invisalign® and crowns — no messy impressions, no guesswork.</p>
+            </div>
+            <div>
+              <p class="font-display text-lg font-semibold italic text-slate-800">Cone Beam 3D Imaging</p>
+              <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Digital X-rays with 90% less radiation than traditional film. Precise implant planning from every angle.</p>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute -bottom-5 -left-5 w-3/4 h-3/4 rounded-[3rem] bg-brand-200/40 -z-10"></div>
+          <div class="absolute -bottom-10 -left-10 w-1/2 h-1/2 rounded-[3rem] bg-brand-100/50 -z-10"></div>
+          <div class="relative overflow-hidden rounded-[3rem] shadow-2xl ring-2 ring-brand-200/50">
+            <Image
+              src={techPhoto}
+              alt="Digital scanning technology"
+              class="h-[600px] w-full object-cover"
+              width={800}
+              height={600}
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. ZERO JUDGMENT -->
+      <div class="mt-16 lg:mt-24 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div class="relative order-2 lg:order-1">
+          <div class="absolute -bottom-5 -right-5 w-3/4 h-3/4 rounded-[3rem] bg-brand-200/40 -z-10"></div>
+          <div class="absolute -bottom-10 -right-10 w-1/2 h-1/2 rounded-[3rem] bg-brand-100/50 -z-10"></div>
+          <!-- Mobile: single hero photo -->
+          <div class="sm:hidden">
+            <Image src={teamPhoto3} alt="Dr. Mikhaylova and team at Thrive Dental Bayside" class="rounded-2xl w-full object-cover object-top shadow-md ring-2 ring-brand-200/50" style="aspect-ratio: 4/3;" width={800} height={600} />
+          </div>
+          <!-- sm+: original staggered layout -->
+          <div class="hidden sm:grid sm:grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <Image src={teamPhoto1} alt="Thrive Dental team providing patient care in Bayside, Queens NY" class="rounded-[2rem] h-80 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={320} />
+              <Image src={teamPhoto2} alt="Patient receiving gentle dental care at Thrive Dental Bayside" class="rounded-[2rem] h-52 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={208} />
+            </div>
+            <div class="pt-12">
+              <Image src={teamPhoto3} alt="Comfortable, modern dental treatment room at Thrive Dental in Bayside NY" class="rounded-[2rem] h-[480px] w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={480} />
+            </div>
+          </div>
+        </div>
+        <div class="order-1 lg:order-2">
+          <p class="text-[12px] font-black uppercase tracking-[0.2em] text-gold-700 mb-6">Our Philosophy</p>
+          <h2 class="display-1 text-slate-900 mb-8">Zero judgment.<br />Just <span class="italic text-brand-500">great care.</span></h2>
+          <p class="text-xl text-slate-500 leading-relaxed mb-10">
+            We take time to listen, understand your story, and build a personalized roadmap for lifelong oral health — never lectures, always collaboration.
+          </p>
+          <div class="space-y-8 border-t border-slate-100 pt-8">
+            <div>
+              <p class="font-display text-lg font-semibold italic text-slate-800">Flexible financing, no pressure</p>
+              <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">We work with most PPO plans, outline costs upfront, and offer CareCredit payment plans so treatment never feels out of reach.</p>
+            </div>
+            <div>
+              <p class="font-display text-lg font-semibold italic text-slate-800">Same-day relief, including weekends</p>
+              <p class="mt-1.5 text-sm text-slate-500 leading-relaxed">Reserved emergency time every day — plus Saturday and Sunday availability — means you get relief fast when the unexpected happens.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave into Meet the Team -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+        <path d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z" fill="#00cfc5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MEET THE TEAM (ABOUT US)
+  ═══════════════════════════════════════════ -->
+  <section class="relative overflow-hidden bg-brand-800 pt-16 pb-28 lg:pt-24 lg:pb-36">
+    <div class="container-wide">
+
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-12">
+        <div class="max-w-xl">
+          <p class="text-[12px] font-black uppercase tracking-[0.25em] text-brand-200 mb-4">The People behind the smiles</p>
+          <h2 class="display-1 !text-white leading-tight">Meet your Queens care team.</h2>
+          <p class="mt-5 text-lg text-white/70 leading-relaxed">Led by Dr. Yelena Mikhaylova with Dr. Alla Hart and Dr. Abanob Saleh, our multi-doctor team blends advanced restorative, cosmetic, and emergency training with a warm, personal touch.</p>
+        </div>
+        <a
+          href="/doctors"
+          class="group/btn inline-flex shrink-0 items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-[14px] font-bold text-white shadow-sm transition-all hover:bg-white hover:text-brand-700 hover:border-white no-underline"
+        >
+          View full team
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+        {doctors.map((doc) => (
+          <div class="group relative flex flex-col overflow-hidden rounded-[3rem] bg-sand-50 p-4 shadow-[0_4px_32px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_48px_80px_rgba(0,0,0,0.15)] border border-sand-200 hover:border-brand-300/60 h-full">
+            <!-- Image Area -->
+            <div class="relative overflow-hidden rounded-[2.5rem] bg-sand-50 ring-2 ring-brand-200/60 shrink-0" style="aspect-ratio: 5/6;">
+              <Image
+                src={doc.img}
+                alt={doc.name}
+                class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
+                width={400}
+                height={480}
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="flex flex-col flex-1 p-8">
+              <div class="min-h-[110px] flex flex-col justify-start"> <!-- Increased height for name/title area -->
+                <h3 class="font-display text-2xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-500 leading-tight">{doc.name}</h3>
+                <div class="mt-3 flex items-center gap-2">
+                  <span class="h-px w-4 bg-brand-400"></span>
+                  <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">{doc.title}</p>
+                </div>
+              </div>
+              
+              <div class="mt-4 mb-8 flex-1"> <!-- Added flex-1 to push the footer down -->
+                <p class="text-[15px] leading-relaxed text-slate-500 line-clamp-3">
+                  {doc.bio}
+                </p>
+              </div>
+              
+              <!-- Footer Area (Pinned to bottom) -->
+              <div class="border-t border-sand-200 pt-6">
+                <a
+                  href={`/doctors/${doc.slug}`}
+                  aria-label={`Learn more about ${doc.name}`}
+                  class="group/link inline-flex items-center gap-2.5 text-sm font-bold text-brand-600 transition-all hover:text-brand-700 no-underline"
+                >
+                  <span class="relative">
+                    Learn More
+                    <span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-600 transition-all duration-300 group-hover/link:w-full"></span>
+                  </span>
+                  <div class="flex h-7 w-7 items-center justify-center rounded-full border border-brand-200 bg-white/60 transition-all group-hover/link:bg-brand-600 group-hover/link:text-white group-hover/link:border-brand-600">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="transition-transform group-hover/link:translate-x-0.5">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Wave into BeforeAfter / CTA -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+        <path d="M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,48 L0,48 Z" fill="#00cfc5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       BEFORE & AFTER GALLERY
+  ═══════════════════════════════════════════ -->
+  <BeforeAfter />
+
+  <!-- ═══════════════════════════════════════════
+       REVIEWS + CTA — unified teal section
+  ═══════════════════════════════════════════ -->
+  <ReviewsCarousel>
+    <div slot="cta" class="container-slim pt-14 pb-2 text-center">
+      <h2 class="display-3 !text-white">Ready for your best smile?</h2>
+      <p class="mt-3 text-white/70 mx-auto max-w-md text-[15px]">New patients always welcome — same-day appointments available, most insurance accepted.</p>
+      <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={BOOK_APPOINTMENT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-brand-700 shadow-lg shadow-black/10 hover:bg-brand-50 hover:-translate-y-px transition-all no-underline"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </a>
+        <a href="tel:+1-718-225-6677" class="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-all no-underline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (718) 225-6677
+        </a>
+      </div>
+      <!-- Bright teal divider before reviews -->
+      <div class="mt-12 border-t border-brand-500/40"></div>
+    </div>
+  </ReviewsCarousel>
+
+  <!-- ═══════════════════════════════════════════
+       LOCATION & HOURS
+  ═══════════════════════════════════════════ -->
+  <section class="bg-white">
+    <div class="container-wide py-14 sm:py-16">
+      <div class="grid gap-10 md:grid-cols-2 md:items-start">
+
+        <div>
+          <p class="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-500">Visit Us</p>
+          <h2 class="display-3 mt-2">Find us in Bayside</h2>
+          <p class="mt-4 max-w-md text-slate-500 leading-relaxed">Our boutique studio sits on Bell Blvd, making it easy for Bayside, Queens, and NYC patients to stop by before work, after school, or on the weekend.</p>
+
+          <div class="mt-6 space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-slate-900">{business.street}</p>
+                <p class="text-sm text-slate-500">{business.city}, {business.state} {business.zip}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <a href="tel:+17182256677" class="text-sm font-medium text-slate-900 no-underline hover:text-brand-500 transition-colors">
+                {business.phone}
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-7">
+            <h3 class="text-sm font-semibold text-slate-900">Office Hours</h3>
+            <div class="mt-3 space-y-2">
+              {[
+                { days: 'Tuesday',          hours: '9:00 AM – 7:00 PM', open: true },
+                { days: 'Wednesday',        hours: '9:00 AM – 5:00 PM', open: true },
+                { days: 'Thursday',         hours: '9:00 AM – 6:00 PM', open: true },
+                { days: 'Saturday – Sunday',hours: '9:00 AM – 3:00 PM', open: true },
+                { days: 'Monday & Friday',  hours: 'Closed',            open: false },
+              ].map((row) => (
+                <div class="flex items-center justify-between max-w-xs border-b border-slate-100 pb-2">
+                  <span class="text-sm text-slate-500">{row.days}</span>
+                  <span class={`text-sm font-medium ${row.open ? 'text-slate-900' : 'text-slate-400'}`}>{row.hours}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-7 flex gap-3">
+            <a
+              href={BOOK_APPOINTMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-400 no-underline transition-colors"
+            >
+              Book Appointment
+            </a>
+            <a
+              href="https://maps.app.goo.gl/yz2gipKBB3Dfp7Tg9"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 no-underline transition-colors"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              Directions
+            </a>
+          </div>
+        </div>
+
+        <div class="map-container overflow-hidden rounded-2xl border border-slate-200 shadow-[0_4px_24px_rgba(0,0,0,0.07)]" style="aspect-ratio: 4/3;">
+          <div 
+            class="h-full w-full bg-slate-100 flex items-center justify-center text-slate-400"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.937217493749!2d-73.77362692397173!3d40.76340557138596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c28a7552b55921%3A0xb59d5e47f359d011!2sThrive%20Dental!5e0!3m2!1sen!2sus!4v1772506008906!5m2!1sen!2sus"
+          >
+            <p class="text-sm">Loading map...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const observerOptions = {
+      root: null,
+      rootMargin: '100px',
+      threshold: 0.1
+    };
+
+    const mapObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const container = entry.target as HTMLElement;
+          const mapPlaceholder = container.querySelector('div[data-src]');
+          if (mapPlaceholder) {
+            const src = mapPlaceholder.getAttribute('data-src');
+            const iframe = document.createElement('iframe');
+            iframe.title = "Thrive Dental location";
+            iframe.className = "h-full w-full";
+            iframe.loading = 'lazy';
+            iframe.src = src || '';
+            iframe.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+            
+            container.innerHTML = '';
+            container.appendChild(iframe);
+          }
+          observer.unobserve(container);
+        }
+      });
+    }, observerOptions);
+
+    const mapContainer = document.querySelector('.map-container');
+    if (mapContainer) {
+      mapObserver.observe(mapContainer);
+    }
+  </script>
+
+  <!-- JSON-LD structured data — WebSite -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': business.url + '#website',
+    name: business.name,
+    url: business.url,
+  })} />
+
+  <!-- JSON-LD structured data — Dentist (LocalBusiness) -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Dentist',
+    '@id': business.url + '#dentist',
+    name: business.name,
+    url: business.url,
+    logo: business.url + 'thrive-dental-logo.png',
+    image: business.url + 'og-default.jpg',
+    telephone: '+17182256677',
+    priceRange: '$$',
+    currenciesAccepted: 'USD',
+    paymentAccepted: 'Cash, Credit Card, Check, Insurance',
+    hasMap: 'https://maps.app.goo.gl/yz2gipKBB3Dfp7Tg9',
+    sameAs: [
+      'https://www.yelp.com/biz/thrive-dental-bayside',
+      'https://www.facebook.com/thrivedentalny',
+      'https://www.healthgrades.com/dentist/dr-yelena-mikhaylova',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: business.street,
+      addressLocality: business.city,
+      addressRegion: business.state,
+      postalCode: business.zip,
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: business.latitude,
+      longitude: business.longitude,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Bayside', containedInPlace: { '@type': 'AdministrativeArea', name: 'Queens' } },
+      { '@type': 'City', name: 'Flushing' },
+      { '@type': 'City', name: 'Douglaston' },
+      { '@type': 'City', name: 'Little Neck' },
+      { '@type': 'City', name: 'Fresh Meadows' },
+      { '@type': 'City', name: 'Oakland Gardens' },
+      { '@type': 'City', name: 'Auburndale' },
+      { '@type': 'AdministrativeArea', name: 'Queens, New York' },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday',   opens: '09:00', closes: '19:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '09:00', closes: '17:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday',  opens: '09:00', closes: '18:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday',  opens: '09:00', closes: '15:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday',    opens: '09:00', closes: '15:00' },
+    ],
+    employee: [
+      { '@type': 'Dentist', name: 'Dr. Yelena Mikhaylova', jobTitle: 'Founder & Clinical Director', url: business.url + 'doctors/yelena-mikhaylova' },
+      { '@type': 'Dentist', name: 'Dr. Alla Hart',          jobTitle: 'General & Cosmetic Dentist',  url: business.url + 'doctors/alla-hart' },
+      { '@type': 'Dentist', name: 'Dr. Abanob Saleh',       jobTitle: 'General & Restorative Dentist', url: business.url + 'doctors/abanob-saleh' },
+    ],
+    medicalSpecialty: 'Dentistry',
+  })} />
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <CallBar />
+</Base>

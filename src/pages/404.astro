@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Base title="Page not found | Thrive Dental" description="We couldn’t find that page." noIndex={true}>
+  <Fragment slot="header"><Header /></Fragment>
+  <div class="container-slim py-24 text-center">
+    <h1 class="text-3xl font-bold text-slate-900">404</h1>
+    <p class="mt-2 text-slate-600">We couldn’t find the page you’re looking for.</p>
+    <a href="/" class="mt-6 inline-flex items-center rounded-md bg-brand-600 text-white px-4 py-2 font-semibold hover:bg-brand-700">Go Home</a>
+  </div>
+  <Fragment slot="footer"><Footer /></Fragment>
+</Base>
+

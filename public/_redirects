@@ -1,0 +1,50 @@
+# Redirect non-www to www (canonical is www.thrivedentalny.com)
+http://thrivedentalny.com/*   https://www.thrivedentalny.com/:splat   301!
+https://thrivedentalny.com/*  https://www.thrivedentalny.com/:splat   301!
+
+# ─── Service pages: old flat URLs → new /services/* structure ───────────────
+/implants                        /services/dental-implants             301!
+/implant-restoration             /services/implant-restoration         301!
+/invisalign-info                 /services/invisalign                  301!
+/gum-disease                     /services/gum-disease-treatment       301!
+/bonding                         /services/dental-bonding              301!
+/bridges                         /services/dental-bridges              301!
+/crowns                          /services/dental-crowns               301!
+/dentures                        /services/dentures                    301!
+/fillings                        /services/dental-fillings             301!
+/fluoride                        /services/fluoride-treatment          301!
+/full-mouth-reconstruction       /services/full-mouth-reconstruction   301!
+/laser-dentistry                 /services/laser-dentistry             301!
+/mouthguards                     /services/mouthguards                 301!
+/nightguards                     /services/nightguards                 301!
+/oral-cancer-screening           /services/oral-cancer-screening       301!
+/pediatric-dentistry             /services/pediatric-dentistry         301!
+/periodontal-treatments          /services/periodontal-treatments      301!
+/preventive-care                 /services/preventive-dentistry        301!
+/root-canals                     /services/root-canal-therapy          301!
+/sealants                        /services/dental-sealants             301!
+/emergency-dental-care           /services/emergency-dentistry         301!
+/itero-digital-impression-system /services/itero-digital-impressions   301!
+
+# ─── Doctor/team pages → /doctors ────────────────────────────────────────────
+/meet-dr-abanob-saleh            /doctors                              301!
+/meet-dr-mark-pakan              /doctors                              301!
+/meet-dr-alla-hart               /doctors                              301!
+/meet-dr-yelena-mikhaylova       /doctors                              301!
+/meet-dr-mikhaylova              /doctors                              301!
+
+# ─── Location / contact pages ─────────────────────────────────────────────────
+/office-location                 /contact                              301!
+/appointment-request             /contact                              301!
+
+# ─── Info / about pages ───────────────────────────────────────────────────────
+/what-sets-us-apart              /why-thrive                           301!
+/financial-information           /new-patients/financial-information   301!
+
+# ─── Pages with no direct equivalent → best-fit target ───────────────────────
+/office-visits                   /services/general-dentistry           301!
+/teeth-for-life                  /services/pediatric-dentistry         301!
+/office-tour                     /                                     301!
+/landing                         /                                     301!
+/home                            /                                     301!
+/sitemap                         /sitemap.xml                          301!

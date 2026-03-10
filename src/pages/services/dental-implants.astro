@@ -1,0 +1,94 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import heroImg from "../../assets/services/dental-implants.jpg";
+---
+
+<ServicePage
+  title="Dental Implants in Bayside, Queens NY | Thrive Dental"
+  description="Dental implants in Bayside, Queens NY — the permanent solution for missing teeth. Natural-looking, built to last a lifetime. Board-certified implant team. Call (718) 225-6677."
+  category="Restorative Dentistry"
+  categoryHref="/services/restorative-dentistry"
+  h1="Dental Implants in Bayside, NY"
+  subtitle="The closest thing to a natural tooth. A titanium post fuses with your jawbone to create a permanent, stable foundation — no adhesives, no slipping, no compromises."
+  heroImg={heroImg}
+  overviewTitle="The permanent answer to missing teeth."
+  overviewText="A dental implant replaces not just the visible tooth, but the root beneath it. That matters — it preserves jawbone density, keeps neighboring teeth in place, and gives you a restoration that looks, feels, and functions exactly like a real tooth. Our team has placed and restored hundreds of implants in Bayside and throughout Queens."
+  overviewExtra="Dental implants in Bayside, NY are one of the most requested treatments at Thrive Dental — and for good reason. Unlike a bridge, which requires grinding down healthy adjacent teeth, or dentures, which sit on top of the gum and don't stop bone loss, an implant works from the inside out. The titanium post integrates directly into the jawbone through a biological process called osseointegration, creating an anchor so strong it can last a lifetime. Patients throughout Bayside, Flushing, Douglaston, and Little Neck choose our practice specifically for implants because of our 3D cone beam imaging, which allows us to plan placement with surgical precision before we begin. If you've been told you're not a candidate due to bone loss, ask us — bone grafting may make implants possible even when other offices have said no."
+  benefits={[
+    {
+      icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+      title: 'Permanent Solution',
+      desc: 'Implants are designed to last a lifetime with proper care — no replacements, no adhesives, no daily removal.',
+    },
+    {
+      icon: `<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>`,
+      title: 'Looks & Feels Natural',
+      desc: 'Custom-crafted crowns match your surrounding teeth precisely. No one will know the difference — including you.',
+    },
+    {
+      icon: `<path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/>`,
+      title: 'Preserves Jawbone',
+      desc: 'Unlike bridges or dentures, implants stimulate the jawbone and prevent the bone loss that follows tooth extraction.',
+    },
+    {
+      icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
+      title: 'Protects Adjacent Teeth',
+      desc: 'A bridge requires grinding down healthy neighboring teeth. Implants stand alone — your other teeth stay untouched.',
+    },
+  ]}
+  steps={[
+    {
+      number: '01',
+      title: 'Consultation & 3D Imaging',
+      desc: 'We start with a comprehensive exam, digital X-rays, and a 3D cone beam scan to assess your bone density and map the ideal implant placement with precision.',
+    },
+    {
+      number: '02',
+      title: 'Implant Placement',
+      desc: 'A small titanium post is placed into the jawbone under local anesthesia. Most patients describe this as no more uncomfortable than a routine extraction.',
+    },
+    {
+      number: '03',
+      title: 'Osseointegration (Healing)',
+      desc: 'Over 3–6 months, the implant fuses with your jawbone in a process called osseointegration — creating an exceptionally strong, stable anchor for your new tooth.',
+    },
+    {
+      number: '04',
+      title: 'Crown Placement',
+      desc: 'Once healed, we use our iTero digital scanner to create a precise model of your bite. Your custom-crafted crown is then attached — completing your new, permanent tooth.',
+    },
+  ]}
+  faq={[
+    {
+      q: 'Am I a good candidate for dental implants?',
+      a: 'Most adults in good general health with adequate jawbone density are excellent candidates. Ideal candidates are non-smokers with healthy gums. We\'ll evaluate you thoroughly at your consultation — and if bone loss is present, a bone graft may be performed first.',
+    },
+    {
+      q: 'Does getting a dental implant hurt?',
+      a: 'The procedure is performed under local anesthesia, so you won\'t feel pain during placement. Most patients are pleasantly surprised by how manageable the recovery is — over-the-counter pain relief is typically sufficient for 2–3 days after.',
+    },
+    {
+      q: 'How long do dental implants last?',
+      a: 'With proper oral hygiene and regular checkups, a well-placed implant can last a lifetime. The crown on top may need replacement after 15–20 years, but the implant post itself is a permanent fixture.',
+    },
+    {
+      q: 'How much do dental implants cost in Bayside, NY?',
+      a: 'The cost varies based on the number of implants, whether bone grafting is needed, and your insurance coverage. We provide a detailed cost breakdown at your consultation and offer CareCredit financing options. Many patients find implants more cost-effective than bridges over the long term.',
+    },
+    {
+      q: 'How is an implant different from a bridge?',
+      a: 'A bridge sits on top of the gum and is anchored to adjacent teeth (which must be ground down). An implant replaces the root itself, requires no modification to neighboring teeth, and actively preserves your jawbone. Implants are generally the superior long-term solution.',
+    },
+  ]}
+  related={[
+    { href: '/services/implant-restoration',       label: 'Implant Restoration' },
+    { href: '/services/dental-bridges',            label: 'Dental Bridges' },
+    { href: '/services/dentures',                  label: 'Dentures' },
+    { href: '/services/full-mouth-reconstruction', label: 'Full-Mouth Reconstruction' },
+    { href: '/services/gum-disease-treatment',     label: 'Gum Disease Treatment' },
+  ]}
+  relatedPosts={[
+    { href: '/blog/dental-implants-cost-queens-ny', title: 'How Much Do Dental Implants Cost in Queens, NY?', description: 'A transparent breakdown of implant pricing — what\'s included, what affects cost, and how to make them affordable.' },
+  ]}
+  ctaHeading="Ready for a permanent smile?"
+/>

@@ -1,0 +1,57 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CallBar from "../components/CallBar.astro";
+import ReviewsCarousel from "../components/ReviewsCarousel.astro";
+import { BOOK_APPOINTMENT_URL } from "../data/site";
+---
+
+<Base
+  title="Patient Reviews & Testimonials | Thrive Dental Bayside, NY"
+  description="See what patients say about Thrive Dental in Bayside, Queens NY. 4.9 stars on Google with 500+ reviews. Read real patient testimonials and book your visit today."
+>
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="relative overflow-hidden bg-sand-50" style="padding-top: clamp(6rem, 12vw, 9rem); padding-bottom: clamp(3rem, 6vw, 5rem);">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-40 left-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-brand-100/50 blur-[90px]"></div>
+    </div>
+    <div class="container-slim text-center">
+      <span class="mb-5 inline-block rounded-full bg-brand-100 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.25em] text-brand-700">Patient Reviews</span>
+      <h1 class="display-1 mb-6">What our patients say.</h1>
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <span class="text-amber-400 text-2xl tracking-tight">★★★★★</span>
+        <span class="font-bold text-slate-700 text-lg">4.9</span>
+        <span class="text-slate-500">· 500+ Google Reviews</span>
+      </div>
+      <p class="mx-auto max-w-xl text-lg text-slate-500 leading-relaxed">Real stories from real Bayside patients — no scripts, no filters.</p>
+    </div>
+  </section>
+
+  <ReviewsCarousel />
+
+  <section class="relative overflow-hidden bg-brand-700">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-20 -right-20 h-[300px] w-[300px] rounded-full bg-brand-500/20 blur-[60px]"></div>
+    </div>
+    <div class="container-slim relative py-12 text-center">
+      <h2 class="display-3 !text-white mb-4">Ready to become our next success story?</h2>
+      <p class="text-white/80 max-w-md mx-auto mb-8">Join 500+ patients who've made Thrive their home for dental care in Bayside.</p>
+      <div class="flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={BOOK_APPOINTMENT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+        >
+          Book Appointment
+        </a>
+        <a href="tel:+1-718-225-6677" class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all no-underline">(718) 225-6677</a>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <CallBar />
+</Base>

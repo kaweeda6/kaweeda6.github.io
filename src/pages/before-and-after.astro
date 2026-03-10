@@ -1,0 +1,71 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CallBar from "../components/CallBar.astro";
+import BeforeAfter from "../components/BeforeAfter.astro";
+import { BOOK_APPOINTMENT_URL } from "../data/site";
+---
+
+<Base
+  title="Before & After Gallery | Thrive Dental Bayside, Queens NY"
+  description="See real before and after results from Thrive Dental in Bayside, Queens NY — Invisalign, veneers, implants, and full-mouth rehabilitation transformations."
+>
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="relative overflow-hidden bg-sand-50" style="padding-top: clamp(6rem, 12vw, 9rem); padding-bottom: clamp(3rem, 6vw, 5rem);">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-40 left-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-brand-100/50 blur-[90px]"></div>
+    </div>
+    <div class="container-slim text-center">
+      <span class="mb-5 inline-block rounded-full bg-brand-100 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.25em] text-brand-700">Before & After</span>
+      <h1 class="display-1 mb-6">Real results. Real patients.</h1>
+      <p class="mx-auto max-w-xl text-lg text-slate-500 leading-relaxed">See the transformations our team creates every day — from single-tooth fixes to complete smile makeovers.</p>
+    </div>
+  </section>
+
+  <BeforeAfter />
+
+  <section class="relative overflow-hidden bg-brand-700">
+    <div class="pointer-events-none absolute inset-0">
+      <div class="absolute -top-20 -right-20 h-[300px] w-[300px] rounded-full bg-brand-500/20 blur-[60px]"></div>
+    </div>
+    <div class="container-slim relative py-12 text-center">
+      <h2 class="display-3 !text-white mb-4">Your transformation starts here.</h2>
+      <p class="text-white/80 max-w-md mx-auto mb-8">Book a consultation and let's build a plan for your smile.</p>
+      <a
+        href={BOOK_APPOINTMENT_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+      >
+        Book a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Structured data: ImageGallery + BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    name: 'Thrive Dental Before & After Gallery',
+    description: 'Before and after photos of real patient smile transformations at Thrive Dental in Bayside, Queens NY — Invisalign, porcelain veneers, dental implants, and full-mouth rehabilitation.',
+    url: 'https://www.thrivedentalny.com/before-and-after',
+    author: {
+      '@type': 'Dentist',
+      name: 'Thrive Dental',
+      url: 'https://www.thrivedentalny.com',
+    },
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thrivedentalny.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Before & After Gallery', item: 'https://www.thrivedentalny.com/before-and-after' },
+    ],
+  })} />
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <CallBar />
+</Base>

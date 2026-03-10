@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+import { BOOK_APPOINTMENT_URL } from "../data/site";
+---
+
+<footer class="mt-16 border-t border-slate-200 bg-white py-12 text-sm">
+  <div class="container-slim">
+    <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+
+      <!-- Brand column -->
+      <div class="sm:col-span-2 md:col-span-3 lg:col-span-1">
+        <Image src={logo} alt="Thrive Dental — Cosmetic and Family Dentistry" class="h-9 w-auto" width={200} height={36} />
+        <p class="mt-4 text-slate-500 leading-relaxed max-w-sm">
+          Cosmetic &amp; family dentistry in Bayside, Queens — serving NYC for over a decade.
+        </p>
+        <div class="mt-4 space-y-1.5">
+          <p class="text-slate-600">
+            <a href="https://maps.app.goo.gl/yz2gipKBB3Dfp7Tg9" target="_blank" rel="noopener noreferrer" class="no-underline text-slate-600 hover:text-brand-600 transition-colors">
+              41-02 Bell Blvd, Bayside, NY 11361
+            </a>
+          </p>
+          <p>
+            <a href="tel:+1-718-225-6677" class="no-underline text-slate-600 hover:text-brand-600 transition-colors">(718) 225-6677</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Services column -->
+      <nav aria-label="Services">
+        <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Services</h3>
+        <ul class="mt-3 space-y-2 text-slate-500">
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/services/general-dentistry">General Dentistry</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/services/cosmetic-dentistry">Cosmetic Dentistry</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/services/invisalign">Invisalign®</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/services/dental-implants">Dental Implants</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/services/restorative-dentistry">Restorative Care</a></li>
+          <li><a class="no-underline font-medium text-red-500 hover:text-red-600 transition-colors" href="/services/emergency-dentistry">Emergency Dentistry</a></li>
+        </ul>
+      </nav>
+
+      <!-- Office column -->
+      <nav aria-label="Office">
+        <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Office</h3>
+        <ul class="mt-3 space-y-2 text-slate-500">
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/doctors">Our Doctors</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/new-patients/first-visit">New Patients</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/new-patients/insurance">Insurance</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/blog">Blog</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/contact">Contact</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <!-- Neighborhoods column -->
+      <nav aria-label="Neighborhoods We Serve">
+        <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Neighborhoods We Serve</h3>
+        <ul class="mt-3 space-y-2 text-slate-500">
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-bayside-ny">Bayside, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-flushing-ny">Flushing, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-douglaston-ny">Douglaston, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-little-neck-ny">Little Neck, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-whitestone-ny">Whitestone, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-fresh-meadows-ny">Fresh Meadows, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-oakland-gardens-ny">Oakland Gardens, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-college-point-ny">College Point, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-beechhurst-ny">Beechhurst, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-floral-park-ny">Floral Park, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-glen-oaks-ny">Glen Oaks, NY</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/dentist-queens-village-ny">Queens Village, NY</a></li>
+        </ul>
+      </nav>
+
+      <!-- Hours column -->
+      <div>
+        <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Hours</h3>
+        <dl class="mt-3 space-y-2">
+          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Tuesday</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 7 PM</time></dd></div>
+          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Wednesday</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 5 PM</time></dd></div>
+          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Thursday</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 6 PM</time></dd></div>
+          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Sat – Sun</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 3 PM</time></dd></div>
+          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Mon &amp; Fri</dt><dd class="text-slate-400 line-through whitespace-nowrap shrink-0">Closed</dd></div>
+        </dl>
+        <a
+          href={BOOK_APPOINTMENT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-5 inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-4 py-2 text-[13px] font-bold text-white hover:bg-brand-400 no-underline transition-colors"
+        >
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 border-t border-slate-100 pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-slate-400 text-xs">
+      <p>© <span id="footer-year">{new Date().getFullYear()}</span> Thrive Dental. All rights reserved.</p>
+      <p>41-02 Bell Blvd · Bayside, NY 11361 · <a href="tel:+1-718-225-6677" class="no-underline hover:text-brand-600 transition-colors">(718) 225-6677</a></p>
+    </div>
+    <script is:inline>
+      var y = document.getElementById('footer-year');
+      if (y) y.textContent = new Date().getFullYear();
+    </script>
+  </div>
+</footer>

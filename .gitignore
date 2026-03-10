@@ -1,0 +1,15 @@
+# Dependencies
+node_modules
+
+# Builds
+dist
+.astro
+
+# Env
+.env
+.env.local
+
+# Editor
+.DS_Store
+.vscode
+*.log

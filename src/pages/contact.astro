@@ -1,0 +1,170 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import CallBar from "../components/CallBar.astro";
+
+const hours = [
+  { days: 'Tuesday',           hours: '9:00 AM – 7:00 PM', open: true },
+  { days: 'Wednesday',         hours: '9:00 AM – 5:00 PM', open: true },
+  { days: 'Thursday',          hours: '9:00 AM – 6:00 PM', open: true },
+  { days: 'Saturday – Sunday', hours: '9:00 AM – 3:00 PM', open: true },
+  { days: 'Monday & Friday',   hours: 'Closed',             open: false },
+]
+---
+
+<Base
+  title="Contact Thrive Dental | Bayside, Queens NY — (718) 225-6677"
+  description="Contact Thrive Dental in Bayside, Queens NY. Call (718) 225-6677, book online, or visit us at 41-02 Bell Blvd, Bayside NY 11361. New patients always welcome."
+>
+  <Fragment slot="header"><Header /></Fragment>
+
+  <section class="relative overflow-hidden bg-sand-50" style="padding-top: clamp(6rem, 12vw, 9rem); padding-bottom: clamp(3rem, 6vw, 5rem);">
+    <div class="pointer-events-none absolute inset-0 -z-10">
+      <div class="absolute -top-40 left-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-brand-100/50 blur-[90px]"></div>
+    </div>
+    <div class="container-slim text-center">
+      <span class="mb-5 inline-block rounded-full bg-brand-100 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.25em] text-brand-700">Get in Touch</span>
+      <h1 class="display-1 mb-6">Contact Thrive Dental</h1>
+      <p class="mx-auto max-w-xl text-lg text-slate-500 leading-relaxed mb-9">
+        We'd love to hear from you. Call, book online, or stop by our office in Bayside, Queens.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <a href="tel:+1-718-225-6677" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (718) 225-6677
+        </a>
+        <a href="https://forms.nexhealth.com/patient/ThriveDental" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition-all no-underline">
+          Book Online ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-sand-100 py-20">
+    <div class="container-slim grid gap-12 md:grid-cols-2 md:items-start">
+      <!-- Info -->
+      <div>
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-6">Our Location</p>
+        <div class="space-y-5 mb-10">
+          <div class="flex items-start gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-slate-900">41-02 Bell Blvd</p>
+              <p class="text-slate-500">Bayside, NY 11361</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <a href="tel:+1-718-225-6677" class="font-semibold text-slate-900 hover:text-brand-500 no-underline transition-colors">(718) 225-6677</a>
+          </div>
+        </div>
+
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Office Hours</p>
+        <div class="space-y-2 mb-8">
+          {hours.map((row) => (
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2 max-w-xs">
+              <span class="text-sm text-slate-500">{row.days}</span>
+              <span class={`text-sm font-medium ${row.open ? 'text-slate-900' : 'text-slate-400'}`}>{row.hours}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="flex gap-3 flex-wrap">
+          <a href="tel:+1-718-225-6677" class="inline-flex items-center rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-400 no-underline transition-colors">Call Now</a>
+          <a href="https://maps.app.goo.gl/yz2gipKBB3Dfp7Tg9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-5 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 no-underline transition-colors">Get Directions ↗</a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-[0_4px_24px_rgba(0,0,0,0.07)]" style="aspect-ratio: 4/3;">
+        <iframe
+          title="Thrive Dental — 41-02 Bell Blvd, Bayside NY"
+          class="h-full w-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.937217493749!2d-73.77362692397173!3d40.76340557138596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c28a7552b55921%3A0xb59d5e47f359d011!2sThrive%20Dental!5e0!3m2!1sen!2sus!4v1772506008906!5m2!1sen!2sus"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Online CTA -->
+  <section class="bg-sand-50 py-20">
+    <div class="container-slim">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-3">Ready to Schedule?</p>
+        <h2 class="display-2 mb-4">Book your appointment online.</h2>
+        <p class="text-slate-500 mb-8 max-w-md mx-auto">Use our online booking system to pick a time that works for you — available 24/7. New patients always welcome.</p>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a
+            href="https://forms.nexhealth.com/patient/ThriveDental"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Appointment Online
+          </a>
+          <a
+            href="tel:+1-718-225-6677"
+            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-7 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (718) 225-6677
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JSON-LD: ContactPage + Dentist entity reference -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ContactPage',
+        '@id': 'https://www.thrivedentalny.com/contact#webpage',
+        name: 'Contact Thrive Dental',
+        url: 'https://www.thrivedentalny.com/contact',
+        description: 'Contact Thrive Dental in Bayside, Queens NY. Call (718) 225-6677 or book online.',
+        isPartOf: { '@id': 'https://www.thrivedentalny.com/#website' },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home',    item: 'https://www.thrivedentalny.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.thrivedentalny.com/contact' },
+        ],
+      },
+      {
+        '@type': 'Dentist',
+        '@id': 'https://www.thrivedentalny.com/#dentist',
+        name: 'Thrive Dental',
+        telephone: '+17182256677',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '41-02 Bell Blvd',
+          addressLocality: 'Bayside',
+          addressRegion: 'NY',
+          postalCode: '11361',
+          addressCountry: 'US',
+        },
+        openingHoursSpecification: [
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday',   opens: '09:00', closes: '19:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '09:00', closes: '17:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday',  opens: '09:00', closes: '18:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday',  opens: '09:00', closes: '15:00' },
+          { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday',    opens: '09:00', closes: '15:00' },
+        ],
+      },
+    ],
+  })} />
+
+  <Fragment slot="footer"><Footer /></Fragment>
+  <CallBar />
+</Base>

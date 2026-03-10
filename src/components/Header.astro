@@ -1,0 +1,326 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+import { BOOK_APPOINTMENT_URL } from "../data/site";
+
+const serviceMenu = [
+  {
+    category: 'Preventive',
+    href: '/services/preventive-dentistry',
+    links: [
+      { href: '/services/dental-cleanings',       label: 'Cleanings & Exams' },
+      { href: '/services/pediatric-dentistry',    label: 'Pediatric Dentistry' },
+      { href: '/services/fluoride-treatment',     label: 'Fluoride Treatment' },
+      { href: '/services/dental-sealants',        label: 'Dental Sealants' },
+      { href: '/services/oral-cancer-screening',  label: 'Oral Cancer Screening' },
+      { href: '/services/mouthguards',            label: 'Mouthguards' },
+      { href: '/services/nightguards',            label: 'Nightguards' },
+    ]
+  },
+  {
+    category: 'Cosmetic',
+    href: '/services/cosmetic-dentistry',
+    links: [
+      { href: '/services/teeth-whitening',    label: 'Teeth Whitening' },
+      { href: '/services/porcelain-veneers',  label: 'Porcelain Veneers' },
+      { href: '/services/invisalign',         label: 'Invisalign®' },
+      { href: '/services/dental-bonding',     label: 'Dental Bonding' },
+      { href: '/services/smile-design',       label: 'Smile Design' },
+    ]
+  },
+  {
+    category: 'Restorative',
+    href: '/services/restorative-dentistry',
+    links: [
+      { href: '/services/dental-implants',           label: 'Dental Implants' },
+      { href: '/services/dental-crowns',             label: 'Dental Crowns' },
+      { href: '/services/dental-bridges',            label: 'Dental Bridges' },
+      { href: '/services/root-canal-therapy',        label: 'Root Canal Therapy' },
+      { href: '/services/dentures',                  label: 'Dentures' },
+      { href: '/services/dental-fillings',           label: 'Dental Fillings' },
+      { href: '/services/full-mouth-reconstruction', label: 'Full-Mouth Reconstruction' },
+    ]
+  },
+  {
+    category: 'Periodontics',
+    href: '/services/periodontics',
+    links: [
+      { href: '/services/gum-disease-treatment',       label: 'Gum Disease Treatment' },
+      { href: '/services/periodontal-treatments',      label: 'Periodontal Treatments' },
+      { href: '/services/laser-dentistry',             label: 'Laser Dentistry' },
+      { href: '/services/itero-digital-impressions',   label: 'iTero® Digital Impressions' },
+      { href: '/services/implant-restoration',         label: 'Implant Restoration' },
+    ]
+  },
+]
+
+const doctorsNav = [
+  { href: '/doctors',                  label: 'All Doctors' },
+  { href: '/doctors/yelena-mikhaylova',label: 'Dr. Yelena Mikhaylova' },
+  { href: '/doctors/alla-hart',        label: 'Dr. Alla Hart' },
+  { href: '/doctors/abanob-saleh',     label: 'Dr. Abanob Saleh' },
+]
+
+const newPatients = [
+  { href: '/new-patients/first-visit',           label: 'Your First Visit' },
+  { href: '/new-patients/financial-information', label: 'Financial Information' },
+  { href: '/new-patients/insurance',             label: 'Insurance We Accept' },
+  { href: 'https://forms.nexhealth.com/patient/ThriveDental', label: 'Patient Forms ↗', external: true },
+]
+
+const topNav = [
+  { href: '/',         label: 'Home' },
+  { label: 'Services', megaMenu: true },
+  { label: 'Doctors',  children: doctorsNav },
+  { label: 'New Patients', children: newPatients },
+  { href: '/blog',     label: 'Blog' },
+  { href: '/contact',  label: 'Contact' },
+]
+const pathname = Astro.url.pathname
+---
+
+<div class="fixed inset-x-0 z-50 pointer-events-none top-4 md:top-0 px-4 sm:px-6 md:px-0">
+  <header class="pointer-events-auto mx-auto max-w-5xl rounded-2xl border border-slate-200/80 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.08)] md:max-w-none md:rounded-none md:border-x-0 md:border-t-0 md:border-b md:border-slate-200 md:shadow-[0_1px_0_rgba(0,0,0,0.06)] md:bg-white">
+    <div class="flex h-[60px] items-center justify-between gap-4 px-4 sm:px-5 md:max-w-7xl md:mx-auto md:px-8">
+
+      <!-- Logo -->
+      <a href="/" class="flex shrink-0 items-center no-underline" aria-label="Thrive Dental home">
+        <Image
+          src={logo}
+          alt="Thrive Dental – Cosmetic and Family Dentistry"
+          class="h-11 w-auto"
+          loading="eager"
+          width={200}
+          height={44}
+        />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-0.5 text-[13.5px]" aria-label="Primary">
+        {topNav.map((item) => (
+          item.megaMenu ? (
+            <!-- SERVICES MEGA-MENU -->
+            <div class="group relative" role="none">
+              <button
+                data-dropdown-toggle
+                class="flex items-center gap-1 rounded-lg px-3 py-1.5 font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/70 transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Services
+                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 transition-transform group-hover:rotate-180 group-focus-within:rotate-180">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </button>
+
+              <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200" role="menu">
+                <div class="w-[680px] rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_8px_48px_rgba(0,0,0,0.12)]">
+                  <div class="grid grid-cols-4 gap-5">
+                    {serviceMenu.map((col) => (
+                      <div>
+                        <a href={col.href} class="block text-[10px] font-black uppercase tracking-[0.2em] text-brand-500 mb-3 no-underline hover:text-brand-700">
+                          {col.category}
+                        </a>
+                        <ul class="space-y-0.5">
+                          {col.links.map((link) => (
+                            <li>
+                              <a href={link.href} class="block rounded-md px-2 py-1.5 text-[13px] text-slate-600 hover:text-brand-700 hover:bg-brand-50/60 no-underline transition-colors">
+                                {link.label}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+                    <a href="/services" class="inline-flex items-center gap-1.5 text-[12px] font-bold text-slate-500 hover:text-brand-500 no-underline transition-colors">
+                      View all services
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="/services/emergency-dentistry" class="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-100 px-4 py-1.5 text-[12px] font-bold text-red-600 hover:bg-red-100 no-underline transition-colors">
+                      <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span></span>
+                      Emergency Care
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : item.children ? (
+            <!-- SIMPLE DROPDOWN -->
+            <div class="group relative">
+              <button
+                data-dropdown-toggle
+                class="flex items-center gap-1 rounded-lg px-3 py-1.5 font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/70 transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {item.label}
+                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 transition-transform group-hover:rotate-180 group-focus-within:rotate-180">
+                  <path d="m6 9 6 6 6-6"/>
+                </svg>
+              </button>
+              <div class="absolute top-full left-1/2 -translate-x-1/2 pt-2 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto transition-all duration-200">
+                <div class="w-56 rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_8px_40px_rgba(0,0,0,0.12)]">
+                  {item.children.map((child) => (
+                    <a
+                      href={child.href}
+                      target={child.external ? '_blank' : undefined}
+                      rel={child.external ? 'noopener noreferrer' : undefined}
+                      class="block rounded-lg px-3 py-2.5 text-slate-600 hover:text-brand-700 hover:bg-brand-50/50 no-underline transition-colors font-medium text-[13px]"
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a
+              href={item.href}
+              class="rounded-lg px-3 py-1.5 font-medium text-slate-500 hover:text-slate-900 hover:bg-slate-100/70 transition-colors no-underline"
+              aria-current={pathname === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          )
+        ))}
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden md:flex shrink-0 items-center gap-2">
+        <a
+          href="tel:+1-718-225-6677"
+          class="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-4 py-2 text-[13px] font-medium text-slate-600 shadow-sm hover:border-slate-300 hover:text-slate-900 transition-all no-underline"
+        >
+          <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          (718) 225-6677
+        </a>
+        <a
+          href={BOOK_APPOINTMENT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-5 py-2 text-[13px] font-bold text-white shadow-sm hover:bg-brand-400 transition-colors no-underline"
+        >
+          <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          Book Appointment
+        </a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <details class="md:hidden relative group/mobile">
+        <summary class="flex list-none h-9 w-9 cursor-pointer items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors" aria-label="Open navigation menu">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6"  x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </summary>
+        <nav class="absolute right-0 mt-2 w-72 rounded-2xl border border-slate-200/80 bg-white/95 p-2 shadow-[0_8px_40px_rgba(0,0,0,0.12)] backdrop-blur-xl max-h-[80vh] overflow-y-auto" aria-label="Mobile">
+
+          <a href="/" class="block rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 hover:bg-slate-50 no-underline transition-colors">Home</a>
+
+          <!-- Services expandable -->
+          <details class="group/sub">
+            <summary class="flex list-none items-center justify-between rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 cursor-pointer hover:bg-slate-50 transition-colors">
+              Services
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="opacity-40 transition-transform group-open/sub:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="ml-3 border-l-2 border-slate-100 pl-3 my-1 space-y-3">
+              {serviceMenu.map((col) => (
+                <div>
+                  <a href={col.href} class="block text-[10px] font-black uppercase tracking-widest text-brand-500 mb-1 no-underline py-1">{col.category}</a>
+                  {col.links.map((link) => (
+                    <a href={link.href} class="block rounded-lg px-2 py-1.5 text-sm text-slate-600 hover:text-brand-500 no-underline transition-colors">{link.label}</a>
+                  ))}
+                </div>
+              ))}
+              <a href="/services/emergency-dentistry" class="block rounded-lg px-2 py-1.5 text-sm font-bold text-red-600 no-underline">🚨 Emergency Care</a>
+              <a href="/services" class="block rounded-lg px-2 py-1 text-[10px] font-black uppercase tracking-widest text-slate-400 no-underline">View All Services</a>
+            </div>
+          </details>
+
+          <!-- Doctors expandable -->
+          <details class="group/sub-docs">
+            <summary class="flex list-none items-center justify-between rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 cursor-pointer hover:bg-slate-50 transition-colors">
+              Doctors
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="opacity-40 transition-transform group-open/sub-docs:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="ml-4 border-l-2 border-slate-100 pl-2 my-1 space-y-1">
+              {doctorsNav.map((doctor) => (
+                <a
+                  href={doctor.href}
+                  class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:text-brand-500 no-underline transition-colors"
+                >
+                  {doctor.label}
+                </a>
+              ))}
+            </div>
+          </details>
+
+          <!-- New Patients expandable -->
+          <details class="group/sub2">
+            <summary class="flex list-none items-center justify-between rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 cursor-pointer hover:bg-slate-50 transition-colors">
+              New Patients
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="opacity-40 transition-transform group-open/sub2:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="ml-4 border-l-2 border-slate-100 pl-2 my-1 space-y-1">
+              {newPatients.map((p) => (
+                <a href={p.href} target={p.external ? '_blank' : undefined} rel={p.external ? 'noopener noreferrer' : undefined} class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:text-brand-500 no-underline transition-colors">{p.label}</a>
+              ))}
+            </div>
+          </details>
+
+          <a href="/blog" class="block rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 hover:bg-slate-50 no-underline transition-colors">Blog</a>
+          <a href="/contact" class="block rounded-xl px-3 py-2.5 text-sm font-bold text-slate-900 hover:bg-slate-50 no-underline transition-colors">Contact</a>
+
+          <div class="mt-2 border-t border-slate-100 pt-2 space-y-1.5">
+            <a href="tel:+1-718-225-6677" class="flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 no-underline">(718) 225-6677</a>
+            <a
+              href={BOOK_APPOINTMENT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center rounded-xl bg-brand-500 px-3 py-2.5 text-sm font-bold text-white hover:bg-brand-400 no-underline"
+            >
+              Book Appointment
+            </a>
+          </div>
+        </nav>
+      </details>
+
+    </div>
+  </header>
+</div>
+
+<script is:inline>
+  // Sync aria-expanded with hover/focus state on desktop dropdown triggers
+  document.querySelectorAll('[data-dropdown-toggle]').forEach((btn) => {
+    const parent = btn.closest('.group');
+    if (!parent) return;
+    parent.addEventListener('focusin', () => btn.setAttribute('aria-expanded', 'true'));
+    parent.addEventListener('focusout', (e) => {
+      if (!parent.contains(e.relatedTarget)) btn.setAttribute('aria-expanded', 'false');
+    });
+    parent.addEventListener('mouseenter', () => btn.setAttribute('aria-expanded', 'true'));
+    parent.addEventListener('mouseleave', () => btn.setAttribute('aria-expanded', 'false'));
+  });
+
+  // Mobile nav: close outer <details> when any nav link is tapped
+  const mobileNav = document.querySelector('details.group\\/mobile');
+  if (mobileNav) {
+    mobileNav.querySelectorAll('a[href]').forEach((link) => {
+      link.addEventListener('click', () => {
+        // Small timeout lets the navigation start before closing
+        setTimeout(() => { mobileNav.removeAttribute('open'); }, 100);
+      });
+    });
+  }
+</script>
