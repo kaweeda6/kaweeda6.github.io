@@ -5,6 +5,11 @@ import Footer from "../components/Footer.astro";
 import CallBar from "../components/CallBar.astro";
 import { BOOK_APPOINTMENT_URL } from "../data/site";
 
+export interface Source {
+  label: string
+  url: string
+}
+
 export interface Props {
   title: string
   description: string
@@ -15,6 +20,8 @@ export interface Props {
   ogImage?: string
   author?: string
   authorCredentials?: string
+  relatedService?: { href: string; label: string }
+  sources?: Source[]
   // When used as an MDX layout, Astro nests frontmatter under `frontmatter`
   frontmatter?: {
     title: string
@@ -26,12 +33,14 @@ export interface Props {
     ogImage?: string
     author?: string
     authorCredentials?: string
+    relatedService?: { href: string; label: string }
+    sources?: Source[]
   }
 }
 
 // Support both direct prop usage and MDX layout frontmatter passthrough
 const fm = Astro.props.frontmatter ?? Astro.props
-const { title, description, publishDate, updatedDate, category, readingTime, ogImage, author, authorCredentials } = fm
+const { title, description, publishDate, updatedDate, category, readingTime, ogImage, author, authorCredentials, relatedService, sources } = fm
 
 const authorName = author ?? 'Dr. Yelena Mikhaylova'
 const authorCreds = authorCredentials ?? 'DDS'
@@ -145,6 +154,34 @@ const breadcrumbSchema = {
         prose-blockquote:border-brand-400 prose-blockquote:bg-brand-50/50 prose-blockquote:rounded-r-xl prose-blockquote:py-1">
         <slot />
       </div>
+
+      <!-- Related service link -->
+      {relatedService && (
+        <div class="mx-auto mt-12 max-w-3xl rounded-2xl border border-brand-100 bg-[#f7f3e8] p-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-1">Related Service</p>
+            <a href={relatedService.href} class="font-display text-lg font-semibold text-slate-900 hover:text-brand-600 no-underline transition-colors">{relatedService.label}</a>
+          </div>
+          <a href={relatedService.href} class="shrink-0 inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-400 no-underline transition-colors">
+            Learn more
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      )}
+
+      <!-- Sources / citations -->
+      {sources && sources.length > 0 && (
+        <div class="mx-auto mt-10 max-w-3xl border-t border-slate-100 pt-6">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">Sources & Further Reading</p>
+          <ul class="flex flex-col gap-1.5">
+            {sources.map((s: Source) => (
+              <li class="text-[13px]">
+                <a href={s.url} target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:text-brand-700 no-underline transition-colors">{s.label} ↗</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <!-- CTA -->
       <div class="mx-auto mt-16 max-w-3xl rounded-2xl bg-brand-700 p-8 text-white">

@@ -3,12 +3,19 @@ import Base from "../../layouts/Base.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import CallBar from "../../components/CallBar.astro";
+import { Image } from "astro:assets";
 import { BOOK_APPOINTMENT_URL } from "../../data/site";
+
+import preventiveImg from "../../assets/office/thrivedental-2750.jpg";
+import cosmeticImg from "../../assets/office/dr_mik_showing_denturess.jpg";
+import restorativeImg from "../../assets/office/dr_mik_looking_dentures.jpg";
+import periodonticsImg from "../../assets/office/dr_mik_looking_xray.jpg";
 
 const categories = [
   {
     title: 'Preventive Dentistry',
     href: '/services/preventive-dentistry',
+    img: preventiveImg,
     desc: 'Cleanings, exams, sealants, fluoride, mouthguards, and pediatric care to keep your smile healthy for life.',
     services: ['Dental Cleanings & Exams', 'Pediatric Dentistry', 'Fluoride Treatment', 'Dental Sealants', 'Oral Cancer Screening', 'Mouthguards', 'Nightguards'],
     icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
@@ -16,6 +23,7 @@ const categories = [
   {
     title: 'Cosmetic Dentistry',
     href: '/services/cosmetic-dentistry',
+    img: cosmeticImg,
     desc: 'Teeth whitening, veneers, Invisalign®, and smile design to help you look and feel your best.',
     services: ['Teeth Whitening', 'Porcelain Veneers', 'Invisalign®', 'Dental Bonding', 'Smile Design'],
     icon: `<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor"/>`,
@@ -23,6 +31,7 @@ const categories = [
   {
     title: 'Restorative Dentistry',
     href: '/services/restorative-dentistry',
+    img: restorativeImg,
     desc: 'Implants, crowns, bridges, dentures, and full-mouth reconstruction to restore function and beauty.',
     services: ['Dental Implants', 'Dental Crowns', 'Dental Bridges', 'Root Canal Therapy', 'Dentures', 'Dental Fillings', 'Full-Mouth Reconstruction'],
     icon: `<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
@@ -30,6 +39,7 @@ const categories = [
   {
     title: 'Periodontics',
     href: '/services/periodontics',
+    img: periodonticsImg,
     desc: 'Gum disease treatment, scaling & root planing, laser therapy, and iTero digital impressions.',
     services: ['Gum Disease Treatment', 'Periodontal Treatments', 'Laser Dentistry', 'iTero® Digital Impressions', 'Implant Restoration'],
     icon: `<path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`,
@@ -76,24 +86,42 @@ const categories = [
     <div class="container-slim">
       <div class="grid gap-8 sm:grid-cols-2">
         {categories.map((cat) => (
-          <div class="group relative overflow-hidden rounded-[2.5rem] border border-brand-100/60 bg-white p-10 shadow-[0_4px_24px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-300/60 hover:shadow-[0_32px_64px_rgba(0,0,0,0.10)]">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={cat.icon}></svg>
+          <div class="group relative overflow-hidden rounded-[2.5rem] border border-brand-100/60 bg-white shadow-[0_4px_24px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-300/60 hover:shadow-[0_32px_64px_rgba(0,0,0,0.10)]">
+            <!-- Card Image -->
+            <div class="relative h-64 w-full overflow-hidden">
+              <Image
+                src={cat.img}
+                alt={cat.title}
+                class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                width={600}
+                height={400}
+                quality={90}
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              
+              <!-- Floating Icon -->
+              <div class="absolute bottom-6 left-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/20 text-white backdrop-blur-md ring-1 ring-white/30 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white group-hover:ring-brand-500">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={cat.icon}></svg>
+              </div>
             </div>
-            <h2 class="display-3 mb-3 group-hover:text-brand-500 transition-colors">{cat.title}</h2>
-            <p class="text-[15px] leading-relaxed text-slate-500 mb-6">{cat.desc}</p>
-            <ul class="space-y-1.5 mb-8">
-              {cat.services.map((s) => (
-                <li class="flex items-center gap-2 text-sm text-slate-600">
-                  <span class="h-1.5 w-1.5 rounded-full bg-brand-400 shrink-0"></span>
-                  {s}
-                </li>
-              ))}
-            </ul>
-            <a href={cat.href} class="inline-flex items-center gap-2 text-sm font-bold text-brand-500 hover:text-brand-700 no-underline transition-colors">
-              Explore {cat.title}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+
+            <!-- Content Area -->
+            <div class="p-10">
+              <h2 class="display-3 mb-3 group-hover:text-brand-500 transition-colors">{cat.title}</h2>
+              <p class="text-[15px] leading-relaxed text-slate-500 mb-6">{cat.desc}</p>
+              <ul class="space-y-1.5 mb-8">
+                {cat.services.map((s) => (
+                  <li class="flex items-center gap-2 text-sm text-slate-600">
+                    <span class="h-1.5 w-1.5 rounded-full bg-brand-400 shrink-0"></span>
+                    {s}
+                  </li>
+                ))}
+              </ul>
+              <a href={cat.href} class="inline-flex items-center gap-2 text-sm font-bold text-brand-500 hover:text-brand-700 no-underline transition-colors">
+                Explore {cat.title}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
           </div>
         ))}
       </div>

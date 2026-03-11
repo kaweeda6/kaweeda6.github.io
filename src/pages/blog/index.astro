@@ -5,56 +5,17 @@ import Footer from "../../components/Footer.astro";
 import CallBar from "../../components/CallBar.astro";
 import { BOOK_APPOINTMENT_URL } from "../../data/site";
 
-const posts = [
-  {
-    slug: 'dental-implants-cost-queens-ny',
-    title: 'How Much Do Dental Implants Cost in Queens, NY?',
-    description: 'A transparent breakdown of dental implant costs in the Queens and Bayside area — what\'s included, what affects pricing, and how to make them affordable.',
-    category: 'Dental Implants',
-    date: '2026-02-18',
-    readingTime: '6 min read',
-  },
-  {
-    slug: 'invisalign-vs-braces-bayside',
-    title: 'Invisalign vs. Braces: Which Is Right for You?',
-    description: 'A side-by-side comparison of Invisalign and traditional braces — cost, timeline, candidacy, and what our Bayside patients choose most.',
-    category: 'Cosmetic Dentistry',
-    date: '2026-02-10',
-    readingTime: '7 min read',
-  },
-  {
-    slug: 'dental-emergency-what-to-do',
-    title: 'Dental Emergency? Here\'s Exactly What to Do.',
-    description: 'Cracked tooth, knocked-out tooth, severe pain — step-by-step guidance for the most common dental emergencies and when to call us immediately.',
-    category: 'Emergency Dentistry',
-    date: '2026-01-28',
-    readingTime: '5 min read',
-  },
-  {
-    slug: 'how-often-dental-cleaning',
-    title: 'How Often Should You Really Get a Dental Cleaning?',
-    description: 'The answer isn\'t always "every 6 months." Learn what factors determine your ideal cleaning schedule and why skipping cleanings costs more in the long run.',
-    category: 'Preventive Care',
-    date: '2026-01-15',
-    readingTime: '4 min read',
-  },
-  {
-    slug: 'porcelain-veneers-guide',
-    title: 'The Complete Guide to Porcelain Veneers',
-    description: 'Everything you need to know before getting veneers — candidacy, the prep process, how long they last, and what makes a great veneer result.',
-    category: 'Cosmetic Dentistry',
-    date: '2025-12-20',
-    readingTime: '8 min read',
-  },
-  {
-    slug: 'gum-disease-signs-treatment',
-    title: 'Signs of Gum Disease Most People Miss (And What to Do About It)',
-    description: 'Gum disease affects nearly half of American adults, and most don\'t know they have it. Learn the early warning signs and how we treat it at every stage.',
-    category: 'Periodontal Health',
-    date: '2025-12-05',
-    readingTime: '5 min read',
-  },
-]
+const postModules = await Astro.glob('./*.mdx')
+const posts = postModules
+  .map((p) => ({
+    slug: (p.url ?? '').split('/').filter(Boolean).pop() ?? '',
+    title: p.frontmatter.title,
+    description: p.frontmatter.description,
+    category: p.frontmatter.category,
+    date: p.frontmatter.publishDate,
+    readingTime: p.frontmatter.readingTime,
+  }))
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 ---
 
 <Base

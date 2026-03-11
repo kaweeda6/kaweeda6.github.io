@@ -8,16 +8,16 @@ module.exports = {
       colors: {
         // Core dark-teal palette (buttons, dark backgrounds, text)
         brand: {
-          50:  '#e6faf9',
-          100: '#c0f2ee',
-          200: '#85e6de',
-          300: '#4dd9d0',
-          400: '#26cfc8',
-          500: '#00cfc5',   // logo / primary brand cyan
-          600: '#00a89e',
-          700: '#007f78',
-          800: '#005954',
-          900: '#003633',
+          50:  '#f2fbf9',
+          100: '#e6f7f4',
+          200: '#c2ede6',
+          300: '#9edfd8',
+          400: '#7ad2ca',
+          500: '#5cc9be',   // Vibrant mint teal from user screenshot
+          600: '#48b5ab',
+          700: '#3a928a',
+          800: '#2e756e',
+          900: '#1d4a47',
         },
         // Warm neutral sand
         sand: {

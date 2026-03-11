@@ -535,6 +535,25 @@ const localBusinessSchema = {
   <!-- Structured data: BreadcrumbList -->
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
+  <!-- Structured data: Service -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': siteOrigin + currentPath + '#service',
+    serviceType: serviceName,
+    name: serviceName + ' in Bayside, Queens NY',
+    provider: {
+      '@type': 'Dentist',
+      '@id': siteOrigin + '/#dentist',
+      name: 'Thrive Dental',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Bayside' },
+      { '@type': 'AdministrativeArea', name: 'Queens, New York' },
+    ],
+    url: siteOrigin + currentPath,
+  })} />
+
   <Fragment slot="footer"><Footer /></Fragment>
   <CallBar />
 </Base>

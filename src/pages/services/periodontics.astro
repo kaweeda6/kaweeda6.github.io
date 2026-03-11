@@ -17,15 +17,66 @@ const services = [
   h1="Periodontics & Gum Care in Bayside, NY"
   subtitle="Healthy gums are the foundation of a healthy smile. Our periodontal treatments address gum disease at every stage — from early gingivitis to advanced periodontitis."
   heroImg={heroImg}
+  overviewTitle="What is periodontics — and do you need it?"
+  overviewText="Periodontics is the specialty of dentistry focused on the structures that support your teeth: the gums, the periodontal ligament, and the alveolar bone. Periodontal disease — commonly called gum disease — is a bacterial infection of these structures and is the leading cause of tooth loss in adults in the United States. It progresses in stages: gingivitis (early, reversible inflammation of the gum tissue) advances to periodontitis (irreversible infection that destroys bone) if left untreated. The challenge is that gum disease is frequently painless — many patients are unaware they have it until significant bone loss has already occurred. This is why periodontal probing at every dental exam isn't optional: it's the mechanism by which early disease is caught."
+  overviewExtra="Research has firmly established a bidirectional link between periodontal disease and systemic health conditions including cardiovascular disease, type 2 diabetes, stroke, respiratory disease, and adverse pregnancy outcomes. Treating gum disease doesn't just save your teeth — it measurably reduces systemic inflammatory burden. At Thrive Dental in Bayside, periodontal care is fully integrated into our practice. Every comprehensive exam includes six-point pocket depth measurement on every tooth, bleeding index documentation, and radiographic bone level assessment. When disease is detected, we move directly to treatment — deep cleanings (scaling and root planing), laser-assisted bacterial decontamination, pocket reduction surgery when needed, and a customized maintenance schedule to prevent recurrence. Patients from Bayside, Flushing, Whitestone, Little Neck, and throughout Northern Queens come to us specifically because of how seriously we take gum health."
+  benefits={[
+    {
+      icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+      title: 'Stops Bone Loss in Its Tracks',
+      desc: 'Active periodontal treatment halts the bacterial destruction of the bone supporting your teeth — preserving the foundation of every restoration, crown, and implant in your mouth.',
+    },
+    {
+      icon: `<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>`,
+      title: 'Protects Your Overall Health',
+      desc: 'Untreated gum disease is linked to heart disease, diabetes, and stroke. Treating it is an investment in your systemic health, not just your smile.',
+    },
+    {
+      icon: `<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>`,
+      title: 'Laser-Assisted Precision',
+      desc: 'Our soft-tissue laser targets infected tissue and bacteria with precision — less discomfort, minimal bleeding, faster healing than traditional surgical methods.',
+    },
+    {
+      icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
+      title: 'Long-Term Maintenance',
+      desc: 'After active treatment, we place you on a 3–4 month periodontal maintenance schedule that monitors healing and prevents reinfection — the key to long-term success.',
+    },
+  ]}
+  faq={[
+    {
+      q: 'What are the warning signs of gum disease?',
+      a: 'Common signs include: bleeding gums when brushing or flossing, red or swollen gums, persistent bad breath (halitosis), gum recession (teeth appearing longer), loose or shifting teeth, and changes in bite. However, early-to-moderate gum disease often causes no symptoms at all — which is why professional pocket measurements at every exam are essential.',
+    },
+    {
+      q: 'What is the difference between a regular cleaning and a periodontal deep cleaning?',
+      a: 'A routine prophylaxis (regular cleaning) removes plaque and tartar from tooth surfaces above and just below the gumline — appropriate for patients with healthy gums or mild gingivitis. A periodontal deep cleaning (scaling and root planing) goes significantly deeper, removing bacteria and hardened deposits from below the gumline and smoothing root surfaces to prevent bacterial reattachment. It is performed under local anesthesia and typically done in two appointments.',
+    },
+    {
+      q: 'Can gum disease be cured?',
+      a: 'Gingivitis — the earliest stage — is completely reversible with professional treatment and improved home care. Periodontitis (with bone loss) is not curable, but it is highly controllable. With proper treatment and consistent maintenance visits, most patients can halt the progression of disease and keep their teeth for life.',
+    },
+    {
+      q: 'How does gum disease affect my overall health?',
+      a: 'The bacteria responsible for gum disease enter the bloodstream through inflamed gum tissue, triggering systemic inflammation. Strong research links untreated periodontitis to increased risk of heart disease, diabetes complications, stroke, respiratory infections, and adverse pregnancy outcomes including preterm birth and low birth weight.',
+    },
+    {
+      q: 'How often should I be seen after gum disease treatment?',
+      a: 'After completing active periodontal therapy, most patients transition to a periodontal maintenance schedule — typically every 3–4 months. This is more frequent than a standard cleaning because patients with a history of periodontitis are at elevated risk of reinfection and require more consistent monitoring to maintain the results of treatment.',
+    },
+  ]}
   related={[
     { href: '/services/restorative-dentistry', label: 'Restorative Dentistry' },
     { href: '/services/preventive-dentistry',  label: 'Preventive Dentistry' },
     { href: '/services',                       label: 'All Services' },
   ]}
+  relatedPosts={[
+    { href: '/blog/gum-disease-signs-treatment', title: 'Signs of Gum Disease & How It\'s Treated', description: 'Bleeding gums, bad breath, loose teeth — learn the warning signs and what modern periodontal treatment looks like.' },
+  ]}
+  ctaHeading="Don't ignore the signs. Healthy gums start here."
 >
-  <section class="bg-white py-20">
+  <section class="bg-white pb-12">
     <div class="container-slim">
-      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-6">Periodontal Services</p>
+      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">Our Periodontal Services</p>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
           <a href={s.href} class="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:border-brand-200 hover:shadow-md transition-all no-underline">

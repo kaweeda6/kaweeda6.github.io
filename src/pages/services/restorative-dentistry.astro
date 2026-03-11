@@ -21,15 +21,63 @@ const services = [
   subtitle="Whether you've lost a tooth, cracked a crown, or need a complete reconstruction — we restore your smile to full function and natural beauty using the latest techniques."
   heroImg={heroImg}
   heroImgPosition="40%"
+  overviewTitle="What is restorative dentistry — and when do you need it?"
+  overviewText="Restorative dentistry repairs or replaces teeth that have been damaged by decay, fracture, infection, or loss. While preventive care aims to avoid these problems altogether, restorative treatment addresses them when they occur — returning your teeth to full function, comfort, and appearance. The spectrum of restorative care is broad: at the simpler end, a tooth-colored composite filling repairs a small cavity in a single 30-minute visit. At the more complex end, a full-mouth reconstruction over 12–24 months can rebuild an entire set of severely damaged or missing teeth using implants, crowns, bridges, and other treatments working together as a system."
+  overviewExtra="Restorative dentistry has advanced dramatically in the last decade. Metal-free porcelain crowns are now stronger and more lifelike than their predecessors. Digital impressions with the iTero scanner have replaced messy putty — producing better-fitting restorations with fewer adjustments. Dental implants, once considered a niche specialty, are now the standard of care for replacing missing teeth — and we place and restore them in-house at our Bayside practice. Root canal therapy, which has an unfair reputation for being painful, is now performed with rotary instruments under profound anesthesia and is no more uncomfortable than a filling for the vast majority of patients. If you have a dental problem you've been delaying treatment for — whether out of anxiety, cost concern, or uncertainty about your options — our team will give you an honest, complete picture of what's involved and help you prioritize based on urgency and your goals."
+  benefits={[
+    {
+      icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+      title: 'Restore Full Function',
+      desc: 'Chew without pain, speak clearly, and smile without self-consciousness. Restorative care returns your mouth to its intended performance.',
+    },
+    {
+      icon: `<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>`,
+      title: 'Prevent Further Damage',
+      desc: 'A cracked tooth that isn\'t crowned will eventually fracture. A missing tooth leads to shifting and bone loss. Timely restoration prevents a manageable problem from becoming a complex one.',
+    },
+    {
+      icon: `<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>`,
+      title: 'Natural-Looking Results',
+      desc: 'All-porcelain crowns, shade-matched fillings, and implant restorations are designed to blend seamlessly with your surrounding teeth.',
+    },
+    {
+      icon: `<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>`,
+      title: 'In-House Comprehensive Care',
+      desc: 'From simple fillings to full-mouth reconstruction — we handle the full range of restorative treatment under one roof with no unnecessary referrals.',
+    },
+  ]}
+  faq={[
+    {
+      q: 'What is the difference between restorative and cosmetic dentistry?',
+      a: 'Restorative dentistry addresses structural or functional problems — decay, infection, fracture, tooth loss — and is often medically necessary. Cosmetic dentistry focuses on improving appearance for elective aesthetic reasons. Many treatments overlap: a porcelain crown, for example, is restorative in purpose but also cosmetic in result. Insurance typically covers restorative work; purely cosmetic procedures are usually not covered.',
+    },
+    {
+      q: 'I\'ve been putting off dental treatment for years. Where do I start?',
+      a: 'Start with a comprehensive new patient exam. We\'ll take digital X-rays, measure your gum health, document every existing issue, and prioritize treatment by urgency. Infection and pain are addressed first; structural issues next; cosmetic refinements last. We\'ll give you a clear, itemized plan — and work with you on sequencing and financing so the path forward is realistic.',
+    },
+    {
+      q: 'How long do restorative dental restorations last?',
+      a: 'It depends on the restoration type: Composite fillings: 7–15 years. Porcelain crowns: 10–20 years. Dental bridges: 10–15 years. Dental implants: a lifetime (crown may need replacement after 15–25 years). Dentures: 7–10 years before reline or replacement. All restorations benefit from good oral hygiene, regular checkups, and avoiding damaging habits like chewing ice or grinding without a nightguard.',
+    },
+    {
+      q: 'Is restorative dental treatment painful?',
+      a: 'Modern restorative dentistry is far more comfortable than its reputation suggests. We use profound local anesthesia for all cavity and crown work, and rotary instruments for root canals that make the procedure feel similar to a filling. Most patients are surprised by how manageable treatment is. We also offer nitrous oxide for anxious patients.',
+    },
+    {
+      q: 'Does insurance cover restorative dentistry?',
+      a: 'Most dental insurance plans cover restorative treatment at 50–80% after the deductible, up to an annual maximum. Fillings are typically covered at a higher rate than crowns or implants. We verify your benefits before treatment begins and provide a clear breakdown of your estimated out-of-pocket costs. Financing through CareCredit is also available.',
+    },
+  ]}
   related={[
     { href: '/services/cosmetic-dentistry',   label: 'Cosmetic Dentistry' },
     { href: '/services/periodontics',         label: 'Periodontics' },
     { href: '/services',                      label: 'All Services' },
   ]}
+  ctaHeading="Restore your smile. Reclaim your confidence."
 >
-  <section class="bg-white py-20">
+  <section class="bg-white pb-12">
     <div class="container-slim">
-      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-6">Restorative Services</p>
+      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">Our Restorative Services</p>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
           <a href={s.href} class="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:border-brand-200 hover:shadow-md transition-all no-underline">

@@ -78,8 +78,8 @@ a:not([class]) { @apply text-brand-600 hover:text-brand-700 underline-offset-2; 
 details summary::-webkit-details-marker { display: none; }
 details summary { list-style: none; }
 
-details[open] .svc-name  { color: #00cfc5; }
-details[open] .svc-cross { transform: rotate(45deg); color: #00cfc5; }
+details[open] .svc-name  { color: #5cc9be; }
+details[open] .svc-cross { transform: rotate(45deg); color: #5cc9be; }
 details .svc-cross        { transition: transform 0.2s ease, color 0.2s ease; }
 
 /* ── Reduced motion ────────────────────────────── */
