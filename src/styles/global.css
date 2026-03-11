@@ -19,7 +19,7 @@ a:not([class]) { @apply text-brand-600 hover:text-brand-700 underline-offset-2; 
 
 /* Display headings */
 .display-1 {
-  @apply font-display text-[2.6rem] sm:text-5xl lg:text-[3.5rem] leading-[1.08] tracking-[-0.02em] text-[#1a1f1e];
+  @apply font-display text-[1.9rem] sm:text-[2.6rem] lg:text-[3.5rem] leading-[1.08] tracking-[-0.02em] text-[#1a1f1e];
 }
 .display-2 {
   @apply font-display text-3xl sm:text-4xl leading-[1.12] tracking-[-0.02em] text-[#1a1f1e];

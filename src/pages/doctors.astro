@@ -4,7 +4,12 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CallBar from "../components/CallBar.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
+import { Image } from "astro:assets";
 import { BOOK_APPOINTMENT_URL } from "../data/site";
+
+import docYelena from "../assets/team/yelena-mikhaylova.jpg";
+import docAlla   from "../assets/team/alla-hart.webp";
+import docAbanob from "../assets/team/abanob-saleh.jpg";
 
 const doctors = [
   {
@@ -12,23 +17,23 @@ const doctors = [
     credentials: 'DDS',
     title: 'Founder & Clinical Director',
     bio: 'With over a decade of experience, Dr. Mikhaylova combines clinical precision with an artistic eye to create healthy, confident smiles.',
-    img: '/team/yelena-mikhaylova.jpg',
+    img: docYelena,
     slug: 'yelena-mikhaylova'
   },
   {
     name: 'Dr. Alla Hart',
     credentials: 'DDS',
     title: 'General & Cosmetic Dentist',
-    bio: 'A graduate of NYU College of Dentistry with a GPR from Columbia University, Dr. Hart brings 30+ years of expertise in cosmetic veneers, implant restorations, Invisalign®, and full-mouth rehabilitation — taking time with every patient to build a true partnership in lifelong oral health.',
-    img: '/team/alla-hart.webp',
+    bio: 'A graduate of NYU College of Dentistry with a GPR from Columbia University, Dr. Hart brings 30+ years of expertise in cosmetic veneers, implant restorations, Invisalign®, and full-mouth rehabilitation.',
+    img: docAlla,
     slug: 'alla-hart'
   },
   {
     name: 'Dr. Abanob Saleh',
     credentials: 'DMD',
     title: 'General & Restorative Dentist',
-    bio: 'A Queens native and NYU School of Dentistry graduate, Dr. Saleh completed his residency at the Northport VA Medical Center. He takes a comprehensive, holistic approach to dentistry — getting to know each patient personally while delivering advanced aesthetic and restorative care.',
-    img: '/team/abanob-saleh.jpg',
+    bio: 'A Queens native and NYU School of Dentistry graduate, Dr. Saleh completed his residency at the Northport VA Medical Center and takes a comprehensive, holistic approach to every patient.',
+    img: docAbanob,
     slug: 'abanob-saleh'
   },
 ]
@@ -47,7 +52,7 @@ const values = [
   {
     icon: `<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>`,
     title: 'Same-Day Availability',
-    desc: 'Dental emergencies can\'t wait. We reserve daily appointments for urgent care so you\'re never left in pain.'
+    desc: "Dental emergencies can't wait. We reserve daily appointments for urgent care so you're never left in pain."
   },
   {
     icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>`,
@@ -66,196 +71,23 @@ const values = [
   <!-- ═══════════════════════════════════════════
        HERO
   ═══════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-sand-50" style="padding-top: clamp(6rem, 12vw, 9rem); padding-bottom: clamp(3rem, 6vw, 5rem);">
-    <!-- Ambient blobs -->
+  <section class="relative overflow-hidden bg-[#f7f3e8] pt-28 pb-20 lg:pt-36 lg:pb-24">
+    <!-- Ambient blob -->
     <div class="pointer-events-none absolute inset-0 -z-10">
-      <div class="absolute -top-40 left-1/3 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-brand-100/50 blur-[90px]"></div>
-      <div class="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-brand-50/80 blur-[70px]"></div>
+      <div class="absolute -top-48 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-brand-100/50 blur-[110px]"></div>
     </div>
 
-    <div class="container-slim">
-      <div class="mx-auto max-w-3xl text-center">
-        <span class="mb-5 inline-block rounded-full bg-brand-100 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.25em] text-brand-700">Our Team</span>
-        <h1 class="display-1 mb-6">
-          The doctors behind<br class="hidden sm:block" />
-          <em class="not-italic text-brand-500">your best smile.</em>
-        </h1>
-        <p class="mx-auto max-w-xl text-lg text-slate-500 leading-relaxed mb-9">
-          Advanced training, genuine warmth, and a patient-first philosophy — our doctors make every visit something you'll actually look forward to.
-        </p>
-
-        <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-          <a
-            href={BOOK_APPOINTMENT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 hover:-translate-y-px transition-all no-underline"
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-            </svg>
-            Book Appointment
-          </a>
-          <a
-            href="tel:+1-718-225-6677"
-            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 hover:-translate-y-px transition-all no-underline"
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            (718) 225-6677
-          </a>
-        </div>
-
-        <!-- Social proof -->
-        <div class="flex items-center justify-center gap-3">
-          <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
-            <svg width="20" height="20" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-              <path fill="#FBBC05" d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"/>
-              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"/>
-            </svg>
-          </div>
-          <div class="text-[13px]">
-            <span class="text-amber-400 tracking-tight">★★★★★</span>
-            <span class="ml-1.5 font-bold text-slate-700">4.9</span>
-            <span class="text-slate-500"> rating · </span>
-            <span class="font-semibold text-slate-700">500+ reviews</span>
-            <span class="text-slate-500"> on Google</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       DOCTOR CARDS
-  ═══════════════════════════════════════════ -->
-  <section class="bg-sand-100 py-24 lg:py-32">
-    <div class="container-slim">
-
-      <!-- Section header -->
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-16">
-        <div class="max-w-xl">
-          <p class="text-[12px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">The People Behind the Smiles</p>
-          <h2 class="display-2">Meet your care team.</h2>
-          <p class="mt-4 text-lg text-slate-500 leading-relaxed">Experienced, compassionate doctors who put your comfort first — every visit, every treatment.</p>
-        </div>
-        <a
-          href={BOOK_APPOINTMENT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group/btn inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-[14px] font-bold text-slate-700 shadow-sm transition-all hover:border-brand-400 hover:text-brand-500 hover:shadow-lg no-underline"
-        >
-          Book an appointment
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-
-      <!-- Cards grid -->
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
-        {doctors.map((doc) => (
-          <div class="group relative flex flex-col overflow-hidden rounded-[3rem] bg-sand-50 p-4 shadow-[0_4px_32px_rgba(0,0,0,0.06)] transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_48px_80px_rgba(0,0,0,0.12)] border border-sand-200 hover:border-brand-300/60 h-full">
-            <!-- Image -->
-            <div class="relative overflow-hidden rounded-[2.5rem] bg-brand-50 shrink-0" style="aspect-ratio: 5/6;">
-              <img
-                src={doc.img}
-                alt={doc.name}
-                class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
-            </div>
-
-            <!-- Content -->
-            <div class="flex flex-col flex-1 p-8">
-              <div class="min-h-[110px] flex flex-col justify-start">
-                <h3 class="display-3 transition-colors duration-300 group-hover:text-brand-500 leading-tight">{doc.name}</h3>
-                <div class="mt-3 flex items-center gap-2">
-                  <span class="h-px w-4 bg-brand-400"></span>
-                  <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">{doc.title}</p>
-                </div>
-              </div>
-              <div class="mt-4 mb-8 flex-1">
-                <p class="text-[15px] leading-relaxed text-slate-500 line-clamp-3">{doc.bio}</p>
-              </div>
-              <div class="border-t border-sand-200 pt-6">
-                <a
-                  href={`/doctors/${doc.slug}`}
-                  class="group/link inline-flex items-center gap-2.5 text-sm font-bold text-brand-500 transition-all hover:text-brand-700 no-underline"
-                >
-                  <span class="relative">
-                    Learn More
-                    <span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-600 transition-all duration-300 group-hover/link:w-full"></span>
-                  </span>
-                  <div class="flex h-7 w-7 items-center justify-center rounded-full border border-brand-100 bg-brand-50/50 transition-all group-hover/link:bg-brand-600 group-hover/link:text-white group-hover/link:border-brand-600">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="transition-transform group-hover/link:translate-x-0.5">
-                      <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       WHY OUR TEAM
-  ═══════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-sand-50 py-24 lg:py-32">
-    <div class="pointer-events-none absolute inset-0 -z-10">
-      <div class="absolute -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-brand-100/30 blur-[100px]"></div>
-      <div class="absolute -bottom-24 right-0 h-[500px] w-[500px] rounded-full bg-brand-200/20 blur-[100px]"></div>
-    </div>
-
-    <div class="container-slim">
-      <div class="mb-16 max-w-xl">
-        <p class="text-[12px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Why Choose Us</p>
-        <h2 class="display-2">Care you can count on.</h2>
-        <p class="mt-4 text-lg text-slate-500 leading-relaxed">
-          Every doctor on our team shares the same commitment — making you feel comfortable, heard, and genuinely cared for.
-        </p>
-      </div>
-
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {values.map((v) => (
-          <div class="group relative overflow-hidden rounded-[2.5rem] border border-brand-100/60 bg-white p-8 shadow-[0_4px_24px_rgba(0,0,0,0.05)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-300/60 hover:shadow-[0_32px_64px_rgba(0,0,0,0.10)]">
-            <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50 text-brand-500 transition-colors duration-300 group-hover:bg-brand-500 group-hover:text-white">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={v.icon}></svg>
-            </div>
-            <h3 class="text-sm font-bold text-slate-900 uppercase tracking-[0.12em] mb-3">{v.title}</h3>
-            <p class="text-[14px] leading-relaxed text-slate-500">{v.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       REVIEWS
-  ═══════════════════════════════════════════ -->
-  <Fragment slot="reviews-carousel"><ReviewsCarousel /></Fragment>
-
-  <!-- ═══════════════════════════════════════════
-       CTA BANNER
-  ═══════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-brand-700">
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -top-20 -right-20 h-[300px] w-[300px] rounded-full bg-brand-500/20 blur-[60px]"></div>
-      <div class="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-brand-500/10 blur-[60px]"></div>
-    </div>
-    <div class="container-slim relative py-12 text-center">
-      <h2 class="display-3 !text-white mb-4">Join our patient family.</h2>
-      <p class="mt-3 text-white/80 mx-auto max-w-md text-[15px]">
-        Ready to experience a different kind of dental care? Book your first visit with one of our doctors today.
+    <div class="container-slim text-center">
+      <span class="mb-5 inline-block rounded-full bg-brand-100 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.25em] text-brand-700">Our Team</span>
+      <h1 class="display-1 mb-6">
+        The doctors behind<br class="hidden sm:block" />
+        <em class="not-italic text-brand-500">your best smile.</em>
+      </h1>
+      <p class="mx-auto max-w-xl text-lg text-slate-500 leading-relaxed mb-9">
+        Advanced training, genuine warmth, and a patient-first philosophy — our doctors make every visit something you'll actually look forward to.
       </p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
         <a
           href={BOOK_APPOINTMENT_URL}
           target="_blank"
@@ -269,7 +101,7 @@ const values = [
         </a>
         <a
           href="tel:+1-718-225-6677"
-          class="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all no-underline"
+          class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 hover:-translate-y-px transition-all no-underline"
         >
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -277,8 +109,176 @@ const values = [
           (718) 225-6677
         </a>
       </div>
+
+      <!-- Social proof -->
+      <div class="flex items-center justify-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm border border-slate-100">
+          <svg width="20" height="20" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"/>
+          </svg>
+        </div>
+        <div class="text-[13px]">
+          <span class="text-amber-400 tracking-tight">★★★★★</span>
+          <span class="ml-1.5 font-bold text-slate-700">4.9</span>
+          <span class="text-slate-500"> rating · </span>
+          <span class="font-semibold text-slate-700">500+ reviews</span>
+          <span class="text-slate-500"> on Google</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave into doctor cards -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+        <path d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z" fill="#00cfc5"/>
+      </svg>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════
+       DOCTOR CARDS — dark teal, matches homepage
+  ═══════════════════════════════════════════ -->
+  <section class="relative overflow-hidden bg-brand-800 pt-16 pb-28 lg:pt-24 lg:pb-36">
+    <div class="container-wide">
+
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-12">
+        <div class="max-w-xl">
+          <p class="text-[12px] font-black uppercase tracking-[0.25em] text-brand-200 mb-4">The People Behind the Smiles</p>
+          <h2 class="display-2 !text-white leading-tight">Meet your Queens care team.</h2>
+          <p class="mt-4 text-lg text-white/70 leading-relaxed">Experienced, compassionate doctors who put your comfort first — every visit, every treatment.</p>
+        </div>
+        <a
+          href={BOOK_APPOINTMENT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group/btn inline-flex shrink-0 items-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 py-4 text-[14px] font-bold text-white shadow-sm transition-all hover:bg-white hover:text-brand-700 hover:border-white no-underline"
+        >
+          Book an appointment
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover/btn:translate-x-1">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 items-stretch">
+        {doctors.map((doc) => (
+          <div class="group relative flex flex-col overflow-hidden rounded-[3rem] bg-sand-50 p-4 shadow-[0_4px_32px_rgba(0,0,0,0.08)] transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_48px_80px_rgba(0,0,0,0.15)] border border-sand-200 hover:border-brand-300/60 h-full">
+            <!-- Image -->
+            <div class="relative overflow-hidden rounded-[2.5rem] bg-sand-50 ring-2 ring-brand-200/60 shrink-0" style="aspect-ratio: 5/6;">
+              <Image
+                src={doc.img}
+                alt={doc.name}
+                class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
+                width={400}
+                height={480}
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex flex-col flex-1 p-5 sm:p-8">
+              <div class="flex flex-col justify-start">
+                <h3 class="font-display text-2xl font-bold text-slate-900 transition-colors duration-300 group-hover:text-brand-500 leading-tight">{doc.name}</h3>
+                <div class="mt-3 flex items-center gap-2">
+                  <span class="h-px w-4 bg-brand-400"></span>
+                  <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em]">{doc.title}</p>
+                </div>
+              </div>
+              <div class="mt-4 mb-8 flex-1">
+                <p class="text-[15px] leading-relaxed text-slate-500 line-clamp-3">{doc.bio}</p>
+              </div>
+              <div class="border-t border-sand-200 pt-6">
+                <a
+                  href={`/doctors/${doc.slug}`}
+                  class="group/link inline-flex items-center gap-2.5 text-sm font-bold text-brand-600 transition-all hover:text-brand-700 no-underline"
+                >
+                  <span class="relative">
+                    Learn More
+                    <span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-brand-600 transition-all duration-300 group-hover/link:w-full"></span>
+                  </span>
+                  <div class="flex h-7 w-7 items-center justify-center rounded-full border border-brand-200 bg-white/60 transition-all group-hover/link:bg-brand-600 group-hover/link:text-white group-hover/link:border-brand-600">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="transition-transform group-hover/link:translate-x-0.5">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Wave into Why Our Team -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+        <path d="M0,24 C240,0 480,48 720,24 C960,0 1200,48 1440,24 L1440,48 L0,48 Z" fill="#ffffff"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHY OUR TEAM — white
+  ═══════════════════════════════════════════ -->
+  <section class="relative overflow-hidden bg-white pt-16 pb-28 lg:pt-20 lg:pb-36">
+    <div class="container-wide">
+      <div class="mb-12 max-w-xl">
+        <p class="text-[12px] font-black uppercase tracking-[0.25em] text-brand-500 mb-4">Why Choose Us</p>
+        <h2 class="display-2">Care you can count on.</h2>
+        <p class="mt-4 text-lg text-slate-500 leading-relaxed">
+          Every doctor on our team shares the same commitment — making you feel comfortable, heard, and genuinely cared for.
+        </p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {values.map((v) => (
+          <div class="group relative overflow-hidden rounded-[2rem] border border-slate-100 bg-[#f7f3e8] p-8 shadow-[0_2px_16px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:border-brand-200/60 hover:shadow-[0_24px_48px_rgba(0,207,197,0.10)]">
+            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white text-brand-500 shadow-sm transition-all duration-300 group-hover:bg-brand-500 group-hover:text-white group-hover:shadow-md">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={v.icon}></svg>
+            </div>
+            <h3 class="font-display text-[15px] font-bold text-slate-900 mb-3 leading-snug">{v.title}</h3>
+            <p class="text-[14px] leading-relaxed text-slate-500">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Wave into Reviews -->
+    <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+        <path d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z" fill="#00cfc5"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       REVIEWS + CTA
+  ═══════════════════════════════════════════ -->
+  <ReviewsCarousel>
+    <div slot="cta" class="container-slim pt-14 pb-2 text-center">
+      <h2 class="display-3 !text-white">Ready to meet your doctor?</h2>
+      <p class="mt-3 text-white/70 mx-auto max-w-md text-[15px]">New patients always welcome — same-day appointments available, most insurance accepted.</p>
+      <div class="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={BOOK_APPOINTMENT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-brand-700 shadow-lg shadow-black/10 hover:bg-brand-50 hover:-translate-y-px transition-all no-underline"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Appointment
+        </a>
+        <a href="tel:+1-718-225-6677" class="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-all no-underline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          (718) 225-6677
+        </a>
+      </div>
+      <div class="mt-12 border-t border-brand-500/40"></div>
+    </div>
+  </ReviewsCarousel>
 
   <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json" set:html={JSON.stringify({
@@ -299,7 +299,6 @@ const values = [
       name: doc.name,
       honorificSuffix: doc.credentials,
       jobTitle: doc.title,
-      image: `https://www.thrivedentalny.com${doc.img}`,
       url: `https://www.thrivedentalny.com/doctors/${doc.slug}`,
       worksFor: {
         '@type': 'Dentist',
