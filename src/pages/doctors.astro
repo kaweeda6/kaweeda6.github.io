@@ -41,7 +41,7 @@ const doctors = [
 const values = [
   {
     icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
-    title: 'Board-Certified Excellence',
+    title: 'Advanced Training & Expertise',
     desc: 'Every doctor holds advanced credentials and stays current with continuing education in the latest dental techniques.'
   },
   {
@@ -63,8 +63,8 @@ const values = [
 ---
 
 <Base
-  title="Meet Our Doctors | Thrive Dental Bayside"
-  description="Meet Dr. Yelena Mikhaylova (DDS, Invisalign Gold Plus Provider), Dr. Alla Hart (DDS, 30+ years), and Dr. Abanob Saleh (DMD) — the board-certified dental team at Thrive Dental in Bayside, Queens."
+  title="Meet Our Dentists | Thrive Dental Bayside, Queens NY"
+  description="Meet Dr. Yelena Mikhaylova DDS, Dr. Alla Hart DDS & Dr. Abanob Saleh DMD — the experienced dental team at Thrive Dental in Bayside, Queens NY."
 >
   <Fragment slot="header"><Header /></Fragment>
 
@@ -170,10 +170,11 @@ const values = [
             <div class="relative overflow-hidden rounded-[2.5rem] bg-sand-50 ring-2 ring-brand-200/60 shrink-0" style="aspect-ratio: 5/6;">
               <Image
                 src={doc.img}
-                alt={doc.name}
+                alt={`${doc.name}, ${doc.title} at Thrive Dental Bayside`}
                 class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
                 width={400}
                 height={480}
+                loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             </div>

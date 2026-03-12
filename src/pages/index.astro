@@ -113,14 +113,14 @@ const doctors = [
 >
   <Fragment slot="head">
     <!-- Preload hero video poster as LCP candidate -->
-    <link rel="preload" as="image" href="/office/hero-2057.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" href="/office/hero-poster.webp" fetchpriority="high" />
   </Fragment>
   <Fragment slot="header"><Header /></Fragment>
 
   <!-- ═══════════════════════════════════════════
        HERO — full-bleed video
   ═══════════════════════════════════════════ -->
-  <section class="relative flex min-h-[92vh] items-center overflow-hidden">
+  <section class="relative flex min-h-[92svh] items-center overflow-hidden">
 
     <!-- Video background -->
     <video
@@ -129,8 +129,10 @@ const doctors = [
       muted
       playsinline
       preload="none"
-      poster="/office/hero-2057.jpg"
+      poster="/office/hero-poster.webp"
       class="absolute inset-0 h-full w-full object-cover"
+      width="1920"
+      height="1281"
     >
       <source src="/office/hero-compressed.webm" type="video/webm" />
       <source src="/office/hero-compressed.mp4" type="video/mp4" />
@@ -262,7 +264,7 @@ const doctors = [
                 class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 width={400}
                 height={200}
-                loading={i >= services.length ? 'lazy' : 'eager'}
+                loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
             </div>
@@ -331,8 +333,9 @@ const doctors = [
           <div class="relative overflow-hidden rounded-[3rem] shadow-2xl ring-2 ring-brand-200/50">
             <Image
               src={heroPhoto}
-              alt="Comfort-first private treatment room at Thrive Dental"
+              alt="Private treatment room with calming lighting at Thrive Dental Bayside"
               class="h-[260px] sm:h-[400px] lg:h-[600px] w-full object-cover"
+              loading="lazy"
               width={800}
               height={600}
             />
@@ -379,8 +382,9 @@ const doctors = [
           <div class="relative overflow-hidden rounded-[3rem] shadow-2xl ring-2 ring-brand-200/50">
             <Image
               src={techPhoto}
-              alt="Digital scanning technology"
+              alt="iTero digital intraoral scanner used for Invisalign and crown planning at Thrive Dental"
               class="h-[260px] sm:h-[400px] lg:h-[600px] w-full object-cover"
+              loading="lazy"
               width={800}
               height={600}
             />
@@ -395,16 +399,16 @@ const doctors = [
           <div class="absolute -bottom-10 -right-10 w-1/2 h-1/2 rounded-[3rem] bg-brand-100/50 -z-10"></div>
           <!-- Mobile: single hero photo -->
           <div class="sm:hidden">
-            <Image src={teamPhoto3} alt="Dr. Mikhaylova and team at Thrive Dental Bayside" class="rounded-2xl w-full object-cover object-top shadow-md ring-2 ring-brand-200/50" style="aspect-ratio: 4/3;" width={800} height={600} />
+            <Image src={teamPhoto3} alt="Dr. Mikhaylova and team at Thrive Dental Bayside" class="rounded-2xl w-full object-cover object-top shadow-md ring-2 ring-brand-200/50" style="aspect-ratio: 4/3;" width={800} height={600} loading="lazy" />
           </div>
           <!-- sm+: original staggered layout -->
           <div class="hidden sm:grid sm:grid-cols-2 gap-4">
             <div class="space-y-4">
-              <Image src={teamPhoto1} alt="Thrive Dental team providing patient care in Bayside, Queens NY" class="rounded-[2rem] h-80 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={320} />
-              <Image src={teamPhoto2} alt="Patient receiving gentle dental care at Thrive Dental Bayside" class="rounded-[2rem] h-52 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={208} />
+              <Image src={teamPhoto1} alt="Thrive Dental team providing patient care in Bayside, Queens NY" class="rounded-[2rem] h-80 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={320} loading="lazy" />
+              <Image src={teamPhoto2} alt="Patient receiving gentle dental care at Thrive Dental Bayside" class="rounded-[2rem] h-52 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={208} loading="lazy" />
             </div>
             <div class="pt-12">
-              <Image src={teamPhoto3} alt="Comfortable, modern dental treatment room at Thrive Dental in Bayside NY" class="rounded-[2rem] h-[480px] w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={480} />
+              <Image src={teamPhoto3} alt="Comfortable, modern dental treatment room at Thrive Dental in Bayside NY" class="rounded-[2rem] h-[480px] w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={480} loading="lazy" />
             </div>
           </div>
         </div>
@@ -466,10 +470,11 @@ const doctors = [
             <div class="relative overflow-hidden rounded-[2.5rem] bg-sand-50 ring-2 ring-brand-200/60 shrink-0" style="aspect-ratio: 5/6;">
               <Image
                 src={doc.img}
-                alt={doc.name}
+                alt={`${doc.name}, ${doc.title} at Thrive Dental Bayside`}
                 class="h-full w-full object-cover object-top transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-1"
                 width={400}
                 height={480}
+                loading="lazy"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-brand-950/20 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>
             </div>

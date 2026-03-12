@@ -27,7 +27,7 @@ const resolvedOgImage = ogImage
 <html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <!-- Font preloads — improves LCP -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href={dmSansUrl} />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesUrl} />
@@ -61,6 +61,7 @@ const resolvedOgImage = ogImage
     <meta property="og:description" content={description ?? 'Modern, friendly dental care in Bayside, Queens. Comprehensive oral health, Invisalign®, implants, and cosmetic dentistry from Dr. Yelena Mikhaylova and team.'} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={title ?? 'Thrive Dental — Cosmetic & Family Dentistry in Bayside, NY'} />
@@ -69,9 +70,8 @@ const resolvedOgImage = ogImage
     <meta name="twitter:title" content={title ?? 'Thrive Dental | Cosmetic & Family Dentistry in Bayside, NY'} />
     <meta name="twitter:description" content={description ?? 'Modern, friendly dental care in Bayside, Queens. Comprehensive oral health, Invisalign®, implants, and cosmetic dentistry from Dr. Yelena Mikhaylova and team.'} />
     <meta name="twitter:image" content={resolvedOgImage} />
-    <!-- Security meta fallbacks (in addition to _headers for non-Netlify hosts) -->
+    <!-- Security meta fallback for non-Netlify hosts (_headers handles X-Frame-Options: DENY via HTTP header) -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <!-- Geo tags (local SEO) -->
     <meta name="geo.region" content="US-NY" />
     <meta name="geo.placename" content="Bayside, Queens, New York" />

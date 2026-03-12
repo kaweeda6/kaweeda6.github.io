@@ -6,6 +6,7 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   site: 'https://www.thrivedentalny.com',
+  trailingSlash: 'never',
   prefetch: true,
   image: {
     endpoint: {
@@ -33,24 +34,26 @@ export default defineConfig({
         return true
       },
       serialize(item) {
+        // lastmod: use today's build date as a reliable baseline for all pages
+        const buildDate = new Date().toISOString().split('T')[0]
         if (item.url === 'https://www.thrivedentalny.com/') {
-          return { ...item, priority: 1.0, changefreq: 'weekly' }
+          return { ...item, lastmod: buildDate, priority: 1.0, changefreq: 'weekly' }
         }
         if (item.url.includes('/blog/')) {
-          return { ...item, priority: 0.6, changefreq: 'monthly' }
+          return { ...item, lastmod: buildDate, priority: 0.6, changefreq: 'monthly' }
         }
         if (item.url.includes('/services/')) {
-          return { ...item, priority: 0.8, changefreq: 'monthly' }
+          return { ...item, lastmod: buildDate, priority: 0.8, changefreq: 'monthly' }
         }
         if (item.url.includes('/doctors')) {
-          return { ...item, priority: 0.7, changefreq: 'monthly' }
+          return { ...item, lastmod: buildDate, priority: 0.7, changefreq: 'monthly' }
         }
         // Service+location pages and neighborhood pages
         const localPatterns = ['/dental-implants-', '/invisalign-', '/emergency-dentist-', '/cosmetic-dentist-', '/porcelain-veneers-', '/teeth-whitening-', '/dentist-']
         if (localPatterns.some(p => item.url.includes(p))) {
-          return { ...item, priority: 0.6, changefreq: 'monthly' }
+          return { ...item, lastmod: buildDate, priority: 0.6, changefreq: 'monthly' }
         }
-        return { ...item, priority: 0.5, changefreq: 'monthly' }
+        return { ...item, lastmod: buildDate, priority: 0.5, changefreq: 'monthly' }
       },
     }),
     mdx(),

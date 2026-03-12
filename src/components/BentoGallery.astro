@@ -1,5 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+
+import img2386 from '../assets/office/thrivedental-2386.jpg';
+import img3059 from '../assets/office/thrivedental-3059.jpg';
+import img2616 from '../assets/office/thrivedental-2616.jpg';
+import img2750 from '../assets/office/thrivedental-2750.jpg';
+import img2362 from '../assets/office/thrivedental-2362.jpg';
+import img2650 from '../assets/office/thrivedental-2650.jpg';
+import imgHero  from '../assets/office/hero-2108.jpg';
 ---
+
 <section class="bg-white py-24 lg:py-32 overflow-hidden">
   <div class="container-slim">
     <div class="max-w-2xl mb-16">
@@ -12,68 +22,89 @@
 
     <!-- Bento Grid -->
     <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 h-[1200px] md:h-[800px]">
-      
+
       <!-- Main Office Image (2x2) -->
       <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-2057.jpg" 
-          alt="Thrive Dental Bayside Office" 
+        <Image
+          src={img2386}
+          alt="Modern waiting area at Thrive Dental Bayside office in Queens, NY"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={800}
+          height={600}
+          loading="lazy"
         />
         <div class="absolute inset-0 bg-black/5"></div>
       </div>
 
       <!-- Treatment Room Detail (1x2) -->
       <div class="md:col-span-1 md:row-span-2 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-3059.jpg" 
-          alt="Modern dental technology" 
+        <Image
+          src={img3059}
+          alt="State-of-the-art dental treatment room at Thrive Dental Bayside"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={400}
+          height={600}
+          loading="lazy"
         />
       </div>
 
       <!-- Waiting Area (1x1) -->
       <div class="md:col-span-1 md:row-span-1 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-2386.jpg" 
-          alt="Comfortable seating" 
+        <Image
+          src={imgHero}
+          alt="Comfortable reception area and seating at Thrive Dental in Bayside"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={400}
+          height={300}
+          loading="lazy"
         />
       </div>
 
       <!-- Tech Detail (1x1) -->
       <div class="md:col-span-1 md:row-span-1 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-2616.jpg" 
-          alt="Digital care" 
+        <Image
+          src={img2616}
+          alt="iTero digital scanner and advanced dental technology at Thrive Dental"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={400}
+          height={300}
+          loading="lazy"
         />
       </div>
 
       <!-- Corridor / Wide View (2x1) -->
       <div class="md:col-span-2 md:row-span-1 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-2750.jpg" 
-          alt="Office corridor" 
+        <Image
+          src={img2750}
+          alt="Bright open hallway inside Thrive Dental's Bayside Queens office"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={800}
+          height={300}
+          loading="lazy"
         />
       </div>
 
       <!-- Entryway / Desk (1x1) -->
       <div class="md:col-span-1 md:row-span-1 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-2362.jpg" 
-          alt="Welcome desk" 
+        <Image
+          src={img2362}
+          alt="Friendly front desk welcome area at Thrive Dental Bayside"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={400}
+          height={300}
+          loading="lazy"
         />
       </div>
 
-      <!-- Tooling / Clinical (1x1) -->
+      <!-- Clinical Detail (1x1) -->
       <div class="md:col-span-1 md:row-span-1 relative overflow-hidden rounded-[2.5rem] bg-slate-100 group">
-        <img 
-          src="/office/thrivedental-2650.jpg" 
-          alt="Clinical precision" 
+        <Image
+          src={img2650}
+          alt="Precision dental instruments and clinical tools at Thrive Dental"
           class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          width={400}
+          height={300}
+          loading="lazy"
         />
       </div>
 

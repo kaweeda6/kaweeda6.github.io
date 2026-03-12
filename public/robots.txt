@@ -33,6 +33,9 @@ Disallow: /
 User-agent: cohere-ai
 Disallow: /
 
+User-agent: Applebot-Extended
+Disallow: /
+
 Sitemap: https://www.thrivedentalny.com/sitemap-index.xml
 
 # IndexNow key (Bing, Yandex, Naver — instant indexing on publish)

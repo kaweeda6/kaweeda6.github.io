@@ -28,6 +28,9 @@ a:not([class]) { @apply text-brand-600 hover:text-brand-700 underline-offset-2; 
   @apply font-display text-2xl sm:text-3xl leading-[1.15] tracking-[-0.01em] text-[#1a1f1e];
 }
 
+/* Improve mobile heading line breaks */
+.display-1, .display-2, .display-3 { text-wrap: balance; }
+
 /* UI components */
 .pill  { @apply rounded-full border border-slate-200 bg-sand-50 px-4 py-2 text-sm text-brand-700; }
 .chip  { @apply rounded-full bg-white border border-slate-200 px-3 py-1 text-xs font-medium; }

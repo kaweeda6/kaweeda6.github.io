@@ -1,196 +1,158 @@
 # SEO Action Plan — Thrive Dental Bayside
-**Generated:** 2026-03-11
-**Overall Score: 76/100** → Target: 88/100
+**Updated:** 2026-03-11 (v2 — post second audit round)
+**Overall Score: 84/100** → Target: 92/100
+
+---
+
+## ✅ COMPLETED THIS SESSION
+
+| # | Fix | Score Impact |
+|---|-----|-------------|
+| ✅ | `employee[].@type` → `Person` (was `Dentist`) | +1 pt |
+| ✅ | `honorificSuffix` + `jobTitle` on BlogPosting author schema | +1 pt |
+| ✅ | `Service` schema added to all service pages | +1 pt |
+| ✅ | `llms.txt` created with correct hours + credentials | +2 pts |
+| ✅ | 11 meta descriptions trimmed to 140–160 chars | +1 pt |
+| ✅ | 5 title tags fixed to under 60 chars | +1 pt |
+| ✅ | `trailingSlash: 'never'` in astro.config.mjs | +1 pt |
+| ✅ | `lastmod` added to all sitemap entries | +0.5 pt |
+| ✅ | BreadcrumbList on blog index | +0.5 pt |
+| ✅ | Blog index migrated to `Astro.glob()` | +0.5 pt |
+| ✅ | Outbound citations (ADA/CDC/NIH) on all 6 blog posts | +1 pt |
+| ✅ | `relatedService` cross-links rendered on all blog posts | +1 pt |
+| ✅ | `relatedPosts` added to general-dentistry service page | +0.5 pt |
+| ✅ | X-Frame-Options conflict fixed (removed conflicting meta tag) | +0.5 pt |
+| ✅ | `og:image:type` meta added | +0.5 pt |
+| ✅ | `X-Content-Type-Options` meta fallback added | +0.5 pt |
+| ✅ | Hero LCP: `fetchpriority="high"` preload on hero poster | +1 pt |
+| ✅ | Service page heroes: `fetchpriority="high"` + `quality={80}` | +0.5 pt |
+| ✅ | Hero CLS fix: `min-h-[92svh]` | +0.5 pt |
+| ✅ | Service page mobile: sidebar hidden, compact CTA bar added | UX |
+| ✅ | Homepage carousel: responsive card sizing + edge fades | UX |
+| ✅ | `Applebot-Extended` blocked in robots.txt | +0.5 pt |
+| ✅ | `url` property added to BlogPosting schema | +0.5 pt |
+| ✅ | `BlogPosting` author → `url` linking to doctor profile page | E-E-A-T |
+| ✅ | Doctors page title fixed (52 chars) | +0.5 pt |
 
 ---
 
 ## 🔴 CRITICAL (Fix Immediately)
 
-### 1. Confirm Production Domain & Canonical URLs
-**Issue:** If site is deployed to GitHub Pages subdomain, all canonical tags point to the wrong domain. Google will index the wrong URL.
-**Fix:**
-- Confirm `site` in `astro.config.mjs` is set to `https://www.thrivedentalny.com`
-- Ensure DNS points thrivedentalny.com to your host (Netlify recommended for `_headers` support)
-- Test: `curl -I https://www.thrivedentalny.com` should return 200, not redirect
+### 1. Create Individual Doctor Profile Pages — **HIGHEST PRIORITY**
+**Issue:** `/doctors/yelena-mikhaylova`, `/doctors/alla-hart`, `/doctors/abanob-saleh` return 404. Every blog post author byline and BlogPosting schema `author.url` links to these pages. Breaks E-E-A-T author chain entirely — Google cannot verify author expertise.
+**Estimated Score Impact:** +3–4 pts
+**Fix:** Create `src/pages/doctors/[slug].astro` with:
+- Full bio, credentials (DDS/DMD), dental school + graduation year
+- Photo
+- `Person` schema with `alumniOf`, `hasCredential`, `jobTitle`
+- Link back to blog posts authored by that doctor
 
-### 2. Security Headers (Deploy to Netlify or Add Meta Fallbacks)
-**Issue:** `public/_headers` only works on Netlify. GitHub Pages ignores it entirely.
-**Fix (Option A — Netlify):** Deploy site to Netlify. Headers file is already correct.
-**Fix (Option B — Meta tags):** Add to `Base.astro` `<head>`:
-```html
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+### 2. Convert Hero Poster to AVIF
+**File:** `public/office/hero-2057.jpg`
+**Issue:** JPEG served as LCP image — largest performance drag on site. Estimated 200–500KB.
+**Estimated LCP improvement:** 400–900ms on mobile
+**Fix:**
+```bash
+npx @squoosh/cli --avif '{"quality":65}' public/office/hero-2057.jpg
+# Output: hero-2057.avif
 ```
+Then update `index.astro` preload:
+```html
+<link rel="preload" as="image" type="image/avif" href="/office/hero-2057.avif" fetchpriority="high">
+```
+And update the `<img>` or `<picture>` source.
 
 ---
 
 ## 🟠 HIGH (Fix Within 1 Week)
 
-### 3. Fix `employee[].@type` Schema
-**File:** `src/pages/index.astro`
-**Issue:** `employee` array has `@type: 'Dentist'` — `Dentist` is an Organization subtype, not a Person.
-**Fix:** Change to `@type: 'Person'` with `jobTitle: 'Dentist'`
-```json
-{
-  "@type": "Person",
-  "name": "Dr. ...",
-  "jobTitle": "Dentist",
-  "url": "https://www.thrivedentalny.com/doctors"
-}
-```
+### 3. Expand 5 Thin Blog Posts to 1,500+ Words
+**Issue:** Only 1 of 6 posts meets the 1,500-word floor for health content. Thin posts rank poorly and don't earn AI citations.
 
-### 4. Optimize Hero Poster Image
-**File:** `public/office/hero-2057.jpg`
-**Issue:** Large JPEG served without WebP/AVIF. Hurts LCP score.
-**Fix:**
-```bash
-# Install sharp or use squoosh CLI
-npx @squoosh/cli --webp '{"quality":82}' public/office/hero-2057.jpg
-```
-Then update `index.astro` preload: `as="image" type="image/webp"`
-Target: under 120KB
+| Post | Est. Words | Gap |
+|------|-----------|-----|
+| dental-emergency-what-to-do | ~750 | +750 words needed |
+| invisalign-vs-braces-bayside | ~900 | +600 words needed |
+| how-often-dental-cleaning | ~850 | +650 words needed |
+| porcelain-veneers-guide | ~1,100 | +400 words needed |
+| gum-disease-signs-treatment | ~1,100 | +400 words needed |
 
-### 5. Shorten Long Title Tags
-**Issue:** Two pages exceed 60-char recommended limit:
-- `/doctors` — "Meet Our Dentists in Bayside, Queens NY | Thrive Dental Bayside" (62 chars)
-**Fix:** "Meet Our Dentists | Thrive Dental Bayside, Queens NY" (53 chars)
+**For each post, add:**
+- 1–2 new H2 sections addressing follow-up questions
+- A comparison table or numbered list for skimmability
+- 1–2 additional ADA/NIH citations
 
-### 6. Add `Service` Schema to Service Pages
-**File:** `src/layouts/ServicePage.astro`
-**Issue:** No `Service` schema — missed rich result opportunity.
-**Fix:** Add to the existing JSON-LD block:
-```json
-{
-  "@type": "Service",
-  "serviceType": "{serviceName}",
-  "provider": { "@id": "https://www.thrivedentalny.com/#dentist" },
-  "areaServed": { "@type": "City", "name": "Bayside" }
-}
-```
+### 4. Fix "Board-Certified" Language
+**Files:** `src/pages/doctors.astro`, `src/layouts/NeighborhoodPage.astro`
+**Issue:** General dentists don't hold board certifications (ADA recognizes 12 specialty boards only). This phrase is technically inaccurate and could mislead patients.
+**Fix:** Replace "board-certified" with:
+- "Advanced Training in [specialty]" (preferred)
+- "ADA Member"
+- "Fellowship-trained" (if applicable)
 
-### 7. Create `public/llms.txt`
-**Issue:** No AI search discovery file. Perplexity, Claude, ChatGPT crawlers have no structured entry point.
-**Fix:** Create `/public/llms.txt`:
-```
-# Thrive Dental Bayside
-> A modern dental practice in Bayside, Queens NY offering implants, Invisalign, cosmetic and general dentistry.
-
-## Services
-- /services/dental-implants
-- /services/invisalign
-- /services/cosmetic-dentistry
-- /services/general-dentistry
-- /services/restorative-dentistry
-- /services/emergency-dentistry
-
-## Blog
-- /blog/dental-implants-cost-queens-ny
-- /blog/invisalign-vs-braces-bayside
-- /blog/dental-emergency-what-to-do
-- /blog/how-often-dental-cleaning
-- /blog/porcelain-veneers-guide
-- /blog/gum-disease-signs-treatment
-
-## Locations Served
-- /dentist-flushing-ny
-- /dentist-douglaston-ny
-- /dentist-little-neck-ny
-- /dentist-fresh-meadows-ny
-- /dentist-oakland-gardens-ny
-```
+### 5. Differentiate Neighborhood Page Content
+**Issue:** Flushing and Douglaston pages have near-identical 40–50 word blurbs — meets Google's QRG definition of unhelpful programmatic content.
+**Fix:** For each neighborhood page, write 200–300 words of genuinely unique content:
+- Specific cross-streets or landmarks near the practice
+- Transportation/commute details from that neighborhood
+- Community-specific patient context (e.g., "Many of our Flushing patients speak Mandarin...")
+- Unique patient testimonial if available
 
 ---
 
 ## 🟡 MEDIUM (Fix Within 1 Month)
 
-### 8. Migrate Blog Index to Dynamic `Astro.glob()`
-**File:** `src/pages/blog/index.astro`
-**Issue:** Posts hardcoded in array — new posts require manual index update.
+### 6. Add `wordCount` to BlogPosting Schema
+**File:** `src/layouts/BlogPost.astro`
+**Issue:** Missing `wordCount` property — minor AI citability signal.
 **Fix:**
 ```astro
----
-const posts = await Astro.glob('./*.astro');
-// or use content collections if migrating to Astro v3+
----
+// In frontmatter: add wordCount to Props interface
+// In schema: wordCount: wordCount ?? undefined
 ```
 
-### 9. Add Outbound Citations to Blog Posts
-**Issue:** Zero outbound links to authoritative sources. Hurts E-E-A-T.
-**Fix:** Add 1–2 citation links per blog post to:
-- ADA.org (American Dental Association)
-- CDC oral health data
-- Peer-reviewed sources (NCBI/PubMed) where relevant
+### 7. Complete Dr. Mikhaylova Bio Details
+**File:** `src/pages/doctors.astro`
+**Issue:** Dr. Mikhaylova's bio lacks dental school name and graduation year. Dr. Hart and Dr. Saleh both have this information.
+**Fix:** Add school name + graduation year to Mikhaylova bio section.
 
-### 10. Add Cross-Links Between Blog Posts and Service Pages
-**Issue:** Blog posts don't link to related service pages or other blog posts.
-**Fix:** Add "Related Service" CTA at the bottom of each blog post.
-- `/blog/dental-implants-cost-queens-ny` → `/services/dental-implants`
-- `/blog/porcelain-veneers-guide` → `/services/cosmetic-dentistry`
-- etc.
+### 8. Add NeighborhoodPage Hub Level to Breadcrumb
+**Issue:** Neighborhood page breadcrumbs have only 2 levels (Home → [Neighborhood]). No hub page exists.
+**Options:**
+- Add a `/neighborhood-dentist` hub page and include it as breadcrumb level 2
+- Or accept 2-level breadcrumb as acceptable (lower priority)
 
-### 11. Add `AggregateRating` Schema
-**Issue:** Site has a ReviewsCarousel component but no structured rating data.
-**Fix:** Add to `Dentist` schema on homepage:
-```json
-"aggregateRating": {
-  "@type": "AggregateRating",
-  "ratingValue": "5",
-  "reviewCount": "120",
-  "bestRating": "5"
-}
-```
-(Use real review count from Google My Business)
-
-### 12. Differentiate Neighborhood Pages
-**Issue:** 5 neighborhood pages share near-identical copy — Google may treat as duplicate/thin.
-**Fix:** For each neighborhood, add:
-- 1 unique paragraph about that neighborhood/community
-- Mention of nearby landmarks or cross-streets
-- Unique patient testimonial from that area (if available)
-
-### 13. Add `lastmod` to Sitemap
-**File:** `astro.config.mjs`
-**Fix:** Sitemap integration supports `lastmod` — add `changefreq` and `lastmod` to frequently updated pages.
+### 9. Add Doctor `image` to Person Schema
+**File:** `src/pages/doctors.astro` (Person @graph)
+**Issue:** Doctor Person nodes lack `image` property.
+**Fix:** Add `"image": "https://www.thrivedentalny.com/images/[doctor-photo].jpg"` to each Person node.
 
 ---
 
 ## 🔵 LOW (Backlog)
 
-### 14. Create Individual Doctor Profile Pages
-- `/doctors/dr-[name]` with full bio, credentials, education, specialties
-- Improves E-E-A-T signals significantly for medical/health sites
-- Add `Person` schema with `alumniOf`, `hasCredential`
+### 10. Add `employee` Array to ServicePage Dentist Block
+**Issue:** ServicePage Dentist schema doesn't repeat the employee array (homepage is canonical node). Fine architecturally, but could strengthen relevance signals on individual service pages.
 
-### 15. Add Image Sitemap
-- List all hero images and blog images in an image sitemap
-- Helps Google Image Search discover and index practice photos
+### 11. Add Image Sitemap
+- List hero images and blog images for Google Image Search indexing
 
-### 16. Improve Service Page Image Alt Text
-- Generic alt text on service hero images
-- Use descriptive: "Patient receiving dental implant consultation at Thrive Dental Bayside"
-
-### 17. Add FAQ Content (Non-Schema)
-- FAQPage schema is restricted, but FAQ content itself is fine
-- Add collapsible Q&A sections to service pages for long-tail keywords
-
-### 18. Blog Author Pages
-- Create `/blog/authors/[name]` pages linking all posts by each doctor
-- Strengthens author E-E-A-T signal
+### 12. Blog Author Hub Pages
+- `/blog/authors/[name]` listing all posts per doctor
+- Strengthens author E-E-A-T chain once doctor profile pages exist
 
 ---
 
 ## Score Impact Estimate
 
-| Action | Est. Score Gain |
-|--------|----------------|
-| Fix domain/canonical (#1) | +5 pts |
-| Security headers (#2) | +2 pts |
-| Fix employee schema (#3) | +1 pt |
-| Optimize hero image (#4) | +2 pts |
-| llms.txt (#7) | +2 pts |
-| Add Service schema (#6) | +1 pt |
-| Blog cross-links (#10) | +1 pt |
-| AggregateRating (#11) | +2 pts |
-| Neighborhood differentiation (#12) | +2 pts |
+| Remaining Action | Est. Score Gain |
+|-----------------|----------------|
+| Doctor profile pages (#1) | +3–4 pts |
+| Hero AVIF conversion (#2) | +1–2 pts |
+| Blog post expansion (#3) | +2–3 pts |
+| Fix "board-certified" (#4) | +0.5 pt |
+| Neighborhood differentiation (#5) | +1–2 pts |
+| wordCount schema (#6) | +0.5 pt |
+| Dr. Mikhaylova bio (#7) | +0.5 pt |
 
-**Projected score after Critical + High fixes: ~86/100**
+**Projected score after all High fixes: ~90–92/100**

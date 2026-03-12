@@ -67,6 +67,15 @@ const posts = postModules
 
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thrivedentalny.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.thrivedentalny.com/blog' },
+    ],
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Dental Health Blog | Thrive Dental',
     description: 'Expert advice on oral health, cosmetic treatments, and dental care from the doctors at Thrive Dental in Bayside, Queens NY.',

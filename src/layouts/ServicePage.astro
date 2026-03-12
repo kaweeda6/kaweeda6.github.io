@@ -236,9 +236,10 @@ const localBusinessSchema = {
           class="absolute inset-0 h-full w-full object-cover"
           style={`object-position: center ${heroImgPosition};`}
           loading="eager"
+          fetchpriority="high"
           width={1200}
           height={900}
-          quality={90}
+          quality={80}
         />
         <!-- Left-edge fade: blend image into cream bg -->
         <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f7f3e8] to-transparent"></div>
@@ -573,6 +574,7 @@ const localBusinessSchema = {
     '@id': siteOrigin + currentPath + '#service',
     serviceType: serviceName,
     name: serviceName + ' in Bayside, Queens NY',
+    description: subtitle,
     provider: {
       '@type': 'Dentist',
       '@id': siteOrigin + '/#dentist',
