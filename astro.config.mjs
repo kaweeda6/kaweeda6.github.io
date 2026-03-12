@@ -31,29 +31,22 @@ export default defineConfig({
           '/cosmetic-dentist-', '/porcelain-veneers-', '/teeth-whitening-',
         ]
         if (serviceLocationPatterns.some(p => url.startsWith(p))) return false
+        // Exclude neighborhood pages (temporarily deactivated)
+        if (url.startsWith('/dentist-')) return false
         return true
       },
       serialize(item) {
-        // lastmod: use today's build date as a reliable baseline for all pages
         const buildDate = new Date().toISOString().split('T')[0]
-        if (item.url === 'https://www.thrivedentalny.com/') {
-          return { ...item, lastmod: buildDate, priority: 1.0, changefreq: 'weekly' }
+        // Normalize homepage URL to match canonical (with trailing slash)
+        const url = item.url === 'https://www.thrivedentalny.com'
+          ? 'https://www.thrivedentalny.com/'
+          : item.url
+        // Blog posts: use updatedDate from frontmatter if available
+        if (url.includes('/blog/') && url !== 'https://www.thrivedentalny.com/blog') {
+          const lastmod = item.lastmod ?? buildDate
+          return { url, lastmod }
         }
-        if (item.url.includes('/blog/')) {
-          return { ...item, lastmod: buildDate, priority: 0.6, changefreq: 'monthly' }
-        }
-        if (item.url.includes('/services/')) {
-          return { ...item, lastmod: buildDate, priority: 0.8, changefreq: 'monthly' }
-        }
-        if (item.url.includes('/doctors')) {
-          return { ...item, lastmod: buildDate, priority: 0.7, changefreq: 'monthly' }
-        }
-        // Service+location pages and neighborhood pages
-        const localPatterns = ['/dental-implants-', '/invisalign-', '/emergency-dentist-', '/cosmetic-dentist-', '/porcelain-veneers-', '/teeth-whitening-', '/dentist-']
-        if (localPatterns.some(p => item.url.includes(p))) {
-          return { ...item, lastmod: buildDate, priority: 0.6, changefreq: 'monthly' }
-        }
-        return { ...item, lastmod: buildDate, priority: 0.5, changefreq: 'monthly' }
+        return { url, lastmod: buildDate }
       },
     }),
     mdx(),

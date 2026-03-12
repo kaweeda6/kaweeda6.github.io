@@ -82,6 +82,7 @@ const articleSchema = {
   },
   url: siteOrigin + currentPath,
   mainEntityOfPage: { '@type': 'WebPage', '@id': siteOrigin + currentPath },
+  isPartOf: { '@type': 'WebSite', '@id': siteOrigin + '/#website' },
 }
 
 const breadcrumbSchema = {

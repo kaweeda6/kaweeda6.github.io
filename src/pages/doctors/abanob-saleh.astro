@@ -19,8 +19,8 @@ const doc = {
 ---
 
 <Base
-  title="Dr. Abanob Saleh, DDS | Restorative & Emergency Dentist in Bayside, NY"
-  description="Dr. Abanob Saleh is a DDS at Thrive Dental in Bayside, Queens NY. Expert in advanced restorative dentistry and same-day emergency dental care. New patients welcome. Call (718) 225-6677."
+  title="Dr. Abanob Saleh, DMD | Restorative & Emergency Dentist in Bayside, NY"
+  description="Dr. Abanob Saleh is a DMD at Thrive Dental in Bayside, Queens NY. Expert in advanced restorative and emergency dental care. Graduate of NYU School of Dentistry. New patients welcome."
 >
   <Fragment slot="header"><Header /></Fragment>
 
@@ -65,30 +65,33 @@ const doc = {
                Dr. Saleh believes that a comprehensive and holistic approach to dentistry is the best way to achieve the best dental health.
              </p>
              <div class="prose prose-slate max-w-none prose-p:text-[17px] prose-p:leading-relaxed prose-p:text-slate-600">
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">About Dr. Saleh</h2>
                <p>
                  Dr. Abanob Saleh is a highly trained general dentist who is committed to providing comprehensive dental care using the most up-to-date, advanced dentistry available. Dr. Saleh is known for his willingness to get to know his patients personally while also using thorough consultations to get familiar with his patient’s dental needs.
                </p>
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">Education &amp; Training</h2>
                <p>
                  A resident native of Queens, NY, Dr. Saleh currently lives in Long Island. Dr. Saleh graduated from the prestigious Macaulay Honors Program in NYC after which he earned his Doctorate of Dental Medicine at the New York University School of Dentistry in New York City. He then completed his residency at the Northport VA Medical Center where he continued his training in cosmetic and general dentistry.
                </p>
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">Areas of Focus</h2>
                <p>
-                 Dr. Saleh is well trained in all aspects of aesthetic and restorative dentistry, ensuring every patient receives precision care tailored to their unique goals.
+                 Dr. Saleh is well trained in all aspects of aesthetic and restorative dentistry, including composite restorations, crowns, dental implant restorations, emergency dental care, and full-mouth rehabilitation. Every patient receives precision care tailored to their unique goals.
                </p>
              </div>
           </div>
 
-          <div class="mt-14 flex flex-wrap items-center gap-4">
+          <div class="mt-14 flex items-center gap-3">
             <a
               href={BOOK_APPOINTMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
             >
               Book with Dr. Saleh
             </a>
             <a
               href="tel:+1-718-225-6677"
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 sm:px-8 sm:py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
             >
               (718) 225-6677
             </a>
@@ -100,52 +103,41 @@ const doc = {
 
   
 
-  <!-- Structured data: Physician (Person) -->
+  <!-- Structured data: Person -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Physician',
+    '@type': 'Person',
     name: 'Dr. Abanob Saleh',
+    honorificPrefix: 'Dr.',
+    honorificSuffix: 'DMD',
     jobTitle: 'Dentist',
     description: 'Dr. Abanob Saleh is a highly trained general dentist at Thrive Dental in Bayside, NY, committed to comprehensive and holistic dental health.',
-    image: 'https://www.thrivedentalny.com/team/abanob-saleh.jpg',
+    image: 'https://www.thrivedentalny.com/og-default.jpg',
     url: 'https://www.thrivedentalny.com/doctors/abanob-saleh',
+    alumniOf: [
+      { '@type': 'EducationalOrganization', name: 'New York University School of Dentistry' },
+      { '@type': 'EducationalOrganization', name: 'Northport VA Medical Center' },
+    ],
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Dentist',
+    },
     worksFor: {
       '@type': 'Dentist',
+      '@id': 'https://www.thrivedentalny.com/#dentist',
       name: 'Thrive Dental',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '41-02 Bell Blvd',
-        addressLocality: 'Bayside',
-        addressRegion: 'NY',
-        postalCode: '11361',
-        addressCountry: 'US',
-      },
     },
   })} />
 
-  <!-- Structured data: Dentist -->
+  <!-- BreadcrumbList -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dr. Abanob Saleh',
-    honorificSuffix: 'DMD',
-    jobTitle: 'Dentist',
-    url: 'https://www.thrivedentalny.com/doctors/abanob-saleh',
-    image: 'https://www.thrivedentalny.com/team/abanob-saleh.jpg',
-    description: 'Dr. Abanob Saleh is a highly trained general dentist at Thrive Dental in Bayside, NY, committed to comprehensive and holistic dental health.',
-    worksFor: {
-      '@type': 'Dentist',
-      name: 'Thrive Dental',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '41-02 Bell Blvd',
-        addressLocality: 'Bayside',
-        addressRegion: 'NY',
-        postalCode: '11361',
-        addressCountry: 'US',
-      },
-    },
-    medicalSpecialty: 'Dentistry',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thrivedentalny.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Our Doctors', item: 'https://www.thrivedentalny.com/doctors' },
+      { '@type': 'ListItem', position: 3, name: 'Dr. Abanob Saleh', item: 'https://www.thrivedentalny.com/doctors/abanob-saleh' },
+    ],
   })} />
 
   <Fragment slot="reviews-carousel"><ReviewsCarousel /></Fragment>

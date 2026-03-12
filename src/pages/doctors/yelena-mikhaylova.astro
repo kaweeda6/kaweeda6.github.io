@@ -19,8 +19,8 @@ const doc = {
 ---
 
 <Base
-  title="Dr. Yelena Mikhaylova, DDS | Cosmetic & Implant Dentist in Bayside, NY"
-  description="Dr. Yelena Mikhaylova is the founder of Thrive Dental in Bayside, NY. NYU-trained DDS, Invisalign® Gold Plus Provider, and expert in cosmetic, implant, and full-mouth rehabilitation dentistry. Call (718) 225-6677."
+  title="Dr. Yelena Mikhaylova, DDS | Bayside NY Cosmetic Dentist"
+  description="Dr. Yelena Mikhaylova, DDS — founder of Thrive Dental in Bayside, NY. NYU-trained, Invisalign® Gold Plus Provider, and expert in cosmetic dentistry, dental implants, and full-mouth rehabilitation."
 >
   <Fragment slot="header"><Header /></Fragment>
 
@@ -67,33 +67,33 @@ const doc = {
              </p>
              
              <div class="prose prose-slate max-w-none prose-p:text-[17px] prose-p:leading-relaxed prose-p:text-slate-600 space-y-6">
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">Education &amp; Training</h2>
                <p>
                  Driven by her enthusiasm for the profession, Dr. Mikhaylova pursued her education at <strong>New York University School of Dentistry</strong>, where she earned her dental degree. Building upon her foundational knowledge, she went on to complete advanced training in aesthetic and surgical dentistry as the chief resident at <strong>Woodhull Medical Center-NYU Langone Health</strong> in New York City.
                </p>
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">Areas of Focus</h2>
                <p>
-                 In addition to her exceptional qualifications, Dr. Mikhaylova is dedicated to continuous learning and professional growth. She actively participates in lectures and workshops across New York, consistently expanding her expertise in cosmetic dentistry and full-mouth rehabilitation treatments. 
+                 In addition to her exceptional qualifications, Dr. Mikhaylova is dedicated to continuous learning and professional growth. She actively participates in lectures and workshops across New York, consistently expanding her expertise in cosmetic dentistry and full-mouth rehabilitation treatments. Her commitment to excellence is reflected in her certification in implant restoration and full-mouth rehabilitation, as well as her status as an <strong>Invisalign® Gold Plus Provider</strong>.
                </p>
-               <p>
-                 Her commitment to excellence is reflected in her certification in implant restoration and full-mouth rehabilitation, as well as her status as an <strong>Invisalign® Gold Plus Provider</strong>.
-               </p>
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">About Dr. Mikhaylova</h2>
                <p>
                  Currently residing in Long Island with her husband, son Elan, and daughter Talia, she continues to make a positive impact on the oral health and smiles of her patients.
                </p>
              </div>
           </div>
 
-          <div class="mt-14 flex flex-wrap items-center gap-4">
+          <div class="mt-14 flex items-center gap-3">
             <a
               href={BOOK_APPOINTMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
             >
               Book Appointment
             </a>
             <a
               href="tel:+1-718-225-6677"
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 sm:px-8 sm:py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
             >
               (718) 225-6677
             </a>
@@ -105,56 +105,44 @@ const doc = {
 
   
 
-  <!-- Structured data: Physician (Person) -->
+  <!-- Structured data: Person -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Physician',
+    '@type': 'Person',
     name: 'Dr. Yelena Mikhaylova',
-    jobTitle: 'Founder & Clinical Director',
-    description: 'NYU-trained dentist and Invisalign® Gold Plus Provider specializing in cosmetic dentistry, dental implants, and full-mouth rehabilitation at Thrive Dental in Bayside, Queens, NY.',
-    image: 'https://www.thrivedentalny.com/team/yelena-mikhaylova.jpg',
-    url: 'https://www.thrivedentalny.com/doctors/yelena-mikhaylova',
-    worksFor: {
-      '@type': 'Dentist',
-      name: 'Thrive Dental',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '41-02 Bell Blvd',
-        addressLocality: 'Bayside',
-        addressRegion: 'NY',
-        postalCode: '11361',
-        addressCountry: 'US',
-      },
-    },
-  })} />
-
-  <!-- Structured data: Dentist -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dr. Yelena Mikhaylova',
+    honorificPrefix: 'Dr.',
     honorificSuffix: 'DDS',
     jobTitle: 'Founder & Clinical Director',
-    url: 'https://www.thrivedentalny.com/doctors/yelena-mikhaylova',
-    image: 'https://www.thrivedentalny.com/team/yelena-mikhaylova.jpg',
     description: 'NYU-trained dentist and Invisalign® Gold Plus Provider specializing in cosmetic dentistry, dental implants, and full-mouth rehabilitation at Thrive Dental in Bayside, Queens, NY.',
+    image: 'https://www.thrivedentalny.com/og-default.jpg',
+    url: 'https://www.thrivedentalny.com/doctors/yelena-mikhaylova',
+    sameAs: [
+      'https://www.healthgrades.com/dentist/dr-yelena-mikhaylova',
+    ],
     alumniOf: [
       { '@type': 'EducationalOrganization', name: 'New York University College of Dentistry' },
       { '@type': 'EducationalOrganization', name: 'Woodhull Medical Center – NYU Langone Health' },
     ],
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Dentist',
+    },
     worksFor: {
       '@type': 'Dentist',
+      '@id': 'https://www.thrivedentalny.com/#dentist',
       name: 'Thrive Dental',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '41-02 Bell Blvd',
-        addressLocality: 'Bayside',
-        addressRegion: 'NY',
-        postalCode: '11361',
-        addressCountry: 'US',
-      },
     },
-    medicalSpecialty: 'Dentistry',
+  })} />
+
+  <!-- BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thrivedentalny.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Our Doctors', item: 'https://www.thrivedentalny.com/doctors' },
+      { '@type': 'ListItem', position: 3, name: 'Dr. Yelena Mikhaylova', item: 'https://www.thrivedentalny.com/doctors/yelena-mikhaylova' },
+    ],
   })} />
 
   <Fragment slot="reviews-carousel"><ReviewsCarousel /></Fragment>

@@ -20,6 +20,7 @@ https://thrivedentalny.com/*  https://www.thrivedentalny.com/:splat   301!
 /oral-cancer-screening           /services/oral-cancer-screening       301!
 /pediatric-dentistry             /services/pediatric-dentistry         301!
 /periodontal-treatments          /services/periodontal-treatments      301!
+/services/periodontics           /services/periodontal-treatments      301!
 /preventive-care                 /services/preventive-dentistry        301!
 /root-canals                     /services/root-canal-therapy          301!
 /sealants                        /services/dental-sealants             301!
@@ -27,11 +28,11 @@ https://thrivedentalny.com/*  https://www.thrivedentalny.com/:splat   301!
 /itero-digital-impression-system /services/itero-digital-impressions   301!
 
 # ─── Doctor/team pages → /doctors ────────────────────────────────────────────
-/meet-dr-abanob-saleh            /doctors                              301!
+/meet-dr-abanob-saleh            /doctors/abanob-saleh                 301!
 /meet-dr-mark-pakan              /doctors                              301!
-/meet-dr-alla-hart               /doctors                              301!
-/meet-dr-yelena-mikhaylova       /doctors                              301!
-/meet-dr-mikhaylova              /doctors                              301!
+/meet-dr-alla-hart               /doctors/alla-hart                    301!
+/meet-dr-yelena-mikhaylova       /doctors/yelena-mikhaylova            301!
+/meet-dr-mikhaylova              /doctors/yelena-mikhaylova            301!
 
 # ─── Location / contact pages ─────────────────────────────────────────────────
 /office-location                 /contact                              301!
@@ -40,6 +41,20 @@ https://thrivedentalny.com/*  https://www.thrivedentalny.com/:splat   301!
 # ─── Info / about pages ───────────────────────────────────────────────────────
 /what-sets-us-apart              /why-thrive                           301!
 /financial-information           /new-patients/financial-information   301!
+
+# ─── Neighborhood pages (temporarily deactivated — files kept in repo) ────────
+/dentist-bayside-ny              /                                     302!
+/dentist-beechhurst-ny           /                                     302!
+/dentist-college-point-ny        /                                     302!
+/dentist-douglaston-ny           /                                     302!
+/dentist-floral-park-ny          /                                     302!
+/dentist-flushing-ny             /                                     302!
+/dentist-fresh-meadows-ny        /                                     302!
+/dentist-glen-oaks-ny            /                                     302!
+/dentist-little-neck-ny          /                                     302!
+/dentist-oakland-gardens-ny      /                                     302!
+/dentist-queens-village-ny       /                                     302!
+/dentist-whitestone-ny           /                                     302!
 
 # ─── Pages with no direct equivalent → best-fit target ───────────────────────
 /office-visits                   /services/general-dentistry           301!

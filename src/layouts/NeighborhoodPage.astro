@@ -40,7 +40,6 @@ const localBusinessSchema = {
   sameAs: [
     'https://www.yelp.com/biz/thrive-dental-bayside',
     'https://www.facebook.com/thrivedentalny',
-    'https://www.healthgrades.com/dentist/dr-yelena-mikhaylova',
   ],
   address: {
     '@type': 'PostalAddress',
@@ -56,11 +55,11 @@ const localBusinessSchema = {
     longitude: -73.7712,
   },
   openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Tuesday',   opens: '09:00', closes: '19:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '09:00', closes: '17:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday',  opens: '09:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday',  opens: '09:00', closes: '15:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Sunday',    opens: '09:00', closes: '15:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Tuesday',   opens: '09:00', closes: '19:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Wednesday', opens: '09:00', closes: '17:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Thursday',  opens: '09:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Saturday',  opens: '09:00', closes: '15:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Sunday',    opens: '09:00', closes: '15:00' },
   ],
   medicalSpecialty: 'Dentistry',
   areaServed: [
@@ -70,10 +69,10 @@ const localBusinessSchema = {
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '500',
-    bestRating: '5',
-    worstRating: '1',
+    ratingValue: 4.9,
+    reviewCount: 500,
+    bestRating: 5,
+    worstRating: 1,
   },
 }
 

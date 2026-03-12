@@ -69,10 +69,10 @@ const localBusinessSchema = {
   ],
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '500',
-    bestRating: '5',
-    worstRating: '1',
+    ratingValue: 4.9,
+    reviewCount: 500,
+    bestRating: 5,
+    worstRating: 1,
   },
 }
 
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
 }
 ---
 
-<Base title={title} description={description}>
+<Base title={title} description={description} noIndex={true}>
   <Fragment slot="header"><Header /></Fragment>
 
   <!-- ═══════════════════════════════════════════

@@ -19,8 +19,8 @@ const doc = {
 ---
 
 <Base
-  title="Dr. Alla Hart, DDS | Dentist at Thrive Dental — Bayside, Queens NY"
-  description="Dr. Alla Hart is a DDS at Thrive Dental in Bayside, Queens NY. Specializing in minimally invasive dentistry, preventive care, and patient-centered treatment. Accepting new patients. Call (718) 225-6677."
+  title="Dr. Alla Hart, DDS | 30+ Years | Bayside Queens Dentist"
+  description="Dr. Alla Hart, DDS at Thrive Dental in Bayside, Queens NY. NYU and Columbia-trained with 30+ years of experience in minimally invasive, cosmetic, and preventive dentistry. Accepting new patients."
 >
   <Fragment slot="header"><Header /></Fragment>
 
@@ -65,30 +65,33 @@ const doc = {
                {doc.bio}
              </p>
              <div class="prose prose-slate max-w-none prose-p:text-[17px] prose-p:leading-relaxed prose-p:text-slate-600">
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">Education &amp; Training</h2>
                <p>
                  Dr. Alla Hart is a graduate of New York University College of Dentistry and completed her General Practice Residency at Columbia University. With more than 30 years of experience, she has earned a reputation throughout Bayside and greater New York for delivering meticulous general and cosmetic dentistry.
                </p>
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">Areas of Focus</h2>
                <p>
                  Her clinical interests span natural-colored composite restorations, cosmetic veneers, onlays, crowns, root canals, dental implant restorations, teeth whitening, laser dentistry, full-mouth rehabilitation, smile design, and pediatric dentistry. Dr. Hart is also an Invisalign® Preferred Provider, helping patients achieve confident, well-aligned smiles without brackets or wires.
                </p>
+               <h2 class="text-lg font-bold text-slate-800 mt-8 mb-3">About Dr. Hart</h2>
                <p>
                  Known for her warm chairside manner, Dr. Hart spends time walking patients through diagnosis, demonstrating preventive techniques, and ensuring they understand every step of their treatment plan. She believes dentistry is a partnership and works closely with each person to maintain lifelong oral health.
                </p>
              </div>
           </div>
 
-          <div class="mt-14 flex flex-wrap items-center gap-4">
+          <div class="mt-14 flex items-center gap-3">
             <a
               href={BOOK_APPOINTMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
             >
               Book with Dr. Hart
             </a>
             <a
               href="tel:+1-718-225-6677"
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-8 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 sm:px-8 sm:py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
             >
               (718) 225-6677
             </a>
@@ -100,52 +103,41 @@ const doc = {
 
   
 
-  <!-- Structured data: Physician (Person) -->
+  <!-- Structured data: Person -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Physician',
+    '@type': 'Person',
     name: 'Dr. Alla Hart',
+    honorificPrefix: 'Dr.',
+    honorificSuffix: 'DDS',
     jobTitle: 'Dentist',
     description: 'Dentist at Thrive Dental in Bayside, Queens, NY, specializing in minimally invasive dentistry and preventive oral health care. 30+ years of experience.',
-    image: 'https://www.thrivedentalny.com/team/alla-hart.webp',
+    image: 'https://www.thrivedentalny.com/og-default.jpg',
     url: 'https://www.thrivedentalny.com/doctors/alla-hart',
+    alumniOf: [
+      { '@type': 'EducationalOrganization', name: 'New York University College of Dentistry' },
+      { '@type': 'EducationalOrganization', name: 'Columbia University General Practice Residency' },
+    ],
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Dentist',
+    },
     worksFor: {
       '@type': 'Dentist',
+      '@id': 'https://www.thrivedentalny.com/#dentist',
       name: 'Thrive Dental',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '41-02 Bell Blvd',
-        addressLocality: 'Bayside',
-        addressRegion: 'NY',
-        postalCode: '11361',
-        addressCountry: 'US',
-      },
     },
   })} />
 
-  <!-- Structured data: Dentist -->
+  <!-- BreadcrumbList -->
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dr. Alla Hart',
-    honorificSuffix: 'DDS',
-    jobTitle: 'Dentist',
-    url: 'https://www.thrivedentalny.com/doctors/alla-hart',
-    image: 'https://www.thrivedentalny.com/team/alla-hart.webp',
-    description: 'Dentist at Thrive Dental in Bayside, Queens, NY, specializing in minimally invasive dentistry and preventive oral health care.',
-    worksFor: {
-      '@type': 'Dentist',
-      name: 'Thrive Dental',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '41-02 Bell Blvd',
-        addressLocality: 'Bayside',
-        addressRegion: 'NY',
-        postalCode: '11361',
-        addressCountry: 'US',
-      },
-    },
-    medicalSpecialty: 'Dentistry',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.thrivedentalny.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Our Doctors', item: 'https://www.thrivedentalny.com/doctors' },
+      { '@type': 'ListItem', position: 3, name: 'Dr. Alla Hart', item: 'https://www.thrivedentalny.com/doctors/alla-hart' },
+    ],
   })} />
 
   <Fragment slot="reviews-carousel"><ReviewsCarousel /></Fragment>
