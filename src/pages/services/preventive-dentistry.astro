@@ -10,6 +10,42 @@ const services = [
   { href: '/services/mouthguards',           label: 'Mouthguards' },
   { href: '/services/nightguards',           label: 'Nightguards' },
 ]
+
+// Editorial content — "Preventive Dentistry: The Foundation of a Healthy Smile"
+const topics = [
+  {
+    title: 'Professional Cleanings & Periodontal Maintenance',
+    body: 'Routine dental cleanings remove plaque and tartar that cannot be removed with brushing and flossing alone. For patients with a history of gum disease, 3-month periodontal maintenance visits are essential to control harmful bacteria, prevent bone loss, and maintain long-term gum health.',
+  },
+  {
+    title: 'Antimicrobial Irrigation & Arestin® Therapy',
+    body: 'For patients with periodontal disease, we offer antimicrobial irrigation and Arestin® therapy to target harmful bacteria deep below the gumline. These treatments help reduce inflammation, slow disease progression, and protect the bone that supports your teeth.',
+  },
+  {
+    title: 'Dental Sealants',
+    body: 'Sealants are a simple and effective way to prevent cavities, especially in children and teenagers. A protective coating is applied to the chewing surfaces of molars, helping to keep food and bacteria out of the deep grooves where decay commonly starts.',
+  },
+  {
+    title: 'Custom Nightguards',
+    body: 'Many patients grind or clench their teeth while sleeping without realizing it. Custom nightguards help protect against enamel wear, fractures, chipped teeth, jaw pain, and headaches — preserving your natural smile for years to come.',
+  },
+  {
+    title: 'Fluoride Treatments',
+    body: 'Professional fluoride treatments strengthen enamel and help prevent cavities by making teeth more resistant to acid attacks from bacteria and dietary sugars.',
+  },
+  {
+    title: 'Oral Cancer Screenings',
+    body: 'Routine oral cancer screenings are included as part of your preventive care. Detecting abnormalities early can significantly improve treatment success and overall health outcomes.',
+  },
+  {
+    title: 'Invisalign® for Prevention',
+    body: 'Straightening crowded or misaligned teeth isn’t just cosmetic. Proper alignment can make teeth easier to clean, reduce abnormal wear, lower the risk of gum disease, and help prevent future dental problems.',
+  },
+  {
+    title: 'Protecting Your Dental Investments',
+    body: 'Preventive care helps protect crowns, implants, veneers, fillings, and other dental work you’ve invested in. Regular maintenance allows us to identify concerns early and maximize the lifespan of your restorations.',
+  },
+]
 ---
 <ServicePage
   title="Preventive Dentistry in Bayside, Queens NY | Thrive Dental"
@@ -74,6 +110,49 @@ const services = [
   ]}
   ctaHeading="Your healthiest smile starts with prevention."
 >
+  <!-- The Foundation of a Healthy Smile -->
+  <section class="bg-white pt-4 pb-16">
+    <div class="container-slim">
+      <div class="max-w-3xl">
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">The Foundation of a Healthy Smile</p>
+        <h2 class="display-2 text-slate-900 mb-6">The best dentistry is the dentistry you never need.</h2>
+        <div class="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p>At Thrive Dental, we believe the best dentistry is the dentistry you never need. Our focus is on identifying and treating small issues before they become larger, more costly, and more complex problems.</p>
+          <p>Preventive care not only protects your teeth and gums — it also supports your overall health and helps you avoid unnecessary discomfort and extensive treatment in the future.</p>
+        </div>
+      </div>
+
+      <!-- Topic cards -->
+      <div class="mt-12 grid gap-5 sm:grid-cols-2">
+        {topics.map((t) => (
+          <div class="rounded-2xl border border-slate-100 bg-white p-7 shadow-sm">
+            <h3 class="font-display text-lg font-semibold text-slate-900 mb-3">{t.title}</h3>
+            <p class="text-[15px] text-slate-600 leading-relaxed" set:html={t.body}></p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Early Detection + Overjet AI highlight -->
+      <div class="mt-12 rounded-[2rem] bg-brand-900 p-8 sm:p-12 text-white shadow-xl">
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-200 mb-5">Advanced Technology</p>
+        <h3 class="font-display text-2xl sm:text-3xl font-semibold mb-6 leading-tight">Early detection powered by superior imaging &amp; AI.</h3>
+        <div class="space-y-5 text-brand-50/90 leading-relaxed max-w-3xl">
+          <p>Using advanced digital imaging and diagnostic technology, we can identify decay, infections, failing restorations, and bone loss in their earliest stages — often before symptoms ever develop. Early detection means simpler treatment and better outcomes.</p>
+          <p>Our practice uses <strong class="text-white">Overjet AI-powered dental imaging</strong> — the same FDA-cleared artificial intelligence technology trusted by leading dental organizations. Overjet analyzes your X-rays with pixel-level precision, quantifying bone levels and highlighting areas of concern so nothing is missed. It means clearer, more objective diagnoses — and X-rays you can actually see and understand alongside your dentist.</p>
+        </div>
+      </div>
+
+      <!-- Philosophy -->
+      <div class="mt-12 max-w-3xl">
+        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-5">Our Philosophy</p>
+        <div class="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
+          <p>At Thrive Dental, we don’t believe in waiting for problems to become emergencies. By focusing on prevention, education, and early intervention, we help our patients maintain healthier smiles, avoid unnecessary treatment, and enjoy better overall health for life.</p>
+          <p class="font-display text-xl italic text-slate-800">A healthy smile starts with prevention — and prevention starts at Thrive Dental.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="bg-white pb-12">
     <div class="container-slim">
       <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">Our Preventive Services</p>

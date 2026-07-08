@@ -201,6 +201,20 @@ const localBusinessSchema = {
           </a>
         </div>
 
+        <!-- Hero image — mobile only -->
+        <div class="lg:hidden mb-8 overflow-hidden rounded-2xl relative">
+          <Image
+            src={heroImg}
+            alt={serviceName + " at Thrive Dental Bayside"}
+            class="w-full h-[200px] object-cover object-top"
+            loading="eager"
+            width={800}
+            height={400}
+            quality={75}
+          />
+          <div class="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#f7f3e8] to-transparent"></div>
+        </div>
+
         <!-- Trust bar -->
         <div class="inline-flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-brand-100 bg-white/70 px-4 py-3 backdrop-blur-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
           <div class="flex items-center gap-2">
