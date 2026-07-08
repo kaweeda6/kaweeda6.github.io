@@ -19,12 +19,6 @@ import docYelena from "../assets/team/yelena-mikhaylova.jpg";
 import docAlla from "../assets/team/alla-hart.webp";
 import docAbanob from "../assets/team/abanob-saleh.jpg";
 
-import svcGeneral from "../assets/services/general.jpg";
-import svcCosmetic from "../assets/services/cosmetic.jpg";
-import svcInvisalign from "../assets/services/invisalign.jpg";
-import svcImplants from "../assets/services/implants.jpg";
-import svcRestorative from "../assets/services/restorative.jpg";
-import svcEmergency from "../assets/services/emergency.jpg";
 
 const business = {
   name: 'Thrive Dental',
@@ -44,37 +38,37 @@ const services = [
     title: 'General Dentistry',
     slug: 'general-dentistry',
     desc: 'Comprehensive oral health care for all ages, including cleanings, fillings, and preventive treatments to keep your smile healthy.',
-    img: svcGeneral
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>`
   },
   {
     title: 'Cosmetic Dentistry',
     slug: 'cosmetic-dentistry',
     desc: 'Philips Zoom! teeth whitening, bonding, and custom veneers designed to create your most confident and beautiful smile.',
-    img: svcCosmetic
+    icon: `<path d="M12 2l2.2 6.9L21 11l-6.8 2.1L12 20l-2.2-6.9L3 11l6.8-2.1z"/>`
   },
   {
     title: 'Invisalign®',
     slug: 'invisalign',
     desc: 'Straighten your teeth discreetly with Invisalign® and Invisalign Go, the clear alternative to traditional braces.',
-    img: svcInvisalign
+    icon: `<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>`
   },
   {
     title: 'Dental Implants',
     slug: 'dental-implants',
     desc: 'Permanent, natural-looking solutions for missing teeth that restore both the function and aesthetics of your smile.',
-    img: svcImplants
+    icon: `<path d="M7 4c-2 0-3 1.7-3 4 0 1.9.6 3.2 1.4 5.6C6.1 15.8 6.4 20 8 20c1.3 0 1.3-3 2-3s.7 3 2 3c1.6 0 1.9-4.2 2.6-6.4C17.4 11.2 18 9.9 18 8c0-2.3-1-4-3-4-1.4 0-1.8.8-3 .8S8.4 4 7 4z"/>`
   },
   {
     title: 'Restorative Care',
     slug: 'restorative-dentistry',
     desc: 'Expert root canals, crowns, bridges, and full-mouth reconstruction using the latest digital impression technology.',
-    img: svcRestorative
+    icon: `<path d="M14.6 6.4a4 4 0 0 0-5.3 5.3l-6.1 6.1L5 20l6.1-6.1a4 4 0 0 0 5.3-5.3l-2.6 2.6-2.6-2.6z"/>`
   },
   {
     title: 'Emergency Dentistry',
     slug: 'emergency-dentistry',
     desc: 'Same-day relief for toothaches, broken teeth, and dental infections. We provide urgent care when you need it most.',
-    img: svcEmergency
+    icon: `<path d="M13 2 4 14h6l-1 8 9-12h-6z"/>`
   },
 ]
 
@@ -256,17 +250,17 @@ const doctors = [
             href={`/services/${s.slug}`}
             class="group relative flex min-w-[220px] max-w-[220px] sm:min-w-[300px] sm:max-w-[300px] lg:min-w-[340px] lg:max-w-[340px] flex-col overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-brand-500/40 bg-brand-700 p-3 sm:p-4 shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-all duration-500 hover:border-brand-500/60 hover:shadow-[0_40px_80px_rgba(0,100,90,0.25)] hover:-translate-y-2 no-underline"
           >
-            <!-- Card Image Area -->
-            <div class="relative h-32 sm:h-44 w-full overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-brand-600">
-              <Image
-                src={s.img}
-                alt={`${s.title} at Thrive Dental in Bayside, Queens NY`}
-                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                width={400}
-                height={200}
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+            <!-- Card Icon Area -->
+            <div class="relative flex h-32 sm:h-44 w-full items-center justify-center overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-gradient-to-br from-brand-600 to-brand-800 ring-1 ring-inset ring-white/10">
+              <!-- soft brand glow -->
+              <div class="pointer-events-none absolute -right-8 -top-8 h-28 w-28 rounded-full bg-brand-400/25 blur-2xl"></div>
+              <div class="pointer-events-none absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-brand-300/10 blur-2xl"></div>
+              <svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="relative h-12 w-12 sm:h-16 sm:w-16 text-brand-100 transition-transform duration-500 group-hover:scale-110"
+                set:html={s.icon}
+              ></svg>
             </div>
 
             <div class="p-3 sm:p-5 lg:p-6">
