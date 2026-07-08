@@ -13,7 +13,7 @@ import heroPhoto from "../assets/office/hero-2108.jpg";
 import techPhoto from "../assets/office/thrivedental-3059.jpg";
 import teamPhoto1 from "../assets/office/thrivedental-2750.jpg";
 import teamPhoto2 from "../assets/office/thrivedental-2616.jpg";
-import teamPhoto3 from "../assets/office/thrivedental-2386.jpg";
+import teamPhoto3 from "../assets/office/doctors-team.jpg";
 
 import docYelena from "../assets/team/yelena-mikhaylova.jpg";
 import docAlla from "../assets/team/alla-hart.webp";
@@ -397,18 +397,15 @@ const doctors = [
           <div class="absolute -bottom-10 -right-10 w-1/2 h-1/2 rounded-[3rem] bg-brand-100/50 -z-10"></div>
           <!-- Mobile: single hero photo -->
           <div class="sm:hidden">
-            <Image src={teamPhoto3} alt="Dr. Mikhaylova and team at Thrive Dental Bayside" class="rounded-2xl w-full object-cover object-top shadow-md ring-2 ring-brand-200/50" style="aspect-ratio: 4/3;" width={800} height={600} loading="lazy" />
+            <Image src={teamPhoto3} alt="Dr. Abanob Saleh, Dr. Yelena Mikhaylova, and Dr. Alla Hart reviewing a case together at Thrive Dental Bayside" class="rounded-2xl w-full object-cover object-top shadow-md ring-2 ring-brand-200/50" style="aspect-ratio: 4/5;" width={800} height={1000} loading="lazy" />
           </div>
-          <!-- sm+: original staggered layout -->
-          <div class="hidden sm:grid sm:grid-cols-2 gap-4">
-            <div class="space-y-4">
-              <Image src={teamPhoto1} alt="Thrive Dental team providing patient care in Bayside, Queens NY" class="rounded-[2rem] h-80 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={320} loading="lazy" />
-              <Image src={teamPhoto2} alt="Patient receiving gentle dental care at Thrive Dental Bayside" class="rounded-[2rem] h-52 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={208} loading="lazy" />
+          <!-- sm+: two office photos on top, full-width doctors photo below -->
+          <div class="hidden sm:block space-y-4">
+            <div class="grid grid-cols-2 gap-4">
+              <Image src={teamPhoto1} alt="Bright, open hallway inside Thrive Dental's Bayside, Queens office" class="rounded-[2rem] h-56 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={224} loading="lazy" />
+              <Image src={teamPhoto2} alt="Dr. Mikhaylova reviewing smile photos with a patient at Thrive Dental" class="rounded-[2rem] h-56 w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={224} loading="lazy" />
             </div>
-            <div class="pt-12">
-              <Image src={teamPhoto3} alt="Comfortable, modern dental treatment room at Thrive Dental in Bayside NY" class="rounded-[2rem] h-[480px] w-full object-cover shadow-lg ring-2 ring-brand-200/50" width={400} height={480} loading="lazy" />
-            </div>
-          </div>
+            <Image src={teamPhoto3} alt="Dr. Abanob Saleh, Dr. Yelena Mikhaylova, and Dr. Alla Hart reviewing a case together at Thrive Dental Bayside" class="rounded-[2rem] h-80 w-full object-cover object-top shadow-lg ring-2 ring-brand-200/50" width={800} height={320} loading="lazy" />
         </div>
         <div class="order-1 lg:order-2">
           <p class="text-[12px] font-black uppercase tracking-[0.2em] text-gold-700 mb-6">Our Philosophy</p>
