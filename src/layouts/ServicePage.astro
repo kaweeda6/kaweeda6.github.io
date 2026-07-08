@@ -206,10 +206,11 @@ const localBusinessSchema = {
           <Image
             src={heroImg}
             alt={serviceName + " at Thrive Dental Bayside"}
-            class="w-full h-[200px] object-cover object-top"
+            class="w-full h-[240px] sm:h-[320px] object-cover"
+            style={`object-position: center ${heroImgPosition};`}
             loading="eager"
             width={800}
-            height={400}
+            height={640}
             quality={75}
           />
           <div class="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#f7f3e8] to-transparent"></div>
