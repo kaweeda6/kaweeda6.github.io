@@ -1,4 +1,7 @@
 ---
+// showHeader: hide the section header when the page hero already announces it
+// waveFill: background color of the section that follows (wave divider color)
+const { showHeader = true, waveFill = '#2e756e' } = Astro.props
 import { Image } from "astro:assets";
 
 // Local imports for optimized images
@@ -49,16 +52,18 @@ const transformations = [
 <section class="relative bg-white pt-16 pb-28 lg:pt-20 lg:pb-36 overflow-hidden">
   <div class="container-wide relative">
     <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10 mb-10">
-      <div class="max-w-2xl">
-        <p class="text-[12px] font-black uppercase tracking-[0.2em] text-brand-500 mb-4">Smile Transformations</p>
-        <h2 class="display-1 text-slate-900 mb-6">Proof in every before & after.</h2>
-        <p class="text-lg text-slate-500 leading-relaxed italic font-serif">
-          Explore real Thrive Dental cases—from single-tooth fixes to full-arch rehabilitation—crafted with digital planning, meticulous aesthetics, and a focus on long-term function.
-        </p>
-      </div>
+      {showHeader && (
+        <div class="max-w-2xl">
+          <p class="eyebrow text-brand-500 mb-4">Smile Transformations</p>
+          <h2 class="display-1 mb-6">Proof in every before & after.</h2>
+          <p class="text-lg text-slate-500 leading-relaxed italic font-display">
+            Explore real Thrive Dental cases — from single-tooth fixes to full-arch rehabilitation — crafted with digital planning, meticulous aesthetics, and a focus on long-term function.
+          </p>
+        </div>
+      )}
       <div class="shrink-0">
-        <div class="flex items-center gap-4 text-slate-400 text-sm font-medium border-b border-slate-200 pb-2">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12H3m18 0-4-4m4 4-4 4"/></svg>
+        <div class="flex items-center gap-4 text-slate-500 text-sm font-medium border-b border-slate-200 pb-2">
+          <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12H3m18 0-4-4m4 4-4 4"/></svg>
           Slide to reveal transformation
         </div>
       </div>
@@ -66,7 +71,7 @@ const transformations = [
 
     <!-- Gallery Grid -->
     <div class="grid gap-6 lg:grid-cols-2">
-      {transformations.map((t, i) => (
+      {transformations.map((t) => (
         <div class="group relative flex flex-col">
           <!-- Case Info -->
           <div class="mb-6">
@@ -74,7 +79,7 @@ const transformations = [
             <p class="mt-2 text-slate-500 text-sm max-w-sm leading-relaxed">{t.detail}</p>
             <a href={`/before-and-after/${t.slug}`} class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-500 hover:text-brand-700 transition-colors no-underline">
               View Case Study
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
 
@@ -85,10 +90,12 @@ const transformations = [
             <div class="absolute inset-0 h-full w-full">
               <Image 
                 src={t.img} 
-                alt={`${t.title} After`}
+                alt={`Before and after: ${t.title} at Thrive Dental in Bayside, Queens`}
                 class="absolute bottom-0 h-[200%] w-full object-cover grayscale-0"
                 width={800}
                 height={880}
+                loading="lazy"
+                decoding="async"
               />
               <div class="absolute bottom-4 right-4 rounded-full bg-brand-500 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white shadow-lg z-10">
                 After
@@ -100,11 +107,14 @@ const transformations = [
               <div class="absolute inset-0 h-full w-[200%] before-image-wrapper" style="width: 200%;">
                 <Image 
                   src={t.img} 
-                  alt={`${t.title} Before`}
+                  alt=""
+                  aria-hidden="true"
                   class="absolute top-0 h-[200%] w-full object-cover grayscale-[0.05]"
                   style={t.nudge ? `transform: translate(${t.nudge.x}, ${t.nudge.y}) scale(${t.nudge.scale}); transform-origin: center center;` : ''}
                   width={800}
                   height={880}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="absolute bottom-4 left-4 rounded-full bg-slate-900/80 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-md">
@@ -115,7 +125,7 @@ const transformations = [
             <!-- Slider Handle -->
             <div class="slider-handle absolute top-0 bottom-0 left-1/2 z-30 flex w-0.5 -translate-x-1/2 items-center justify-center bg-white">
                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-xl text-brand-500 cursor-ew-resize transition-transform group-hover/slider:scale-110">
-                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
                    <path d="m18 8 4 4-4 4M6 8l-4 4 4 4"/>
                  </svg>
                </div>
@@ -127,7 +137,7 @@ const transformations = [
               max="100" 
               value="50" 
               class="absolute inset-0 z-40 h-full w-full cursor-ew-resize opacity-0" 
-              aria-label="Before and after slider" 
+              aria-label={`Before and after slider: ${t.title}`}
             />
           </div>
         </div>
@@ -136,8 +146,8 @@ const transformations = [
   </div>
   <!-- Wave into CTA/Reviews (brand-800) -->
   <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
-    <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
-      <path d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z" fill="#5cc9be"/>
+    <svg aria-hidden="true" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%">
+      <path d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z" fill={waveFill}/>
     </svg>
   </div>
 </section>
@@ -148,6 +158,10 @@ const transformations = [
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
+  }
+  .before-after-container:has(input[type="range"]:focus-visible) {
+    outline: 3px solid #48b5ab;
+    outline-offset: 3px;
   }
 </style>
 
@@ -191,5 +205,4 @@ const transformations = [
   }
 
   initStudioSliders();
-  document.addEventListener('astro:after-swap', initStudioSliders);
 </script>

@@ -4,6 +4,7 @@ node_modules
 # Builds
 dist
 .astro
+.netlify
 
 # Env
 .env
@@ -13,3 +14,10 @@ dist
 .DS_Store
 .vscode
 *.log
+
+# Local working files (never commit)
+screenshots/
+.dev-server.pid
+ACTION-PLAN.md
+FULL-AUDIT-REPORT.md
+ffmpeg2pass-*.log

@@ -12,6 +12,7 @@ export interface Source {
 
 export interface Props {
   title: string
+  h1?: string
   description: string
   publishDate: string
   updatedDate?: string
@@ -25,6 +26,7 @@ export interface Props {
   // When used as an MDX layout, Astro nests frontmatter under `frontmatter`
   frontmatter?: {
     title: string
+    h1?: string
     description: string
     publishDate: string
     updatedDate?: string
@@ -40,7 +42,10 @@ export interface Props {
 
 // Support both direct prop usage and MDX layout frontmatter passthrough
 const fm = Astro.props.frontmatter ?? Astro.props
-const { title, description, publishDate, updatedDate, category, readingTime, ogImage, author, authorCredentials, relatedService, sources } = fm
+const { title, h1, description, publishDate, updatedDate, category, readingTime, ogImage, author, authorCredentials, relatedService, sources } = fm
+
+// Visible heading / schema headline / breadcrumb leaf: the SEO <title> minus the brand suffix
+const headline = h1 ?? title.split(' | ')[0].trim()
 
 const authorName = author ?? 'Dr. Yelena Mikhaylova'
 const authorCreds = authorCredentials ?? 'DDS'
@@ -56,7 +61,7 @@ const currentPath = Astro.url.pathname
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: title,
+  headline: headline,
   description: description,
   image: ogImage
     ? (ogImage.startsWith('http') ? ogImage : siteOrigin + ogImage)
@@ -72,7 +77,9 @@ const articleSchema = {
   },
   publisher: {
     '@type': 'Organization',
+    '@id': siteOrigin + '/#dentist',
     name: 'Thrive Dental',
+    url: siteOrigin + '/',
     logo: {
       '@type': 'ImageObject',
       url: siteOrigin + '/thrive-dental-logo.png',
@@ -91,12 +98,12 @@ const breadcrumbSchema = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin + '/' },
     { '@type': 'ListItem', position: 2, name: 'Blog', item: siteOrigin + '/blog' },
-    { '@type': 'ListItem', position: 3, name: title, item: siteOrigin + currentPath },
+    { '@type': 'ListItem', position: 3, name: headline, item: siteOrigin + currentPath },
   ],
 }
 ---
 
-<Base title={title} description={description} ogImage={ogImage}>
+<Base title={title} description={description} ogImage={ogImage} ogType="article">
   <Fragment slot="header"><Header /></Fragment>
 
   <!-- Article hero -->
@@ -106,11 +113,11 @@ const breadcrumbSchema = {
     </div>
     <div class="container-slim">
       <!-- Breadcrumb -->
-      <nav class="mb-6 flex items-center gap-1.5 text-[12px] font-medium text-slate-400" aria-label="Breadcrumb">
+      <nav class="mb-6 flex items-center gap-1.5 text-[12px] font-medium text-slate-500" aria-label="Breadcrumb">
         <a href="/" class="hover:text-brand-600 no-underline transition-colors">Home</a>
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
         <a href="/blog" class="hover:text-brand-600 no-underline transition-colors">Blog</a>
-        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
         <span class="text-slate-600 truncate max-w-[200px]">{category}</span>
       </nav>
 
@@ -120,9 +127,9 @@ const breadcrumbSchema = {
             <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span>
             {category}
           </span>
-          <span class="text-[13px] text-slate-400">{readingTime}</span>
+          <span class="text-[13px] text-slate-500">{readingTime}</span>
         </div>
-        <h1 class="display-1 mb-5">{title}</h1>
+        <h1 class="display-1 mb-5">{headline}</h1>
         <p class="text-[17px] leading-relaxed text-slate-500 mb-6">{description}</p>
         <div class="flex items-center gap-3">
           <div class="flex h-9 w-9 items-center justify-center rounded-full bg-brand-100 text-[11px] font-black text-brand-700">
@@ -132,7 +139,7 @@ const breadcrumbSchema = {
             <a href={`/doctors/${authorSlug}`} class="text-sm font-semibold text-slate-700 hover:text-brand-600 no-underline transition-colors">
               {authorName}, {authorCreds}
             </a>
-            <p class="text-xs text-slate-400">
+            <p class="text-xs text-slate-500">
               Published {formattedDate}
               {updatedDate && updatedDate !== publishDate && (
                 <> · Updated {new Date(updatedDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</>
@@ -161,22 +168,22 @@ const breadcrumbSchema = {
 
       <!-- Related service link -->
       {relatedService && (
-        <div class="mx-auto mt-12 max-w-3xl rounded-2xl border border-brand-100 bg-[#f7f3e8] p-6 flex items-center justify-between gap-4">
-          <div>
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-1">Related Service</p>
-            <a href={relatedService.href} class="font-display text-lg font-semibold text-slate-900 hover:text-brand-600 no-underline transition-colors">{relatedService.label}</a>
-          </div>
-          <a href={relatedService.href} class="shrink-0 inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-400 no-underline transition-colors">
+        <a href={relatedService.href} class="group mx-auto mt-12 max-w-3xl rounded-2xl border border-brand-100 bg-sand-50 p-6 flex items-center justify-between gap-4 no-underline">
+          <span class="block">
+            <span class="eyebrow text-brand-500 mb-1 block">Related Service</span>
+            <span class="font-display text-lg font-semibold text-slate-900 group-hover:text-brand-600 transition-colors">{relatedService.label}</span>
+          </span>
+          <span class="shrink-0 inline-flex items-center gap-1.5 rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white group-hover:bg-brand-400 transition-colors">
             Learn more
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
       )}
 
       <!-- Sources / citations -->
       {sources && sources.length > 0 && (
         <div class="mx-auto mt-10 max-w-3xl border-t border-slate-100 pt-6">
-          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-3">Sources & Further Reading</p>
+          <p class="eyebrow text-slate-500 mb-3">Sources & Further Reading</p>
           <ul class="flex flex-col gap-1.5">
             {sources.map((s: Source) => (
               <li class="text-[13px]">
@@ -189,7 +196,7 @@ const breadcrumbSchema = {
 
       <!-- CTA -->
       <div class="mx-auto mt-16 max-w-3xl rounded-2xl bg-brand-700 p-8 text-white">
-        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-200 mb-3">Ready to take the next step?</p>
+        <p class="eyebrow text-brand-200 mb-3">Ready to take the next step?</p>
         <h2 class="font-display text-2xl font-bold mb-3">Schedule your appointment at Thrive Dental.</h2>
         <p class="text-white/75 text-sm mb-6">Serving Bayside, Flushing, Douglaston, Little Neck, and all of Queens. New patients always welcome.</p>
         <div class="flex flex-wrap gap-3">
@@ -203,7 +210,7 @@ const breadcrumbSchema = {
           </a>
           <a
             href="tel:+1-718-225-6677"
-            class="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white hover:bg-white/20 no-underline transition-colors"
+            class="btn-ghost"
           >
             (718) 225-6677
           </a>

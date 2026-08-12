@@ -24,22 +24,22 @@ import { BOOK_APPOINTMENT_URL } from "../data/site";
     </div>
   </section>
 
-  <BeforeAfter />
+  <BeforeAfter showHeader={false} waveFill="#3a928a" />
 
   <section class="relative overflow-hidden bg-brand-700">
     <div class="pointer-events-none absolute inset-0">
       <div class="absolute -top-20 -right-20 h-[300px] w-[300px] rounded-full bg-brand-500/20 blur-[60px]"></div>
     </div>
     <div class="container-slim relative py-12 text-center">
-      <h2 class="display-3 !text-white mb-4">Your transformation starts here.</h2>
+      <h2 class="display-3 text-white mb-4">Your transformation starts here.</h2>
       <p class="text-white/80 max-w-md mx-auto mb-8">Book a consultation and let's build a plan for your smile.</p>
       <a
         href={BOOK_APPOINTMENT_URL}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+        class="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-bold text-brand-700 shadow-lg shadow-black/10 hover:bg-brand-50 hover:-translate-y-px transition no-underline"
       >
-        Book a Consultation
+        Book Appointment
       </a>
     </div>
   </section>
@@ -51,10 +51,10 @@ import { BOOK_APPOINTMENT_URL } from "../data/site";
     name: 'Thrive Dental Before & After Gallery',
     description: 'Before and after photos of real patient smile transformations at Thrive Dental in Bayside, Queens NY — Invisalign, porcelain veneers, dental implants, and full-mouth rehabilitation.',
     url: 'https://www.thrivedentalny.com/before-and-after',
-    author: {
+    provider: {
       '@type': 'Dentist',
+      '@id': 'https://www.thrivedentalny.com/#dentist',
       name: 'Thrive Dental',
-      url: 'https://www.thrivedentalny.com',
     },
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({

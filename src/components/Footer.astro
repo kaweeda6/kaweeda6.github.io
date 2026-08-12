@@ -2,6 +2,28 @@
 import { Image } from "astro:assets";
 import logo from "../assets/logo.png";
 import { BOOK_APPOINTMENT_URL } from "../data/site";
+import { LIVE_NEIGHBORHOODS } from "../data/live-neighborhoods.mjs";
+import { OFFICE_HOURS } from "../data/site";
+
+// Compact footer format: '9:00 AM – 7:00 PM' -> '9 AM – 7 PM', 'Saturday – Sunday' -> 'Sat – Sun'
+const footerHours = OFFICE_HOURS.map((row) => ({
+  days: row.days.replace('Saturday – Sunday', 'Sat – Sun').replace('Monday & Friday', 'Mon & Fri'),
+  hours: row.open ? row.hours.replace(/:00/g, '') : 'Closed',
+  open: row.open,
+}))
+
+const NEIGHBORHOOD_LABELS: Record<string, string> = {
+  '/dentist-flushing-ny': 'Flushing',
+  '/dentist-douglaston-ny': 'Douglaston',
+  '/dentist-little-neck-ny': 'Little Neck',
+  '/dentist-fresh-meadows-ny': 'Fresh Meadows',
+  '/dentist-oakland-gardens-ny': 'Oakland Gardens',
+}
+
+const areasWeServe = LIVE_NEIGHBORHOODS.map((href) => ({
+  href,
+  label: NEIGHBORHOOD_LABELS[href] ?? href,
+}))
 ---
 
 <footer class="mt-16 border-t border-slate-200 bg-white pt-12 pb-24 md:pb-12 text-sm">
@@ -10,7 +32,7 @@ import { BOOK_APPOINTMENT_URL } from "../data/site";
 
       <!-- Brand column -->
       <div class="sm:col-span-2 md:col-span-3 lg:col-span-1">
-        <Image src={logo} alt="Thrive Dental — Cosmetic and Family Dentistry" class="h-9 w-auto" width={200} height={36} />
+        <Image src={logo} alt="Thrive Dental — Cosmetic and Family Dentistry" class="h-9 w-auto" width={200} height={36} loading="lazy" />
         <p class="mt-4 text-slate-500 leading-relaxed max-w-sm">
           Cosmetic &amp; family dentistry in Bayside, Queens — serving NYC for over a decade.
         </p>
@@ -44,6 +66,8 @@ import { BOOK_APPOINTMENT_URL } from "../data/site";
         <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Office</h3>
         <ul class="mt-3 space-y-2 text-slate-500">
           <li><a class="no-underline hover:text-brand-600 transition-colors" href="/doctors">Our Doctors</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/why-thrive">Why Thrive Dental</a></li>
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/testimonials">Patient Reviews</a></li>
           <li><a class="no-underline hover:text-brand-600 transition-colors" href="/new-patients/first-visit">New Patients</a></li>
           <li><a class="no-underline hover:text-brand-600 transition-colors" href="/new-patients/insurance">Insurance</a></li>
           <li><a class="no-underline hover:text-brand-600 transition-colors" href="/blog">Blog</a></li>
@@ -53,15 +77,27 @@ import { BOOK_APPOINTMENT_URL } from "../data/site";
       </nav>
 
 
+      <!-- Areas We Serve column -->
+      <nav aria-label="Areas we serve">
+        <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Areas We Serve</h3>
+        <ul class="mt-3 space-y-2 text-slate-500">
+          <li><a class="no-underline hover:text-brand-600 transition-colors" href="/">Bayside</a></li>
+          {areasWeServe.map((area) => (
+            <li><a class="no-underline hover:text-brand-600 transition-colors" href={area.href}>{area.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
       <!-- Hours column -->
       <div>
         <h3 class="font-bold text-slate-900 uppercase tracking-[0.1em] text-[11px]">Hours</h3>
         <dl class="mt-3 space-y-2">
-          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Tuesday</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 7 PM</time></dd></div>
-          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Wednesday</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 5 PM</time></dd></div>
-          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Thursday</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 6 PM</time></dd></div>
-          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Sat – Sun</dt><dd class="text-slate-700 whitespace-nowrap shrink-0"><time>9 AM – 3 PM</time></dd></div>
-          <div class="flex justify-between gap-4 text-slate-500"><dt class="shrink-0">Mon &amp; Fri</dt><dd class="text-slate-400 line-through whitespace-nowrap shrink-0">Closed</dd></div>
+          {footerHours.map((row) => (
+            <div class="flex justify-between gap-4 text-slate-500">
+              <dt class="shrink-0">{row.days}</dt>
+              <dd class={`whitespace-nowrap shrink-0 ${row.open ? 'text-slate-700' : 'text-slate-500'}`}>{row.open ? <time>{row.hours}</time> : 'Closed'}</dd>
+            </div>
+          ))}
         </dl>
         <a
           href={BOOK_APPOINTMENT_URL}
@@ -74,13 +110,9 @@ import { BOOK_APPOINTMENT_URL } from "../data/site";
       </div>
     </div>
 
-    <div class="mt-10 border-t border-slate-100 pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-slate-400 text-xs">
-      <p>© <span id="footer-year">{new Date().getFullYear()}</span> Thrive Dental. All rights reserved.</p>
+    <div class="mt-10 border-t border-slate-100 pt-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-slate-500 text-xs">
+      <p>© {new Date().getFullYear()} Thrive Dental. All rights reserved.</p>
       <p>41-02 Bell Blvd · Bayside, NY 11361 · <a href="tel:+1-718-225-6677" class="no-underline hover:text-brand-600 transition-colors">(718) 225-6677</a></p>
     </div>
-    <script is:inline>
-      var y = document.getElementById('footer-year');
-      if (y) y.textContent = new Date().getFullYear();
-    </script>
   </div>
 </footer>

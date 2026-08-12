@@ -3,22 +3,50 @@ import NeighborhoodPage from "../layouts/NeighborhoodPage.astro";
 ---
 
 <NeighborhoodPage
-  title="Dentist Near Fresh Meadows, NY | Thrive Dental Bayside"
-  description="Dentist near Fresh Meadows, Queens? Thrive Dental in Bayside is just 10 minutes away. Family, cosmetic & emergency dentistry. New patients welcome."
+  title="Dentist Near Fresh Meadows, NY | Thrive Dental"
+  description="Dentist near Fresh Meadows, Queens: Thrive Dental on Bell Blvd is about 10 min east. Implants, crowns, root canals, Invisalign, weekend hours."
   neighborhood="Fresh Meadows"
-  distanceNote="just 10 minutes from Fresh Meadows"
-  blurb="Fresh Meadows residents choose Thrive Dental in Bayside for trusted, comprehensive dental care that's close to home. From kids' first visits to complex smile makeovers, our team delivers expert care in a comfortable, modern setting. Same-day emergency appointments available."
+  distanceNote="about ten minutes east, off Union Turnpike or the Horace Harding service road"
+  blurb="Thrive Dental is roughly ten minutes east of Fresh Meadows on Bell Boulevard. We're a general practice that also handles the bigger work in-house — implants, crowns, root canals and full-mouth planning — with evening and weekend appointments."
+  whyIntro="Union Turnpike and the Horace Harding service road both run east toward us, and the trip is usually under fifteen minutes outside of rush hour. Patients from this side of Queens often come to us after being referred elsewhere for a specialist procedure — most of that work we simply do here."
+  servicesIntro="Preventive care, cosmetic work and the restorative procedures that usually get referred out — planned and completed in one Bayside office."
+  travelNote="Union Turnpike east to Springfield or Francis Lewis Boulevard, then north to Bell Boulevard, is the usual route; the Long Island Expressway service road works just as well. The Q46 runs along Union Turnpike if you're not driving. Parking at our office is free."
   landmarks={[
-    "~10 min from Fresh Meadows via Horace Harding Expy",
-    "Accessible via the Queens-Nassau border",
-    "Free parking at our Bayside office",
+    "~10 min east via Union Tpke or the LIE service road",
+    "Q46 runs the length of Union Tpke",
+    "Free on-site parking at 41-02 Bell Blvd",
   ]}
   serviceLinks={[
-    { href: "/emergency-dentist-fresh-meadows-ny", label: "Emergency Dentist near Fresh Meadows" },
-    { href: "/dental-implants-fresh-meadows-ny", label: "Dental Implants near Fresh Meadows" },
-    { href: "/invisalign-fresh-meadows-ny", label: "Invisalign® near Fresh Meadows" },
-    { href: "/cosmetic-dentist-fresh-meadows-ny", label: "Cosmetic Dentist near Fresh Meadows" },
-    { href: "/porcelain-veneers-fresh-meadows-ny", label: "Porcelain Veneers near Fresh Meadows" },
-    { href: "/teeth-whitening-fresh-meadows-ny", label: "Teeth Whitening near Fresh Meadows" },
+    { href: "/services/emergency-dentistry", label: "Emergency Dentistry" },
+    { href: "/services/dental-implants", label: "Dental Implants" },
+    { href: "/services/invisalign", label: "Invisalign®" },
+    { href: "/services/cosmetic-dentistry", label: "Cosmetic Dentistry" },
+    { href: "/services/porcelain-veneers", label: "Porcelain Veneers" },
+    { href: "/services/teeth-whitening", label: "Teeth Whitening" },
   ]}
-/>
+>
+  <section slot="after-hero" class="bg-white py-16">
+    <div class="container-slim max-w-3xl">
+      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Complex Work, One Office</p>
+      <h2 class="display-2 mb-5">The treatments people usually get referred out for</h2>
+      <p class="text-slate-500 leading-relaxed mb-5">
+        A lot of general practices hand off anything past a filling. We don't. Implants are planned with 3D cone beam imaging and placed here; the crown that goes on top is designed from an iTero scan in the same chart. Root canals, crowns, bridges and dentures are all in-house, and full-mouth reconstruction cases are sequenced by the same team from start to finish.
+      </p>
+      <p class="text-slate-500 leading-relaxed">
+        That matters practically. Every referral adds a new consultation, a new set of records and a new drive — and when the treating dentist changes halfway through, so does the plan. Keeping it in one place shortens the timeline and keeps one person accountable for the result.
+      </p>
+    </div>
+  </section>
+
+  <section slot="mid" class="bg-white py-16">
+    <div class="container-slim max-w-3xl">
+      <h2 class="display-2 mb-5">Getting here from the Union Turnpike corridor</h2>
+      <p class="text-slate-500 leading-relaxed mb-5">
+        The straightforward drive is Union Turnpike east, then north on Springfield or Francis Lewis Boulevard to Bell. The Horace Harding service road along the Long Island Expressway is the alternative when the Turnpike is busy, and it feeds onto the Clearview. If you're not driving, the Q46 runs the length of Union Turnpike and connects to the north–south buses that come up Bell Boulevard.
+      </p>
+      <p class="text-slate-500 leading-relaxed">
+        Students and staff around St. John's tend to book the Tuesday evening block, which runs until 7 PM, or a Saturday or Sunday slot between 9 AM and 3 PM. Emergency openings are held every day we're open — call before you drive over and we'll tell you what time to come.
+      </p>
+    </div>
+  </section>
+</NeighborhoodPage>

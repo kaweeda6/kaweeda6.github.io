@@ -4,19 +4,20 @@ import '@fontsource-variable/dm-sans'
 import '@fontsource-variable/fraunces/opsz.css'
 import '@fontsource-variable/fraunces/opsz-italic.css'
 
-// Self-hosted font paths — served from /public/fonts/ for reliable preloading in production
-const dmSansUrl = '/fonts/dm-sans-latin-wght-normal.woff2'
-const frauncesUrl = '/fonts/fraunces-latin-opsz-normal.woff2'
-const frauncesItalicUrl = '/fonts/fraunces-latin-opsz-italic.woff2'
+// Preload the exact hashed woff2 files the bundled @font-face rules request.
+// Importing with ?url makes Vite emit the same hashed URL used inside the CSS.
+import dmSansUrl from '@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url'
+import frauncesUrl from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2?url'
 
 export interface Props {
   title?: string
   description?: string
   ogImage?: string
+  ogType?: string
   noIndex?: boolean
 }
 
-const { title, description, ogImage, noIndex } = Astro.props as Props
+const { title, description, ogImage, ogType, noIndex } = Astro.props as Props
 const site = Astro.site?.origin ?? 'https://www.thrivedentalny.com'
 const canonicalURL = site + Astro.url.pathname
 const resolvedOgImage = ogImage
@@ -31,7 +32,6 @@ const resolvedOgImage = ogImage
     <!-- Font preloads — improves LCP -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href={dmSansUrl} />
     <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesUrl} />
-    <link rel="preload" as="font" type="font/woff2" crossorigin href={frauncesItalicUrl} />
     <!-- Preconnect to third-party origins used on most pages -->
     <link rel="preconnect" href="https://maps.googleapis.com" />
     <link rel="dns-prefetch" href="https://maps.googleapis.com" />
@@ -46,7 +46,7 @@ const resolvedOgImage = ogImage
     <meta name="theme-color" content="#3a928a" />
     <!-- Robots -->
     {noIndex
-      ? <meta name="robots" content="noindex,nofollow" />
+      ? <meta name="robots" content="noindex,follow" />
       : <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
     }
     <!-- Primary meta -->
@@ -54,7 +54,7 @@ const resolvedOgImage = ogImage
     <meta name="description" content={description ?? 'Modern, friendly dental care in Bayside, Queens. Comprehensive oral health, Invisalign®, implants, and cosmetic dentistry from Dr. Yelena Mikhaylova and team.'} />
     <link rel="canonical" href={canonicalURL} />
     <!-- OpenGraph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType ?? 'website'} />
     <meta property="og:site_name" content="Thrive Dental" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title ?? 'Thrive Dental | Cosmetic & Family Dentistry in Bayside, NY'} />
@@ -95,13 +95,6 @@ const resolvedOgImage = ogImage
     </main>
     <slot name="reviews-carousel" />
     <slot name="footer" />
-    <script is:inline>
-      try {
-        document.body.addEventListener('keydown', e => {
-          if (e.key === 'Tab') document.body.classList.add('keys')
-        }, { once: true })
-      } catch {}
-    </script>
     <script is:inline>
       try {
         document.querySelectorAll('details').forEach(function(d) {

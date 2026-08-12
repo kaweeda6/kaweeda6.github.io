@@ -3,22 +3,53 @@ import NeighborhoodPage from "../layouts/NeighborhoodPage.astro";
 ---
 
 <NeighborhoodPage
-  title="Dentist Near Flushing NY | Thrive Dental Bayside"
-  description="Looking for a dentist near Flushing, Queens? Thrive Dental in Bayside is just 8–10 minutes away. Family, cosmetic, and emergency dentistry. New patients welcome."
+  title="Dentist Near Flushing, NY | Thrive Dental Bayside"
+  description="Looking for a dentist near Flushing, Queens? Thrive Dental is four LIRR stops east in Bayside — family, cosmetic and same-day emergency care, free parking."
   neighborhood="Flushing"
-  distanceNote="just 8–10 minutes from downtown Flushing"
-  blurb="If you're looking for a top-rated dentist near Flushing, NY, Thrive Dental in Bayside is just a short drive away. We offer comprehensive family and cosmetic dentistry, same-day emergency appointments, and a welcoming, modern office serving the Queens community."
+  distanceNote="four LIRR stops east of Flushing–Main Street"
+  blurb="Thrive Dental sits at 41-02 Bell Boulevard in Bayside, an easy hop east along the Port Washington Branch or Northern Boulevard. We handle everyday cleanings, cosmetic work, implants and same-day emergencies — and there is always somewhere to park."
+  whyIntro="Our office is four LIRR stops east of Main Street, which for most Flushing patients means a ten-minute trip and a parking space waiting at the other end. A lot of the families we see started out searching for something closer to downtown and decided the short ride east bought them a calmer visit."
+  servicesIntro="Everything below happens in one Bayside office — no sending you across the borough for an implant, a set of aligners, or a child's first cleaning."
+  travelNote="Northern Boulevard runs from downtown Flushing straight to our block; when traffic on Northern backs up, the Long Island Expressway to the Clearview Expressway is usually quicker. Parking on site is free, and the Bayside LIRR station is at our corner."
   landmarks={[
-    "~8 min from Flushing Main St LIRR station",
-    "Easy access via Northern Blvd or the Long Island Expressway",
-    "Free parking available at our office",
+    "4 LIRR stops from Flushing–Main St (Port Washington Branch)",
+    "Straight east on Northern Blvd, or the LIE to the Clearview",
+    "Free on-site parking at 41-02 Bell Blvd",
   ]}
   serviceLinks={[
-    { href: "/emergency-dentist-flushing-ny", label: "Emergency Dentist near Flushing" },
-    { href: "/dental-implants-flushing-ny", label: "Dental Implants near Flushing" },
-    { href: "/invisalign-flushing-ny", label: "Invisalign® near Flushing" },
-    { href: "/cosmetic-dentist-flushing-ny", label: "Cosmetic Dentist near Flushing" },
-    { href: "/porcelain-veneers-flushing-ny", label: "Porcelain Veneers near Flushing" },
-    { href: "/teeth-whitening-flushing-ny", label: "Teeth Whitening near Flushing" },
+    { href: "/services/emergency-dentistry", label: "Emergency Dentistry" },
+    { href: "/services/dental-implants", label: "Dental Implants" },
+    { href: "/services/invisalign", label: "Invisalign®" },
+    { href: "/services/cosmetic-dentistry", label: "Cosmetic Dentistry" },
+    { href: "/services/porcelain-veneers", label: "Porcelain Veneers" },
+    { href: "/services/teeth-whitening", label: "Teeth Whitening" },
   ]}
-/>
+>
+  <section slot="after-hero" class="bg-white py-16">
+    <div class="container-slim max-w-3xl">
+      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Getting Here</p>
+      <h2 class="display-2 mb-5">From Main Street to Bell Boulevard</h2>
+      <p class="text-slate-500 leading-relaxed mb-5">
+        Downtown Flushing sits at the western end of the Long Island Rail Road's Port Washington Branch. Bayside is four stops east on that same line, and our front door at 41-02 Bell Boulevard is right at the Bayside station — for a lot of patients the walk from the platform is shorter than the walk from the waiting room to the parking lot at a mall practice.
+      </p>
+      <p class="text-slate-500 leading-relaxed mb-5">
+        Prefer the bus? The Q12 and Q13 both leave the Main Street hub and run east along Northern Boulevard, and the Q13 continues up Bell Boulevard past our block. If you are coming from the 7 train's Main Street terminus, either bus drops you within a few minutes' walk. Driving is the third option: Northern Boulevard the whole way, or the Long Island Expressway east to the Clearview Expressway when Northern is crawling.
+      </p>
+      <p class="text-slate-500 leading-relaxed">
+        The practical difference once you arrive is parking. Circling for a metered space is part of the downtown routine; here it isn't. Our lot is free and it is on site, which matters most when you're bringing a child, a parent, or yourself after a procedure.
+      </p>
+    </div>
+  </section>
+
+  <section slot="mid" class="bg-white py-16">
+    <div class="container-slim max-w-3xl">
+      <h2 class="display-2 mb-5">Appointments that fit a working schedule</h2>
+      <p class="text-slate-500 leading-relaxed mb-5">
+        We're open until 7 PM on Tuesdays and see patients both Saturday and Sunday from 9 AM to 3 PM, so a cleaning or an aligner check doesn't have to cost you a weekday. Urgent slots are held open daily — if a crown comes off on a Saturday morning, call us before you plan the rest of the day.
+      </p>
+      <p class="text-slate-500 leading-relaxed">
+        Treatment planning happens digitally. Our iTero scanner replaces the old impression trays, and as an Invisalign Platinum Provider we can show you a simulation of your result before you commit to anything. Our three dentists trained at NYU, and we take most major PPO plans — bring your card and we'll check your coverage before treatment starts, not after.
+      </p>
+    </div>
+  </section>
+</NeighborhoodPage>

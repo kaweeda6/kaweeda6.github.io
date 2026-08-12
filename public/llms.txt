@@ -1,12 +1,12 @@
 # Thrive Dental — Bayside, Queens NY
 
-> Thrive Dental is a full-service dental practice at 41-02 Bell Blvd, Bayside, NY 11361, serving patients from Bayside and all of Northeast Queens. Services include general dentistry, cosmetic dentistry, Invisalign® (Gold Plus Provider), dental implants, emergency dentistry, porcelain veneers, and teeth whitening. Phone: (718) 225-6677.
+> Thrive Dental is a full-service dental practice at 41-02 Bell Blvd, Bayside, NY 11361, serving patients from Bayside and all of Northeast Queens. Services include general dentistry, cosmetic dentistry, Invisalign® (Platinum Provider), dental implants, emergency dentistry, porcelain veneers, and teeth whitening. Phone: (718) 225-6677.
 
 ## Core Service Pages
 
 - [General Dentistry](https://www.thrivedentalny.com/services/general-dentistry): Cleanings, exams, fillings, preventive care for all ages in Bayside, Queens.
 - [Dental Implants](https://www.thrivedentalny.com/services/dental-implants): Permanent tooth replacement with 3D cone beam imaging and in-house placement. $3,500–$6,000 per implant including post, abutment, and crown.
-- [Invisalign®](https://www.thrivedentalny.com/services/invisalign): Clear aligner treatment for teens and adults. Thrive Dental is an Invisalign Gold Plus Provider with iTero digital scanning.
+- [Invisalign®](https://www.thrivedentalny.com/services/invisalign): Clear aligner treatment for teens and adults. Thrive Dental is an Invisalign Platinum Provider with iTero digital scanning.
 - [Cosmetic Dentistry](https://www.thrivedentalny.com/services/cosmetic-dentistry): Smile makeovers including veneers, bonding, and whitening.
 - [Porcelain Veneers](https://www.thrivedentalny.com/services/porcelain-veneers): Custom ceramic veneers for chips, gaps, discoloration, and shape corrections.
 - [Teeth Whitening](https://www.thrivedentalny.com/services/teeth-whitening): Philips Zoom! in-office whitening (up to 8 shades brighter) and custom take-home trays.
@@ -14,16 +14,20 @@
 - [Root Canal Therapy](https://www.thrivedentalny.com/services/root-canal-therapy): Comfortable root canal treatment to save infected teeth.
 - [Dental Crowns](https://www.thrivedentalny.com/services/dental-crowns): Custom porcelain and zirconia crowns with digital impressions.
 - [Full-Mouth Reconstruction](https://www.thrivedentalny.com/services/full-mouth-reconstruction): Comprehensive restorative treatment for patients with multiple missing, damaged, or decayed teeth.
+- [Dentures](https://www.thrivedentalny.com/services/dentures): Full and partial dentures, including implant-supported options.
+- [Gum Disease Treatment](https://www.thrivedentalny.com/services/gum-disease-treatment): Periodontal care — deep cleanings, scaling and root planing, and laser-assisted gum therapy.
+- [Pediatric Dentistry](https://www.thrivedentalny.com/services/pediatric-dentistry): First visits, sealants, and fluoride for children.
+- [Preventive Dentistry](https://www.thrivedentalny.com/services/preventive-dentistry): Exams, cleanings, oral cancer screening, and nightguards.
 
-## Local Pages (Northeast Queens Neighborhoods)
+## Local Pages (Northeast Queens Neighborhoods Served)
 
-- [Dentist in Bayside, Queens](https://www.thrivedentalny.com/dentist-bayside-ny): Main location page for Bayside, NY 11361.
-- [Dentist near Flushing, NY](https://www.thrivedentalny.com/dentist-flushing-ny): Serving Flushing patients, ~15 min via Northern Blvd.
-- [Dentist near Douglaston, NY](https://www.thrivedentalny.com/dentist-douglaston-ny): Serving Douglaston, just 5 min away.
-- [Dentist near Little Neck, NY](https://www.thrivedentalny.com/dentist-little-neck-ny): Serving Little Neck and Great Neck area.
-- [Dentist near Whitestone, NY](https://www.thrivedentalny.com/dentist-whitestone-ny): Serving Whitestone, ~10 min via Whitestone Expressway.
-- [Dentist near Fresh Meadows, NY](https://www.thrivedentalny.com/dentist-fresh-meadows-ny): Serving Fresh Meadows, ~15 min via Union Tpke.
-- [Dentist near Oakland Gardens, NY](https://www.thrivedentalny.com/dentist-oakland-gardens-ny): Serving Oakland Gardens, ~12 min via Francis Lewis Blvd.
+All care is delivered at our single office, 41-02 Bell Blvd, Bayside, NY 11361. These pages describe how we serve nearby neighborhoods.
+
+- [Dentist near Flushing, NY](https://www.thrivedentalny.com/dentist-flushing-ny): Serving Flushing patients — four LIRR stops (Port Washington Branch) or a straight run east on Northern Blvd.
+- [Dentist near Douglaston, NY](https://www.thrivedentalny.com/dentist-douglaston-ny): Serving Douglaston — one LIRR stop east of our office, about 5 minutes by car.
+- [Dentist near Little Neck, NY](https://www.thrivedentalny.com/dentist-little-neck-ny): Serving Little Neck near the Queens–Nassau line — two LIRR stops, direct via Northern Blvd.
+- [Dentist near Fresh Meadows, NY](https://www.thrivedentalny.com/dentist-fresh-meadows-ny): Serving Fresh Meadows — about 10 minutes east via Union Tpke or the LIE service road.
+- [Dentist near Oakland Gardens, NY](https://www.thrivedentalny.com/dentist-oakland-gardens-ny): Serving Oakland Gardens — a few minutes north on Bell Blvd.
 
 ## Blog — Patient Education
 
@@ -34,9 +38,17 @@
 - [The Complete Guide to Porcelain Veneers](https://www.thrivedentalny.com/blog/porcelain-veneers-guide): Candidacy, process, lifespan, and what makes a great veneer result.
 - [Signs of Gum Disease Most People Miss](https://www.thrivedentalny.com/blog/gum-disease-signs-treatment): Early warning signs and treatment options for periodontal disease.
 
+## About the Practice
+
+- [Why Thrive Dental](https://www.thrivedentalny.com/why-thrive): What sets the practice apart — technology, team, and patient experience.
+- [Patient Testimonials](https://www.thrivedentalny.com/testimonials): Patient reviews and experiences.
+- [Before & After](https://www.thrivedentalny.com/before-and-after): Documented case studies of completed treatment.
+- [New Patients — First Visit](https://www.thrivedentalny.com/new-patients/first-visit): What to expect at your first appointment.
+- [Insurance](https://www.thrivedentalny.com/new-patients/insurance): Accepted plans and payment options.
+
 ## Doctors
 
-- [Dr. Yelena Mikhaylova, DDS](https://www.thrivedentalny.com/doctors/yelena-mikhaylova): Lead dentist and Invisalign Gold Plus Provider.
+- [Dr. Yelena Mikhaylova, DDS](https://www.thrivedentalny.com/doctors/yelena-mikhaylova): Lead dentist and Invisalign Platinum Provider.
 - [Dr. Alla Hart, DDS](https://www.thrivedentalny.com/doctors/alla-hart): General and cosmetic dentistry, 30+ years experience.
 - [Dr. Abanob Saleh, DMD](https://www.thrivedentalny.com/doctors/abanob-saleh): Restorative and implant dentistry.
 
@@ -47,7 +59,7 @@
 - Phone: (718) 225-6677
 - Hours: Tuesday 9am–7pm, Wednesday 9am–5pm, Thursday 9am–6pm, Saturday–Sunday 9am–3pm (closed Mon & Fri)
 - Accepts: Delta Dental, MetLife, Aetna, Guardian, Cigna, and most major PPO plans
-- Financing: CareCredit and Sunbit available
+- Financing: CareCredit available
 - Parking: Free on-site parking
-- Invisalign status: Gold Plus Provider
+- Invisalign status: Platinum Provider
 - Technology: 3D cone beam CT, iTero Element digital scanner, Philips Zoom! whitening

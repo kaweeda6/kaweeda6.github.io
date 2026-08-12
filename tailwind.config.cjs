@@ -19,29 +19,24 @@ module.exports = {
           800: '#2e756e',
           900: '#1d4a47',
         },
+        // Body text
+        ink: '#1a1f1e',
         // Warm neutral sand
         sand: {
           50:  '#f8f7f4',
           100: '#efefe9',
           200: '#e4e4da',
         },
-        // Gold accent (highlights, subtle dividers, secondary CTAs)
+        // Gold accent (eyebrow labels on light backgrounds)
         gold: {
-          50:  '#FFF8E6',
-          100: '#FDEEC2',
-          200: '#F9E08F',
-          300: '#F2CB54',
-          400: '#E8B22C',
-          500: '#D4A62A',
-          600: '#B48709',
           700: '#8F6B06',
-          800: '#6B4F04',
-          900: '#3F2E02',
         },
       },
-      borderRadius: {
-        xl2:  '1.25rem',
-        pill: '9999px',
+      boxShadow: {
+        card:       '0 2px 12px rgba(0,0,0,0.05)',
+        'card-hover': '0 16px 48px rgba(0,0,0,0.10)',
+        float:      '0 4px 24px rgba(0,0,0,0.07)',
+        dropdown:   '0 8px 40px rgba(0,0,0,0.12)',
       },
       fontFamily: {
         display: ['Fraunces Variable', 'ui-serif', 'Georgia', 'serif'],

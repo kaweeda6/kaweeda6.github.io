@@ -19,8 +19,8 @@ const doc = {
 ---
 
 <Base
-  title="Dr. Yelena Mikhaylova, DDS | Bayside NY Cosmetic Dentist"
-  description="Dr. Yelena Mikhaylova, DDS — founder of Thrive Dental in Bayside, NY. NYU-trained, Invisalign® Platinum Provider, and expert in cosmetic dentistry, dental implants, and full-mouth rehabilitation."
+  title="Dr. Yelena Mikhaylova, DDS | Bayside NY | Thrive Dental"
+  description="Dr. Yelena Mikhaylova, DDS — founder of Thrive Dental, Bayside NY. NYU-trained, Invisalign Platinum Provider, cosmetic implants and full-mouth rehab."
 >
   <Fragment slot="header"><Header /></Fragment>
 
@@ -41,7 +41,7 @@ const doc = {
           <div class="relative overflow-hidden rounded-[3rem] shadow-2xl bg-brand-50 w-full" style="aspect-ratio: 4/5;">
             <Image 
               src={doc.img} 
-              alt={doc.name} 
+              alt={`${doc.name}, dentist at Thrive Dental in Bayside, Queens`}
               class="h-full w-full object-cover object-top"
               width={900}
               height={1125}
@@ -51,12 +51,12 @@ const doc = {
             </div>
         <!-- Info Side -->
         <div class="lg:order-2 lg:col-span-6">
-          <p class="text-[11px] font-black uppercase tracking-[0.3em] text-gold-700 mb-6">Founder & Clinical Director</p>
+          <p class="eyebrow text-gold-700 mb-6">Founder & Clinical Director</p>
           <h1 class="display-1 text-slate-900 leading-[1.05] tracking-tight mb-6">{doc.name}</h1>
           
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-8 bg-brand-400"></span>
-            <p class="text-[14px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-relaxed">
+            <p class="text-[14px] font-bold text-slate-500 uppercase tracking-[0.2em] leading-relaxed">
               DDS • Invisalign® Platinum Provider
             </p>
           </div>
@@ -91,13 +91,13 @@ const doc = {
               href={BOOK_APPOINTMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+              class="btn-primary sm:px-8 sm:py-4"
             >
               Book Appointment
             </a>
             <a
               href="tel:+1-718-225-6677"
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 sm:px-8 sm:py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+              class="btn-secondary sm:px-8 sm:py-4"
             >
               (718) 225-6677
             </a>
@@ -113,12 +113,13 @@ const doc = {
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://www.thrivedentalny.com/doctors/yelena-mikhaylova#person',
     name: 'Dr. Yelena Mikhaylova',
     honorificPrefix: 'Dr.',
     honorificSuffix: 'DDS',
     jobTitle: 'Founder & Clinical Director',
     description: 'NYU-trained dentist and Invisalign® Platinum Provider specializing in cosmetic dentistry, dental implants, and full-mouth rehabilitation at Thrive Dental in Bayside, Queens, NY.',
-    image: 'https://www.thrivedentalny.com/og-default.jpg',
+    image: 'https://www.thrivedentalny.com/team/yelena-mikhaylova.jpg',
     url: 'https://www.thrivedentalny.com/doctors/yelena-mikhaylova',
     sameAs: [
       'https://www.healthgrades.com/dentist/dr-yelena-mikhaylova',

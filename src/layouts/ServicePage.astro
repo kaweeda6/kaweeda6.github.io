@@ -4,8 +4,8 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import CallBar from "../components/CallBar.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
-import { BOOK_APPOINTMENT_URL } from "../data/site";
-import { Image } from "astro:assets";
+import { BOOK_APPOINTMENT_URL, OFFICE_HOURS } from "../data/site";
+import { getImage } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import defaultHero from "../assets/services/default-hero.jpg";
 
@@ -38,6 +38,7 @@ export interface Props {
   subtitle: string
   heroImg?: string | ImageMetadata
   heroImgPosition?: string
+  heroAlt?: string
   // Body sections (all optional — page looks great without them too)
   overviewTitle?: string
   overviewText?: string
@@ -50,6 +51,10 @@ export interface Props {
   relatedPosts?: Array<{ href: string; title: string; description: string }>
   ctaHeading?: string
   showWhyThrive?: boolean
+  // False for non-treatment pages (about, new-patient info): skips the
+  // Service schema, the "Services" breadcrumb level, and the treatment eyebrow
+  isTreatment?: boolean
+  overviewEyebrow?: string
 }
 
 const {
@@ -58,6 +63,7 @@ const {
   h1, subtitle,
   heroImg = defaultHero,
   heroImgPosition = '40%',
+  heroAlt,
   overviewTitle,
   overviewText,
   overviewExtra,
@@ -68,6 +74,8 @@ const {
   relatedPosts = [],
   ctaHeading = 'Ready to get started?',
   showWhyThrive = true,
+  isTreatment = true,
+  overviewEyebrow = 'About This Treatment',
 } = Astro.props
 
 // Extract clean service name for alt text / fallback headings
@@ -77,6 +85,23 @@ const serviceName = h1
   .replace(/ \|.*$/, '')
   .trim()
 
+// Hero alt: avoid doubling the brand name when the h1 already contains it
+const heroAltText = heroAlt ?? (
+  /thrive dental/i.test(serviceName)
+    ? serviceName
+    : `${serviceName} at Thrive Dental in Bayside, Queens`
+)
+
+// Single responsive hero rendition set (one download per viewport)
+const heroSizes = '(min-width: 1024px) 50vw, 100vw'
+const hero = await getImage({
+  src: heroImg as ImageMetadata,
+  widths: [480, 800, 1200, 1600],
+  sizes: heroSizes,
+  format: 'webp',
+  quality: 80,
+})
+
 const siteOrigin = 'https://www.thrivedentalny.com'
 const currentPath = Astro.url.pathname
 
@@ -84,10 +109,10 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home',     item: siteOrigin + '/' },
-    { '@type': 'ListItem', position: 2, name: 'Services', item: siteOrigin + '/services' },
-    { '@type': 'ListItem', position: 3, name: category,   item: siteOrigin + categoryHref },
-    { '@type': 'ListItem', position: 4, name: serviceName, item: siteOrigin + currentPath },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteOrigin + '/' },
+    ...(isTreatment ? [{ '@type': 'ListItem', position: 2, name: 'Services', item: siteOrigin + '/services' }] : []),
+    { '@type': 'ListItem', position: isTreatment ? 3 : 2, name: category, item: siteOrigin + categoryHref },
+    { '@type': 'ListItem', position: isTreatment ? 4 : 3, name: serviceName, item: siteOrigin + currentPath },
   ],
 }
 
@@ -95,55 +120,28 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'Dentist',
   '@id': siteOrigin + '/#dentist',
-  name: 'Thrive Dental',
-  url: siteOrigin + '/',
-  telephone: '+17182256677',
-  priceRange: '$$',
-  logo: siteOrigin + '/thrive-dental-logo.png',
-  image: siteOrigin + '/og-default.jpg',
-  medicalSpecialty: 'Dentistry',
-  sameAs: [
-    'https://www.yelp.com/biz/thrive-dental-bayside',
-    'https://www.facebook.com/thrivedentalny',
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '41-02 Bell Blvd',
-    addressLocality: 'Bayside',
-    addressRegion: 'NY',
-    postalCode: '11361',
-    addressCountry: 'US',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 40.7628,
-    longitude: -73.7712,
-  },
-  openingHoursSpecification: [
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Tuesday',   opens: '09:00', closes: '19:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Wednesday', opens: '09:00', closes: '17:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Thursday',  opens: '09:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Saturday',  opens: '09:00', closes: '15:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'https://schema.org/Sunday',    opens: '09:00', closes: '15:00' },
-  ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: 4.9,
-    reviewCount: 500,
-    bestRating: 5,
-    worstRating: 1,
-  },
 }
 
 ---
 
 <Base title={title} description={description}>
+  <Fragment slot="head">
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href={hero.src}
+      imagesrcset={hero.srcSet.attribute}
+      imagesizes={heroSizes}
+      fetchpriority="high"
+    />
+  </Fragment>
   <Fragment slot="header"><Header /></Fragment>
 
   <!-- ═══════════════════════════════════════════
        HERO — full-bleed split: text left / image right
   ═══════════════════════════════════════════ -->
-  <section class="relative overflow-hidden bg-[#f7f3e8]">
+  <section class="relative overflow-hidden bg-sand-50">
 
     <div class="lg:grid lg:grid-cols-2 lg:min-h-[680px] xl:min-h-[720px]">
 
@@ -155,11 +153,15 @@ const localBusinessSchema = {
                   pt-28 pb-16 lg:pt-32 lg:pb-20">
 
         <!-- Breadcrumb -->
-        <nav class="mb-6 flex items-center gap-1.5 text-[12px] font-medium text-slate-400" aria-label="Breadcrumb">
-          <a href="/services" class="hover:text-brand-500 no-underline transition-colors">Services</a>
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        <nav class="mb-6 flex items-center gap-1.5 text-[12px] font-medium text-slate-500" aria-label="Breadcrumb">
+          {isTreatment && (
+            <Fragment>
+              <a href="/services" class="hover:text-brand-500 no-underline transition-colors">Services</a>
+              <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+            </Fragment>
+          )}
           <a href={categoryHref} class="hover:text-brand-500 no-underline transition-colors">{category}</a>
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+          <svg aria-hidden="true" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
           <span class="text-slate-600">{serviceName}</span>
         </nav>
 
@@ -180,9 +182,9 @@ const localBusinessSchema = {
             href={BOOK_APPOINTMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 hover:-translate-y-px transition-all no-underline"
+            class="btn-primary"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
               <line x1="16" y1="2" x2="16" y2="6"/>
               <line x1="8" y1="2" x2="8" y2="6"/>
@@ -192,34 +194,19 @@ const localBusinessSchema = {
           </a>
           <a
             href="tel:+1-718-225-6677"
-            class="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-white px-7 py-4 text-sm font-semibold text-slate-700 shadow-sm hover:bg-brand-50 hover:-translate-y-px transition-all no-underline"
+            class="btn-secondary"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             (718) 225-6677
           </a>
         </div>
 
-        <!-- Hero image — mobile only -->
-        <div class="lg:hidden mb-8 overflow-hidden rounded-2xl relative">
-          <Image
-            src={heroImg}
-            alt={serviceName + " at Thrive Dental Bayside"}
-            class="w-full h-[240px] sm:h-[320px] object-cover"
-            style={`object-position: center ${heroImgPosition};`}
-            loading="eager"
-            width={800}
-            height={640}
-            quality={75}
-          />
-          <div class="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#f7f3e8] to-transparent"></div>
-        </div>
-
         <!-- Trust bar -->
-        <div class="inline-flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-brand-100 bg-white/70 px-4 py-3 backdrop-blur-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+        <div class="inline-flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-brand-100 bg-white/70 px-4 py-3 backdrop-blur-sm shadow-card">
           <div class="flex items-center gap-2">
-            <svg width="16" height="16" viewBox="0 0 24 24">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
               <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.07-3.71 1.07-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
               <path fill="#FBBC05" d="M5.84 14.11c-.22-.66-.35-1.36-.35-2.11s.13-1.45.35-2.11V7.05H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.95l3.66-2.84z"/>
@@ -230,42 +217,44 @@ const localBusinessSchema = {
           </div>
           <span class="h-3.5 w-px bg-brand-200/60"></span>
           <div class="flex items-center gap-1.5 text-[13px] text-slate-500">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-brand-500"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-brand-500"><polyline points="20 6 9 17 4 12"/></svg>
             Same-day available
           </div>
           <span class="h-3.5 w-px bg-brand-200/60"></span>
           <div class="flex items-center gap-1.5 text-[13px] text-slate-500">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-brand-500"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-brand-500"><polyline points="20 6 9 17 4 12"/></svg>
             New patients welcome
           </div>
         </div>
 
       </div>
 
-      <!-- ── RIGHT: full-bleed image (desktop only) ── -->
-      <div class="hidden lg:block relative">
-        <Image
-          src={heroImg}
-          alt={serviceName + " at Thrive Dental Bayside"}
+      <!-- ── RIGHT: hero image — one element, responsive across breakpoints ── -->
+      <div class="relative mx-6 sm:mx-10 mb-12 h-[240px] sm:h-[320px] overflow-hidden rounded-2xl lg:mx-0 lg:mb-0 lg:h-auto lg:rounded-none">
+        <img
+          src={hero.src}
+          srcset={hero.srcSet.attribute}
+          sizes={heroSizes}
+          alt={heroAltText}
           class="absolute inset-0 h-full w-full object-cover"
           style={`object-position: center ${heroImgPosition};`}
           loading="eager"
           fetchpriority="high"
+          decoding="async"
           width={1200}
           height={900}
-          quality={80}
         />
-        <!-- Left-edge fade: blend image into cream bg -->
-        <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f7f3e8] to-transparent"></div>
+        <!-- Left-edge fade: blend image into cream bg (desktop only) -->
+        <div class="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-sand-50 to-transparent"></div>
         <!-- Bottom-edge fade: blend into white section below -->
-        <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white to-transparent"></div>
+        <div class="hidden lg:block absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
     </div>
 
     <!-- Wave into content section -->
     <div class="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
-      <svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="block w-full" style="height:48px;display:block;">
+      <svg aria-hidden="true" viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="block w-full" style="height:48px;display:block;">
         <path d="M0,24 C240,48 480,0 720,24 C960,48 1200,0 1440,24 L1440,48 L0,48 Z" fill="white"/>
       </svg>
     </div>
@@ -284,14 +273,14 @@ const localBusinessSchema = {
           {/* Overview */}
           {showWhyThrive && (
             <div class="mb-12 pb-12 border-b border-slate-100">
-              <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-4">About This Treatment</p>
+              <p class="eyebrow text-brand-500 mb-4">{overviewEyebrow}</p>
               <h2 class="display-2 mb-5">
                 {overviewTitle ?? `Expert ${serviceName} care in Bayside.`}
               </h2>
               <div class="space-y-4 text-[16px] leading-[1.8] text-slate-600">
-                <p>{overviewText ?? `Our board-certified doctors combine advanced clinical training with a genuine patient-first approach — so every visit is comfortable, precise, and worth your time.`}</p>
+                <p>{overviewText ?? `Our NYU-trained doctors combine advanced clinical training with a genuine patient-first approach — so every visit is comfortable, precise, and worth your time.`}</p>
                 {!overviewText && (
-                  <p>{`When Bayside and Northern Queens residents search for ${serviceName}, they want a team they can trust to get it right the first time. At Thrive Dental, every ${serviceName} treatment is performed by board-certified clinicians using the latest technology — from digital X-rays and iTero impressions to laser-assisted procedures.`}</p>
+                  <p>{`When Bayside and Northern Queens residents search for ${serviceName}, they want a team they can trust to get it right the first time. At Thrive Dental, every ${serviceName} treatment is performed by experienced, NYU-trained clinicians using the latest technology — from digital X-rays and iTero impressions to laser-assisted procedures.`}</p>
                 )}
                 {!overviewText && (
                   <p>Our office is located in the heart of Bayside, Queens, and is a short drive from Flushing, Douglaston, Little Neck, and surrounding neighborhoods of Northeast Queens. We're accepting new patients — same-day appointments are available and most major insurance plans are welcome.</p>
@@ -304,7 +293,7 @@ const localBusinessSchema = {
           {/* Benefits */}
           {benefits.length > 0 && (
             <div class="mb-12 pb-12 border-b border-slate-100">
-              <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-4">Key Benefits</p>
+              <p class="eyebrow text-brand-500 mb-4">Key Benefits</p>
               <h2 class="display-3 mb-8">What makes this treatment worth it.</h2>
               <div class={`grid gap-4 ${
                 benefits.length <= 2  ? 'sm:grid-cols-2' :
@@ -312,9 +301,9 @@ const localBusinessSchema = {
                 'sm:grid-cols-2'
               }`}>
                 {benefits.map((b) => (
-                  <div class="group flex gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_16px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_32px_rgba(0,207,197,0.10)] hover:border-brand-200/60 transition-all duration-200">
-                    <div class="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all duration-200">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={b.icon}></svg>
+                  <div class="group flex gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-card hover:shadow-[0_8px_32px_rgba(92,201,190,0.10)] hover:border-brand-200/60 transition duration-200">
+                    <div class="shrink-0 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition duration-200">
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={b.icon}></svg>
                     </div>
                     <div>
                       <h3 class="font-semibold text-slate-900 text-[14px] mb-1">{b.title}</h3>
@@ -333,7 +322,7 @@ const localBusinessSchema = {
           {/* Process */}
           {steps.length > 0 && (
             <div class="mb-0 pb-0">
-              <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-4">The Process</p>
+              <p class="eyebrow text-brand-500 mb-4">The Process</p>
               <h2 class="display-3 mb-2">What to expect.</h2>
               <p class="text-[16px] leading-relaxed text-slate-500 mb-8">We walk you through every step — no surprises, just clear communication and expert care from start to finish.</p>
               <ol class="flex flex-col gap-0">
@@ -363,15 +352,15 @@ const localBusinessSchema = {
 
           <!-- Book card -->
           <div class="rounded-2xl bg-brand-800 p-6 text-white">
-            <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-brand-400 mb-2">Ready to get started?</p>
+            <p class="eyebrow text-brand-400 mb-2">Ready to get started?</p>
             <h3 class="font-display text-[1.3rem] font-bold leading-snug mb-4">{ctaHeading}</h3>
             <a
               href={BOOK_APPOINTMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-5 py-3.5 text-sm font-bold text-white hover:bg-brand-400 transition-all no-underline mb-3"
+              class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-5 py-3.5 text-sm font-bold text-white hover:bg-brand-400 transition no-underline mb-3"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
                 <line x1="16" y1="2" x2="16" y2="6"/>
                 <line x1="8" y1="2" x2="8" y2="6"/>
@@ -381,9 +370,9 @@ const localBusinessSchema = {
             </a>
             <a
               href="tel:+1-718-225-6677"
-              class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/20 transition-all no-underline"
+              class="btn-ghost w-full"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
               </svg>
               (718) 225-6677
@@ -391,11 +380,11 @@ const localBusinessSchema = {
           </div>
 
           <!-- Quick facts -->
-          <div class="rounded-2xl border border-slate-100 bg-[#f7f3e8] p-6">
-            <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-4">At a Glance</p>
+          <div class="rounded-2xl border border-slate-100 bg-sand-50 p-6">
+            <p class="eyebrow text-slate-500 mb-4">At a Glance</p>
             <ul class="flex flex-col gap-3">
               {[
-                'Board-certified doctors',
+                'NYU-trained doctors',
                 'Digital X-rays & iTero scanner',
                 'Same-day appointments',
                 'Most insurance accepted',
@@ -403,7 +392,7 @@ const localBusinessSchema = {
                 'Tue – Sun hours',
               ].map((fact) => (
                 <li class="flex items-center gap-2.5 text-[14px] text-slate-600">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0 text-brand-500"><polyline points="20 6 9 17 4 12"/></svg>
+                  <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0 text-brand-500"><polyline points="20 6 9 17 4 12"/></svg>
                   {fact}
                 </li>
               ))}
@@ -412,22 +401,16 @@ const localBusinessSchema = {
 
           <!-- Hours card -->
           <div class="rounded-2xl border border-slate-100 bg-white p-5">
-            <p class="text-[11px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-3">Office Hours</p>
+            <p class="eyebrow text-slate-500 mb-3">Office Hours</p>
             <ul class="flex flex-col gap-1.5">
-              {[
-                { day: 'Tuesday',   hrs: '9am – 7pm' },
-                { day: 'Wednesday', hrs: '9am – 5pm' },
-                { day: 'Thursday',  hrs: '9am – 6pm' },
-                { day: 'Saturday',  hrs: '9am – 3pm' },
-                { day: 'Sunday',    hrs: '9am – 3pm' },
-              ].map((h) => (
+              {OFFICE_HOURS.filter((row) => row.open).map((row) => (
                 <li class="flex items-center justify-between text-[13px]">
-                  <span class="text-slate-500">{h.day}</span>
-                  <span class="font-medium text-slate-700">{h.hrs}</span>
+                  <span class="text-slate-500">{row.days}</span>
+                  <span class="font-medium text-slate-700">{row.hours.replace(/:00/g, '')}</span>
                 </li>
               ))}
             </ul>
-            <p class="mt-3 text-[11px] text-slate-400">Mon & Fri closed</p>
+            <p class="mt-3 text-[11px] text-slate-500">Mon & Fri closed</p>
           </div>
 
         </aside>
@@ -440,19 +423,19 @@ const localBusinessSchema = {
        FAQ — beige, optional
   ═══════════════════════════════════════════ -->
   {faq.length > 0 && (
-    <section class="bg-[#f7f3e8] py-14 lg:py-20 border-t border-slate-100">
+    <section class="bg-sand-50 py-14 lg:py-20 border-t border-slate-100">
       <div class="container-wide">
         <div class={`grid gap-12 ${related.length > 0 ? 'lg:grid-cols-[1fr_320px]' : ''}`}>
           <!-- FAQ column -->
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-4">Common Questions</p>
+            <p class="eyebrow text-brand-500 mb-4">Common Questions</p>
             <h2 class="display-2 mb-10">Everything you need to know.</h2>
             <div class="divide-y divide-slate-200">
               {faq.map((item) => (
                 <details class="group py-5 first:pt-0">
                   <summary class="flex cursor-pointer list-none items-start justify-between gap-4 select-none">
                     <span class="font-semibold text-[16px] text-slate-900 group-open:text-brand-600 transition-colors leading-snug">{item.q}</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0 mt-0.5 text-slate-400 transition-transform duration-200 group-open:rotate-45 group-open:text-brand-500">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0 mt-0.5 text-slate-400 transition-transform duration-200 group-open:rotate-45 group-open:text-brand-500">
                       <path d="M12 5v14M5 12h14"/>
                     </svg>
                   </summary>
@@ -465,12 +448,12 @@ const localBusinessSchema = {
           <!-- Related Services sidebar -->
           {related.length > 0 && (
             <div class="lg:border-l lg:border-slate-200 lg:pl-10">
-              <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-5">Related Services</p>
+              <p class="eyebrow text-brand-500 mb-5">Related Services</p>
               <div class="flex flex-col divide-y divide-slate-200/70">
                 {related.slice(0, 6).map((r) => (
                   <a href={r.href} class="group flex items-center justify-between py-3.5 no-underline">
                     <span class="text-[15px] font-medium text-slate-700 group-hover:text-brand-500 transition-colors">{r.label}</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0 text-slate-300 group-hover:text-brand-500 transition-colors"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="shrink-0 text-slate-300 group-hover:text-brand-500 transition-colors"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                   </a>
                 ))}
               </div>
@@ -487,15 +470,15 @@ const localBusinessSchema = {
   {relatedPosts.length > 0 && (
     <section class="bg-white py-14 border-t border-slate-100">
       <div class="container-wide">
-        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-500 mb-5">From the Blog</p>
+        <p class="eyebrow text-brand-500 mb-5">From the Blog</p>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {relatedPosts.map((post) => (
-            <a href={post.href} class="group flex flex-col gap-2 rounded-2xl border border-slate-100 bg-[#f7f3e8] p-5 hover:border-brand-200 hover:shadow-[0_8px_24px_rgba(0,207,197,0.08)] transition-all no-underline">
+            <a href={post.href} class="group flex flex-col gap-2 rounded-2xl border border-slate-100 bg-sand-50 p-5 hover:border-brand-200 hover:shadow-[0_8px_24px_rgba(92,201,190,0.08)] transition no-underline">
               <span class="text-[14px] font-semibold text-slate-800 group-hover:text-brand-600 transition-colors leading-snug">{post.title}</span>
               <span class="text-[13px] text-slate-500 leading-relaxed line-clamp-2">{post.description}</span>
               <span class="flex items-center gap-1 text-[12px] font-semibold text-brand-500 mt-auto pt-2">
                 Read more
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </span>
             </a>
           ))}
@@ -511,8 +494,8 @@ const localBusinessSchema = {
     <div slot="cta" class="container-slim py-14 lg:py-20">
       <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
         <div class="max-w-xl">
-          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-brand-400 mb-3">Thrive Dental · Bayside, Queens NY</p>
-          <h2 class="display-3 !text-white mb-3">{ctaHeading}</h2>
+          <p class="eyebrow text-brand-400 mb-3">Thrive Dental · Bayside, Queens NY</p>
+          <h2 class="display-3 text-white mb-3">{ctaHeading}</h2>
           <p class="text-white/70 text-[15px] leading-relaxed">New patients always welcome — no referral needed. We'll get you in quickly and make it worth your time.</p>
         </div>
         <div class="flex shrink-0 flex-col gap-3 sm:flex-row">
@@ -520,9 +503,9 @@ const localBusinessSchema = {
             href={BOOK_APPOINTMENT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white hover:bg-brand-400 hover:-translate-y-px transition-all no-underline"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white hover:bg-brand-400 hover:-translate-y-px transition no-underline"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
               <line x1="16" y1="2" x2="16" y2="6"/>
               <line x1="8" y1="2" x2="8" y2="6"/>
@@ -532,9 +515,9 @@ const localBusinessSchema = {
           </a>
           <a
             href="tel:+1-718-225-6677"
-            class="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-sm font-semibold text-white hover:bg-white/20 hover:-translate-y-px transition-all no-underline"
+            class="btn-ghost"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.99 12 19.79 19.79 0 0 1 1.95 3.42 2 2 0 0 1 3.93 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.91 6.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
             (718) 225-6677
@@ -544,14 +527,14 @@ const localBusinessSchema = {
     </div>
   </ReviewsCarousel>
 
-  <!-- Structured data: LocalBusiness (includes AggregateRating) -->
+  <!-- Structured data: reference to the practice entity defined on the homepage -->
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 
   <!-- Structured data: BreadcrumbList -->
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <!-- Structured data: Service -->
-  <script type="application/ld+json" set:html={JSON.stringify({
+  <!-- Structured data: Service (treatment pages only) -->
+  {isTreatment && <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': siteOrigin + currentPath + '#service',
@@ -568,7 +551,7 @@ const localBusinessSchema = {
       { '@type': 'AdministrativeArea', name: 'Queens, New York' },
     ],
     url: siteOrigin + currentPath,
-  })} />
+  })} />}
 
   <Fragment slot="footer"><Footer /></Fragment>
   <CallBar />

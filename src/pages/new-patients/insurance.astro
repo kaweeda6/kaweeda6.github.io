@@ -57,7 +57,7 @@ const logos = [
 
       <!-- Logo carousel -->
       <div>
-        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">Insurance We Accept</p>
+        <p class="eyebrow text-gold-700 mb-4">Insurance We Accept</p>
         <h2 class="display-2 mb-3">Most major plans welcome.</h2>
         <p class="text-[17px] leading-relaxed text-slate-500 mb-10 max-w-2xl">
           We're in-network with many of the plans below and out-of-network with others — either way, we'll work to maximize your benefits and keep your out-of-pocket costs as low as possible.
@@ -79,7 +79,7 @@ const logos = [
                   width={120}
                   height={40}
                   loading="lazy"
-                  class="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  class="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300"
                 />
               </div>
             ))}
@@ -92,20 +92,20 @@ const logos = [
                   width={120}
                   height={40}
                   loading="lazy"
-                  class="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  class="h-8 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        <p class="mt-6 text-[13px] text-slate-400">Don't see your plan? Call us — we likely accept it or can help you get the most out of your out-of-network benefits.</p>
+        <p class="mt-6 text-[13px] text-slate-500">Don't see your plan? Call us — we likely accept it or can help you get the most out of your out-of-network benefits.</p>
       </div>
 
       <!-- How it works -->
       <div class="grid gap-12 lg:grid-cols-2 lg:gap-20 items-start">
         <div>
-          <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-4">How It Works</p>
+          <p class="eyebrow text-gold-700 mb-4">How It Works</p>
           <h2 class="display-2 mb-6">We handle the paperwork.</h2>
           <div class="space-y-5 text-[15px] leading-relaxed text-slate-600">
             <p>Bring your insurance card (or email it ahead of time) and we'll verify your coverage, run a benefits breakdown, and give you a clear estimate of your out-of-pocket cost before any treatment begins.</p>
@@ -121,7 +121,7 @@ const logos = [
           ].map((item) => (
             <div class="flex gap-4 rounded-2xl border border-slate-100 bg-slate-50/50 p-5">
               <div class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <div>
                 <p class="text-[14px] font-semibold text-slate-900 mb-1">{item.title}</p>
@@ -135,7 +135,7 @@ const logos = [
       <!-- No insurance CTA -->
       <div class="rounded-[2rem] bg-brand-50 border border-brand-100 p-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div class="max-w-xl">
-          <p class="text-[11px] font-black uppercase tracking-[0.25em] text-gold-700 mb-3">No Insurance?</p>
+          <p class="eyebrow text-gold-700 mb-3">No Insurance?</p>
           <h3 class="text-2xl font-display text-slate-900 mb-3">We have an in-house plan for you.</h3>
           <p class="text-[15px] leading-relaxed text-slate-600">
             Our Roslyn Discount Dental Plan gives uninsured patients two cleanings, exams, X-rays, and 15%+ off all other treatment for one flat annual fee — no waiting periods or deductibles.
@@ -143,10 +143,10 @@ const logos = [
         </div>
         <a
           href="/new-patients/financial-information"
-          class="shrink-0 inline-flex items-center gap-2 rounded-full bg-brand-500 px-7 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+          class="btn-primary shrink-0"
         >
           See plan details
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
 
@@ -165,5 +165,8 @@ const logos = [
   @keyframes marquee {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .insurance-track { animation: none; }
   }
 </style>

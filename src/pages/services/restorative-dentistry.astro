@@ -14,7 +14,7 @@ const services = [
 ---
 <ServicePage
   title="Restorative Dentistry in Bayside, Queens NY | Thrive Dental"
-  description="Restorative dentistry in Bayside, Queens NY — dental implants, crowns, bridges, dentures, root canals & full-mouth reconstruction. Restore your smile today. Call (718) 225-6677."
+  description="Restorative dentistry in Bayside, Queens NY — implants, crowns, bridges, dentures, and root canals. Restore your smile. (718) 225-6677."
   category="Our Services"
   categoryHref="/services"
   h1="Restorative Dentistry in Bayside, NY"
@@ -70,19 +70,19 @@ const services = [
   ]}
   related={[
     { href: '/services/cosmetic-dentistry',   label: 'Cosmetic Dentistry' },
-    { href: '/services/periodontics',         label: 'Periodontics' },
+    { href: '/services/gum-disease-treatment', label: 'Gum Disease Treatment' },
     { href: '/services',                      label: 'All Services' },
   ]}
   ctaHeading="Restore your smile. Reclaim your confidence."
 >
   <section class="bg-white pb-12">
     <div class="container-slim">
-      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">Our Restorative Services</p>
+      <p class="eyebrow text-brand-500 mb-6">Our Restorative Services</p>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
-          <a href={s.href} class="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:border-brand-200 hover:shadow-md transition-all no-underline">
+          <a href={s.href} class="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:border-brand-200 hover:shadow-md transition no-underline">
             <span class="text-sm font-semibold text-slate-700 group-hover:text-brand-500 transition-colors">{s.label}</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-300 group-hover:text-brand-500 transition-colors shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-300 group-hover:text-brand-500 transition-colors shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         ))}
       </div>

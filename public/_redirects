@@ -19,8 +19,9 @@ https://thrivedentalny.com/*  https://www.thrivedentalny.com/:splat   301!
 /nightguards                     /services/nightguards                 301!
 /oral-cancer-screening           /services/oral-cancer-screening       301!
 /pediatric-dentistry             /services/pediatric-dentistry         301!
-/periodontal-treatments          /services/periodontal-treatments      301!
-/services/periodontics           /services/periodontal-treatments      301!
+/periodontal-treatments          /services/gum-disease-treatment       301!
+/services/periodontics           /services/gum-disease-treatment       301!
+/services/periodontal-treatments /services/gum-disease-treatment       301!
 /preventive-care                 /services/preventive-dentistry        301!
 /root-canals                     /services/root-canal-therapy          301!
 /sealants                        /services/dental-sealants             301!
@@ -42,24 +43,10 @@ https://thrivedentalny.com/*  https://www.thrivedentalny.com/:splat   301!
 /what-sets-us-apart              /why-thrive                           301!
 /financial-information           /new-patients/financial-information   301!
 
-# ─── Neighborhood pages (temporarily deactivated — files kept in repo) ────────
-/dentist-bayside-ny              /                                     302!
-/dentist-beechhurst-ny           /                                     302!
-/dentist-college-point-ny        /                                     302!
-/dentist-douglaston-ny           /                                     302!
-/dentist-floral-park-ny          /                                     302!
-/dentist-flushing-ny             /                                     302!
-/dentist-fresh-meadows-ny        /                                     302!
-/dentist-glen-oaks-ny            /                                     302!
-/dentist-little-neck-ny          /                                     302!
-/dentist-oakland-gardens-ny      /                                     302!
-/dentist-queens-village-ny       /                                     302!
-/dentist-whitestone-ny           /                                     302!
-
 # ─── Pages with no direct equivalent → best-fit target ───────────────────────
 /office-visits                   /services/general-dentistry           301!
 /teeth-for-life                  /services/pediatric-dentistry         301!
 /office-tour                     /                                     301!
 /landing                         /                                     301!
 /home                            /                                     301!
-/sitemap                         /sitemap.xml                          301!
+/sitemap                         /sitemap-index.xml                    301!

@@ -114,7 +114,7 @@ const topics = [
   <section class="bg-white pt-4 pb-16">
     <div class="container-slim">
       <div class="max-w-3xl">
-        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">The Foundation of a Healthy Smile</p>
+        <p class="eyebrow text-brand-500 mb-6">The Foundation of a Healthy Smile</p>
         <h2 class="display-2 text-slate-900 mb-6">The best dentistry is the dentistry you never need.</h2>
         <div class="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
           <p>At Thrive Dental, we believe the best dentistry is the dentistry you never need. Our focus is on identifying and treating small issues before they become larger, more costly, and more complex problems.</p>
@@ -134,7 +134,7 @@ const topics = [
 
       <!-- Early Detection + Overjet AI highlight -->
       <div class="mt-12 rounded-[2rem] bg-brand-900 p-8 sm:p-12 text-white shadow-xl">
-        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-200 mb-5">Advanced Technology</p>
+        <p class="eyebrow text-brand-200 mb-5">Advanced Technology</p>
         <h3 class="font-display text-2xl sm:text-3xl font-semibold mb-6 leading-tight">Early detection powered by superior imaging &amp; AI.</h3>
         <div class="space-y-5 text-brand-50/90 leading-relaxed max-w-3xl">
           <p>Using advanced digital imaging and diagnostic technology, we can identify decay, infections, failing restorations, and bone loss in their earliest stages — often before symptoms ever develop. Early detection means simpler treatment and better outcomes.</p>
@@ -144,7 +144,7 @@ const topics = [
 
       <!-- Philosophy -->
       <div class="mt-12 max-w-3xl">
-        <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-5">Our Philosophy</p>
+        <p class="eyebrow text-brand-500 mb-5">Our Philosophy</p>
         <div class="space-y-5 text-base sm:text-lg text-slate-600 leading-relaxed">
           <p>At Thrive Dental, we don’t believe in waiting for problems to become emergencies. By focusing on prevention, education, and early intervention, we help our patients maintain healthier smiles, avoid unnecessary treatment, and enjoy better overall health for life.</p>
           <p class="font-display text-xl italic text-slate-800">A healthy smile starts with prevention — and prevention starts at Thrive Dental.</p>
@@ -155,12 +155,12 @@ const topics = [
 
   <section class="bg-white pb-12">
     <div class="container-slim">
-      <p class="text-[11px] font-black uppercase tracking-[0.25em] text-brand-500 mb-6">Our Preventive Services</p>
+      <p class="eyebrow text-brand-500 mb-6">Our Preventive Services</p>
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
-          <a href={s.href} class="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:border-brand-200 hover:shadow-md transition-all no-underline">
+          <a href={s.href} class="group flex items-center justify-between rounded-2xl border border-slate-100 bg-white p-6 shadow-sm hover:border-brand-200 hover:shadow-md transition no-underline">
             <span class="text-sm font-semibold text-slate-700 group-hover:text-brand-500 transition-colors">{s.label}</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-300 group-hover:text-brand-500 transition-colors shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-300 group-hover:text-brand-500 transition-colors shrink-0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         ))}
       </div>

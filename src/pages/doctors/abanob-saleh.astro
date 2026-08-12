@@ -19,8 +19,8 @@ const doc = {
 ---
 
 <Base
-  title="Dr. Abanob Saleh, DMD | Restorative & Emergency Dentist in Bayside, NY"
-  description="Dr. Abanob Saleh is a DMD at Thrive Dental in Bayside, Queens NY. Expert in advanced restorative and emergency dental care. Graduate of NYU School of Dentistry. New patients welcome."
+  title="Dr. Abanob Saleh, DMD | Bayside NY Dentist | Thrive Dental"
+  description="Dr. Abanob Saleh, DMD at Thrive Dental in Bayside, Queens NY. NYU-trained in advanced restorative and emergency dental care. New patients welcome."
 >
   <Fragment slot="header"><Header /></Fragment>
 
@@ -40,7 +40,7 @@ const doc = {
           <div class="relative overflow-hidden rounded-[3rem] shadow-2xl bg-brand-50 w-full" style="aspect-ratio: 4/5;">
             <Image 
               src={doc.img} 
-              alt={doc.name} 
+              alt={`${doc.name}, dentist at Thrive Dental in Bayside, Queens`}
               class="h-full w-full object-cover object-top"
               width={900}
               height={1125}
@@ -50,12 +50,12 @@ const doc = {
             </div>
         <!-- Info Side -->
         <div class="lg:order-2 lg:col-span-6">
-          <p class="text-[11px] font-black uppercase tracking-[0.3em] text-gold-700 mb-6">Our Team</p>
+          <p class="eyebrow text-gold-700 mb-6">Our Team</p>
           <h1 class="display-1 text-slate-900 leading-[1.05] tracking-tight mb-6">{doc.name}</h1>
           
           <div class="flex items-center gap-3 mb-12">
             <span class="h-px w-8 bg-brand-400"></span>
-            <p class="text-[14px] font-bold text-slate-400 uppercase tracking-[0.2em] leading-relaxed">
+            <p class="text-[14px] font-bold text-slate-500 uppercase tracking-[0.2em] leading-relaxed">
               {doc.credentials} • Dentist
             </p>
           </div>
@@ -85,13 +85,13 @@ const doc = {
               href={BOOK_APPOINTMENT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 sm:px-8 sm:py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/20 hover:bg-brand-400 transition-all no-underline"
+              class="btn-primary sm:px-8 sm:py-4"
             >
               Book with Dr. Saleh
             </a>
             <a
               href="tel:+1-718-225-6677"
-              class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 sm:px-8 sm:py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all no-underline"
+              class="btn-secondary sm:px-8 sm:py-4"
             >
               (718) 225-6677
             </a>
@@ -107,12 +107,13 @@ const doc = {
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': 'https://www.thrivedentalny.com/doctors/abanob-saleh#person',
     name: 'Dr. Abanob Saleh',
     honorificPrefix: 'Dr.',
     honorificSuffix: 'DMD',
     jobTitle: 'Dentist',
     description: 'Dr. Abanob Saleh is a highly trained general dentist at Thrive Dental in Bayside, NY, committed to comprehensive and holistic dental health.',
-    image: 'https://www.thrivedentalny.com/og-default.jpg',
+    image: 'https://www.thrivedentalny.com/team/abanob-saleh.jpg',
     url: 'https://www.thrivedentalny.com/doctors/abanob-saleh',
     alumniOf: [
       { '@type': 'EducationalOrganization', name: 'New York University School of Dentistry' },
