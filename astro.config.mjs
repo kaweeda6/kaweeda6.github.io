@@ -21,7 +21,9 @@ for (const file of fs.readdirSync(blogDir)) {
 
 export default defineConfig({
   site: 'https://www.thrivedentalny.com',
-  trailingSlash: 'never',
+  // Netlify serves directory-based static routes with a trailing slash.
+  // Keep generated canonical URLs and sitemap entries aligned with that URL.
+  trailingSlash: 'always',
   prefetch: true,
   image: {
     endpoint: {
@@ -48,7 +50,7 @@ export default defineConfig({
         ]
         if (serviceLocationPatterns.some(p => url.startsWith(p))) return false
         // Neighborhood pages: only the live (indexed) set
-        if (url.startsWith('/dentist-')) return LIVE_NEIGHBORHOODS.includes(url)
+        if (url.startsWith('/dentist-')) return LIVE_NEIGHBORHOODS.includes(url.replace(/\/$/, ''))
         return true
       },
       serialize(item) {
